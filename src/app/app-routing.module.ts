@@ -8,6 +8,10 @@ const routes: Routes = [
     pathMatch: "full",
   },
   {
+    path: "report",
+    loadChildren: () => import("./Pages/report/report.module").then( m => m.ReportPageModule)
+  },
+  {
     path: "tasktracker",
  //loadChildren: () =>import("./Pages/tabs/tabs.module").then((m) => m.TabsPageModule),
     children: [
