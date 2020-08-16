@@ -5,7 +5,7 @@
     </ion-buttons>
     <ion-title size="small" color="primary" > <h4> Update My Progress</h4></ion-title>
     <ion-buttons slot="end">
-      <ion-button>
+      <ion-button (click)="deleteTask()">
         <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -50,7 +50,7 @@
             <ion-input style="background-color:transparent;"
               required
               type="text"
-              [(ngModel)]="loadedTask.taskName"
+              [(ngModel)]="loadedTask.task"
               (focusout)="updateTask()"
             ></ion-input>
           </ion-item>
@@ -68,7 +68,7 @@
           </ion-item>
           <ion-item>
             <ion-label position="stacked" color="primary">Description</ion-label>
-            <ion-textarea  rows="20" cols="20"    style="background-color:transparent " [(ngModel)]="loadedTask.taskDesc"
+            <ion-textarea  rows="20" cols="20"    style="background-color:transparent " [(ngModel)]="loadedTask.details"
             (focusout)="updateTask()"></ion-textarea>
           </ion-item>
         </ion-list>
