@@ -16,7 +16,7 @@ export class UsersService {
 
   path: string = "https://46odim7l6f.execute-api.us-east-2.amazonaws.com/beta";
 
-  async getAllUsers(): Promise<any> {
+  async getAllUsers(): Promise<Array<User>> {
     let users = await this.http.get<any>(`${this.path}/id/`).toPromise();
     await users.forEach((u) => {
       this.usersList.push(
@@ -48,6 +48,7 @@ export class UsersService {
     return usr;
   }
   getUserByEmail(email: String): User {
+    console.log(this.usersList)
     return this.usersList.find((u) => u.email === email);
   }
 }

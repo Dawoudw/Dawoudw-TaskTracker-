@@ -26,18 +26,9 @@
               style="text-align: center !important;"
               style="height: 80px;"
             >
-              <ion-avatar
-                name="avatar"
-                class="ion-no-padding ion-margin-horizontal ion-margin-top"
-              >
-                <img src="../assets/avatar.svg" />
+              <ion-avatar name="avatar" class="ion-no-padding ion-margin">
+                <img src="../assets/images/avatar.svg" />
               </ion-avatar>
-              <ion-spinner
-                style="height: 3px;"
-                *ngIf="loading"
-                name="dots"
-                style="text-align: center !important;"
-              ></ion-spinner>
             </ion-col>
 
             <!-- ion-float-left ion-float-start -->
@@ -95,7 +86,14 @@
                   ><h3>Remember My Credentials</h3>
                 </ion-label>
               </ion-item>
-              <div class="ion-padding ion-no-margin">
+              <div
+                class="ion-padding ion-no-margin"
+                style="text-align: center !important; height:100px;"
+              >
+                <div style="height:8px;  text-align: center !important;">
+                  <ion-spinner style="position: relative;"   *ngIf="loading" name="dots"></ion-spinner>
+                </div>
+
                 <ion-button
                   [disabled]=" loading "
                   expand="block"

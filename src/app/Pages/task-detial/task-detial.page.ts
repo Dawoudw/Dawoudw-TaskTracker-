@@ -22,7 +22,7 @@ export class TaskDetialPage implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
       if(!paramMap.has('taskId')){
-        this.navCtrl.navigateBack('/tasktracker/submit-my-progress');
+        this.navCtrl.navigateBack('/tasktracker/mytasks');
         return;
       }
 																				 

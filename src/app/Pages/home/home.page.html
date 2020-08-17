@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header style=" text-align: center !important">
   <ion-toolbar>
     <ion-chip
       outline
@@ -11,16 +11,17 @@
       >
     </ion-chip>
   </ion-toolbar>
+  
 </ion-header>
 
-<ion-content fullscreen>
+<ion-content fullscreen >
   <!-- <ion-chip outline color="warning"  class="ion-margin ion-padding">   <ion-label  [(ngModel)]="currentTime">
     <span >
       {{currentDate}}  
     </span>
     <span> - {{currentTime}}</span> 
   </ion-label> </ion-chip> -->
-  <router-outlet></router-outlet>
+  <!-- <router-outlet></router-outlet> -->
   <ion-segment color="medium">
     <ion-segment-button>
       <ion-label color="warning" name="lbldate" #lbldate>
@@ -38,8 +39,8 @@
     </ion-segment-button>
   </ion-segment>
 </ion-content>
-<ion-footer class="ion-no-border ion-justify-content-center">
-  <!-- <ion-grid>
+<ion-footer class="ion-no-border ion-justify-content-center" style=" text-align: center !important">
+  <!-- <ion-grid> 
     <ion-row class="ion-justify-content-center">
       <ion-col style="  text-align: center !important;">
         <ion-toolbar>
@@ -50,10 +51,10 @@
       </ion-col>
     </ion-row>
   </ion-grid> -->
-  <ion-toolbar>
-    <ion-button
+  <ion-toolbar  >
+    <ion-button 
       color="primary"
-      style="width: 180px;"
+      style="width: 180px;align-items: center !important;"
       class="ion-margin ion-text-capitalize"
       (click)="openlogin()"
     >

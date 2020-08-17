@@ -12,7 +12,6 @@ import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./Components/header/header.component";
 import { EventService } from "./Services/event-service.service";
 import { AuthService } from "./Services/authService.service";
-import { AuthApi } from "./Services/authApi.service";
 import { UsersService } from "./Services/users.service";
 import { TasksService } from "./Services/tasks.service";
 import { TaskProgressService } from "./Services/task-progress-service.service";
@@ -35,7 +34,6 @@ import { TaskProgressService } from "./Services/task-progress-service.service";
     SplashScreen,
     EventService,
     AuthService,
-    AuthApi,
     UsersService,
     TasksService,
     TaskProgressService,

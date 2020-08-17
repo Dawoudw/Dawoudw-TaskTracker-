@@ -10,10 +10,13 @@ import { AuthService } from "src/app/Services/authService.service";
   styleUrls: ["./login.page.scss"],
 })
 export class LoginPage implements OnInit {
-  constructor(private authServ: AuthService, private userServ: UsersService) {
-    if (authServ.checkCurrentUser()) {
-      authServ.redirectToHome();
+  constructor(private auth: AuthService, private userServ: UsersService) {
+    if (auth.isLoggedIn()) {
+      auth.redirectToHome();
     }
+    this.auth.errmessage.subscribe((msg) => {
+      this.message = msg;
+    });
   }
 
   email: any;
@@ -31,13 +34,14 @@ export class LoginPage implements OnInit {
 
   async signIn() {
     this.loading = true;
+    let errmessage = "";
     await new Promise(() => {
       console.log("Sign In");
       setTimeout(() => {
         try {
-       let user =   this.authServ.userLogin(this.email, this.pass);
-       console.log("emit user" ,user)
-          this.authServ.loginChange.emit(user)
+          this.auth.signIn(this.email, this.pass);
+          this.auth.userChange.emit(this.auth.getLoggedUser());
+          this.loading = false;
         } catch (err) {
           this.loading = false;
           this.message = err;
