@@ -1,8 +1,9 @@
-import { Injectable } from "@angular/core";
+import { Injectable, ErrorHandler } from "@angular/core";
 import { Task } from "../Models/task";
 import { HttpClient } from "@angular/common/http";
-import { map, tap, take, switchMap } from "rxjs/operators";
-import { BehaviorSubject, of } from "rxjs";
+import { map, tap, take, switchMap, catchError } from "rxjs/operators";
+import { BehaviorSubject, of, throwError } from "rxjs";
+import { User } from '../Models/user';
 
 interface TaskData {
   task: string;
@@ -17,28 +18,12 @@ interface TaskData {
   providedIn: "root",
 })
 export class TasksService {
-  // myTasks: Task[] = [
-  //   new Task(
-  //     't1',
-  //     'Test 1',
-  //     'Test Desc 1',
-  //     0.5
-  //   ),
-  //   new Task(
-  //     't2',
-  //     'Test 2',
-  //     'Test Desc 2',
-  //     0.25
-  //   ),
-  //   new Task(
-  //     't3',
-  //     'Test 3',
-  //     'Test Desc 3',
-  //     0.85
-  //   )
-  // ];
 
   private _myTasks = new BehaviorSubject<Task[]>([]);
+  loginedUser = new User(
+    '0',
+    'Testing User'
+  );
 
   get myTasks() {
     return this._myTasks.asObservable();
@@ -59,11 +44,12 @@ export class TasksService {
             if (resData.hasOwnProperty(key)) {
               tasks.push(
                 new Task(
-                  resData[key].id,
                   resData[key].task,
+                  resData[key].id,
+                  resData[key].taskdate,
                   resData[key].details,
-                  parseFloat(resData[key].progress) * 0.01,
-                  resData[key].taskdate
+                  resData[key].userid,
+                  parseFloat(resData[key].progress) > 1 ?  parseFloat(resData[key].progress)*0.01 : parseFloat(resData[key].progress)
                 )
               );
             }
@@ -84,80 +70,115 @@ export class TasksService {
       .pipe(
         map((taskData) => {
           return new Task(
-            id,
             taskData.task,
+            id,
+            taskData.taskdate,
             taskData.details,
-            parseFloat(taskData.progress) * 0.01,
-            taskData.taskdate
+            taskData.userid,
+            parseFloat(taskData.progress)
           );
         })
       );
   }
 
-  getMyTasks(id: string) {
-    // return {...this.myTasks.find(p => p.id === id)};
+  addTask(taskTitle: string, taskDescription: string){
+    console.log("Trying to create task with title: ", taskTitle, " and description: ", taskDescription);
+    const currentUserId = this.loginedUser.userId;
+
+    const newTask = Object.create(Task);
+    newTask.task = taskTitle;
+    newTask.id = null;
+    newTask.taskdate = (new Date()).toISOString().substring(0, 10);
+    newTask.details = taskDescription;
+    newTask.userid = currentUserId;
+    newTask.progress = "0";
+
+    console.log("Create new task target: ", newTask);
+
+    return this.httpClient
+      .post<{ taskid: string}>(
+        'https://46odim7l6f.execute-api.us-east-2.amazonaws.com/beta/task',
+        newTask
+      )
+      .pipe(
+        switchMap(resData => {
+          newTask.id = resData.taskid;
+          return this.myTasks;
+        }),
+        take(1),
+        tap(tasks => {
+          this._myTasks.next(tasks.concat(newTask));
+        })
+      );
   }
 
   updateTask(task: Task) {
     // let index = this.myTasks.findIndex(item => item.id === task.id);
     // this.myTasks[index] = task;
+    console.log("Receiving update task: ", task);
     const taskId = task.id;
-    const taskName = task.taskName;
-    const taskDesc = task.taskDesc;
+    const taskName = task.task;
+    const taskDesc = task.details;
     const taskProgress = task.progress;
+    const taskUserId = task.userid;
 
     let updatedTasks: Task[];
 
-    return (
-      this.myTasks.pipe(
-        take(1),
-        switchMap((tasks) => {
-          if (!tasks || tasks.length <= 0) {
-            return this.fetchMyTasks("0"); // TODO: This userId must be gotten from user service later
-          } else {
-            return of(tasks);
-          }
-        }),
-        switchMap((tasks) => {
+    console.log("Start updating the task with ID: ", taskId);
+
+    return this.myTasks.pipe(
+      take(1),
+      switchMap(tasks => {
+        if (!tasks || tasks.length <= 0) {
+          console.log("The list is empty");
+          return this.fetchMyTasks(this.loginedUser.userId); // TODO: This userId must be gotten from user service later
+        } else {
+          return of(tasks);
+        }
+      }),
+      switchMap(tasks => {
+        console.log("Start mapping obejct between task and")
           const updatedTaskIndex = tasks.findIndex((tk) => tk.id === taskId);
           updatedTasks = [...tasks];
           const oldTask = updatedTasks[updatedTaskIndex];
           updatedTasks[updatedTaskIndex] = new Task(
-            oldTask.id,
             taskName,
+            oldTask.id,
+            new Date().toString(),
             taskDesc,
-            taskProgress,
-            new Date().toString()
+            taskUserId,
+            taskProgress
           );
+          console.log("Sending update request to the server: ", updatedTasks[updatedTaskIndex]);
           return this.httpClient.put(
-            `https://46odim7l6f.execute-api.us-east-2.amazonaws.com/beta/task/?taskid=${taskId}`,
-            { ...updatedTasks[updatedTaskIndex] }
-          ); // ? id: null
-        })
-      ),
+                    `https://46odim7l6f.execute-api.us-east-2.amazonaws.com/beta/task`,
+                    // { ...updatedTasks[updatedTaskIndex] }
+                    task
+                  );
+      }),
       tap(() => {
+        console.log("Updating Reqeust Completed!");
         this._myTasks.next(updatedTasks);
       })
     );
   }
 
-  deleteTask(taskId: string) {
-    // FAKE DELETING FUNCTION
-    // let index = this.myTasks.findIndex(item => item.id === task.id);
-    // this.myTasks = this.myTasks.splice(index, 1);
-    // console.log(this.myTasks);
+  deleteTask(task: Task) {
+    console.log("Sending delete request to server with task ID: ", task.id);
 
-    this.httpClient
-      .delete(
-        `https://46odim7l6f.execute-api.us-east-2.amazonaws.com/beta/task/?taskid=${taskId}`
-      )
+    return this.httpClient
+      .delete<any>(`https://46odim7l6f.execute-api.us-east-2.amazonaws.com/beta/task?id=${task.id}`)
       .pipe(
+        catchError(err => {
+          console.log('Handling error locally and rethrowing it...', err);
+          return throwError(err);
+        }),
         switchMap(() => {
           return this.myTasks;
         }),
         take(1),
-        tap((tasks) => {
-          this._myTasks.next(tasks.filter((t) => t.id !== taskId));
+        tap(tasks => {
+          this._myTasks.next(tasks.filter((t) => t.id !== task.id));
         })
       );
   }

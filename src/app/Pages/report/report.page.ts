@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { ReportService } from '../../Services/report.service';
 import { UserTask } from '../../Models/user-task';
@@ -6,7 +6,6 @@ import { UserInfo } from 'src/app/Models/user-info';
 
 
 declare var google;
-
 
 @Component({
   selector: 'app-report',
@@ -90,4 +89,3 @@ export class ReportPage {
   }
 
 }
-

@@ -1,13 +1,6 @@
 {
-  "appId": "io.ionic.starter",
+  "appId": "com.TaskTracker.wsd",
   "appName": "TaskTracker",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
   "webDir": "www",
-  "plugins": {
-    "SplashScreen": {
-      "launchShowDuration": 0
-    }
-  },
-  "cordova": {}
+  "npmClient": "npm"
 }

@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: ':taskId',
     loadChildren: () => import('../task-detial/task-detial.module').then( m => m.TaskDetialPageModule)
+  },
+  {
+    path: 'new',
+    loadChildren: () => import('../../Components/new-task/new-task.component').then( m => m.NewTaskComponent)
   }
 ];
 
