@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { ReportService } from '../../Services/report.service';
 import { UserTask } from '../../Models/user-task';
-import { User } from 'src/app/Models/user';
 import { UserInfo } from 'src/app/Models/user-info';
 
 
@@ -20,18 +19,34 @@ export class ReportPage {
   //deafult is a working userId and date case, other dates/userId combo may not work due to differing format or lack of data
   tasks: UserTask[] = new Array(10);
   userArr: UserInfo[] = new Array(0);
-  userId: string = "5";
+  userId: string = "0";
   dateArr: string[] = new Array(0);
-  taskDate: string = "2020-08-06";
+  taskDate: string = "2020-08-14";
 
   constructor(public platform: Platform, public api: ReportService) 
   {
     this.api.getUsers().subscribe(data => { this.userArr = data });
 
-    this.api.getTasks().subscribe(data => { for(const t of data)
-    {
-        this.dateArr.push(t.taskdate);
-    } 
+    this.api.getTasks().subscribe(data => 
+    { 
+      for(const t of data)
+      {
+        let duplicate = false;
+
+        for(const d of this.dateArr)
+        {
+          if(d == t.taskdate)
+          {
+            duplicate=true;
+
+            break;
+          }
+        }
+        if(!duplicate)
+        {
+          this.dateArr.push(t.taskdate);
+        }
+      } 
     });
 
     this.platform.ready().then(() => {
@@ -49,7 +64,6 @@ export class ReportPage {
 
   DrawPieChart()
   {
-    console.log(this.userArr);
     var data: any = new google.visualization.DataTable();
     let total: number = 0;
 
