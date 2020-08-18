@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
-import { HomePage } from "./Pages/home/home.page";
+ 
 
 const routes: Routes = [
   {
@@ -54,6 +54,7 @@ const routes: Routes = [
         (m) => m.CreateTaskPageModule
       ),
   },
+ 
   // {
   //   path: "**",
   //   loadChildren: () =>

@@ -100,9 +100,12 @@ export class AuthService {
       });
     }).subscribe(
       (data) => {
-        console.log("signIn data", data);
+        // console.log(
+        //   "signIn data userPool.getCurrentUser() !=null",
+        //  self.isUserPoolLoggedIn()
+        // );
 
-        if (self.isLoggedIn()) {
+        if (self.isUserPoolLoggedIn()) {
           let currentUser = this.userServ.getUserByEmail(email);
           if (currentUser != null && currentUser != undefined) {
             self.setLoggedUser(currentUser);
@@ -116,28 +119,20 @@ export class AuthService {
       (err) => {
         self.errmessage = err.message;
         console.log("signIn err", err.message);
-        //throw err;
       }
     );
   }
 
   isLoggedIn() {
     // console.log(
-    //   "userPool.getCurrentUser() != null",
-    //   userPool.getCurrentUser() != null
+    //   "this.getLoggedUser()!=null  ",
+    //   this.getLoggedUser() != null && this.getLoggedUser() != undefined
     // );
-    // console.log(
-    //   "userPool.getCurrentUser() != undefined",
-    //   userPool.getCurrentUser() != undefined
-    // );
-    console.log(
-      "this.getLoggedUser()!=null  ",
-      this.getLoggedUser() != null && this.getLoggedUser() != undefined
-    );
     return this.getLoggedUser() != null && this.getLoggedUser() != undefined;
-    //return userPool.getCurrentUser() != null;
   }
-
+  isUserPoolLoggedIn() {
+    return userPool.getCurrentUser() != null;
+  }
   getAuthenticatedUser(): User {
     // gets the current user from the local storage
     if (this.isLoggedIn()) {
@@ -165,9 +160,8 @@ export class AuthService {
     let val = localStorage.getItem("client");
     let client = new User();
     client = JSON.parse(val);
-    console.log("getLoggedUser", client);
-    // this.CurrentUser = client;
-    // this.isLogged = true;
+    //console.log("getLoggedUser", client);
+    
     return client;
   }
   getGuestUser(): any {

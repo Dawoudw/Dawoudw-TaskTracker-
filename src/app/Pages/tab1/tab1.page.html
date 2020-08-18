@@ -24,5 +24,65 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <app-users-progress></app-users-progress>
+  <ion-grid>
+    <ion-row class="ion-no-margin ; no-padding">
+      <ion-col size-med="6" size-lg="6" offset-med="3" offset-lg="3">
+        <ion-list>
+          <ion-row
+            *ngFor="let item of userProgress; let i = index"
+            style="justify-items: left;"
+          >
+            <ion-col>
+              <ion-item [routerLink]="['./', item.userId]" detail="true" >
+                <ion-avatar slot="start" name="avatar">
+                  <img src="../assets/images/avatar.svg" />
+                </ion-avatar>
+                <ion-label class="ion-text-start ion-text-capitalize">
+                  <ion-label color="primary" mode="ios" position="stacked">
+                    <b>{{ item.userName }}</b></ion-label
+                  >
+  
+                  <ion-label mode="ios" position="stacked">
+                    Total Tasks <b>({{ item.totaltasks }}) </b>
+                  </ion-label>
+                  <ion-label mode="ios" position="stacked">
+                    <ion-badge
+                      style="margin: 0px;"
+                      [color]="
+                        item.avgProgress > 99
+                          ? 'success'
+                          : item.avgProgress < 50
+                          ? 'warning'
+                          : 'primary'
+                      "
+                    >
+                      {{ item.avgProgress }}%
+                    </ion-badge>
+                  </ion-label>
+                </ion-label>
+              </ion-item>
+            </ion-col>
+  
+            <ion-col size="auto">
+              <ion-icon
+                color="primary"
+                name="chatbox-ellipses-outline"
+                style="
+                  flex: left;
+                  margin-top: 10px;
+                  margin-left: 5px;
+                  margin-right: 5px;
+                  width: 20px;
+                  height: 20px;
+                "
+                class="ion-text-start"
+              ></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+ 
+  </ion-grid>
+  
 </ion-content>
