@@ -10,10 +10,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./Components/header/header.component";
-import { EventService } from "./Services/event-service.service";
 import { AuthService } from "./Services/authService.service";
 import { UsersService } from "./Services/users.service";
 import { TasksService } from "./Services/tasks.service";
+import { ReportService } from "./Services/report.service";
 import { TaskProgressService } from "./Services/task-progress-service.service";
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -32,11 +32,11 @@ import { TaskProgressService } from "./Services/task-progress-service.service";
   providers: [
     StatusBar,
     SplashScreen,
-    EventService,
     AuthService,
     UsersService,
     TasksService,
     TaskProgressService,
+    ReportService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent],
