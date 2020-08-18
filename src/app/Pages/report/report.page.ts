@@ -75,8 +75,10 @@ export class ReportPage {
       data.addRows([[t.task, (parseFloat(t.progress) / 100)]]);
       total = total + (parseFloat(t.progress) / 100);
     }
-    
-    data.addRows([["Pending", 1 - total]]);
+    if(total<1)
+    {
+      data.addRows([["Pending", 1 - total]]);
+    }
 
     var options = {
       title: 'Associate Task Status',

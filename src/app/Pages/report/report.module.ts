@@ -23,8 +23,4 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   ],
   declarations: [ReportPage]
 })
-<<<<<<< HEAD
 export class ReportPageModule {}
-=======
-export class ReportPageModule {}
->>>>>>> 2c647cc1c8f775be4455e001409fcda8841cb29c
