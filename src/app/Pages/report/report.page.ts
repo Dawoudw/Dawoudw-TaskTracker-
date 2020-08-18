@@ -16,6 +16,7 @@ declare var google;
 export class ReportPage {
 
   //deafult is a working userId and date case, other dates/userId combo may not work due to differing format or lack of data
+
   tasks: UserTask[] = new Array(10);
   userArr: UserInfo[] = new Array(0);
   userId: string = "0";
@@ -79,6 +80,12 @@ export class ReportPage {
     {
       data.addRows([["Pending", 1 - total]]);
     }
+
+      data.addRows([[t.task, (parseFloat(t.progress+'') / 100)]]);
+      total = total + (parseFloat(t.progress+'') / 100);
+    }
+    
+    data.addRows([["Pending", 1 - total]]);
 
     var options = {
       title: 'Associate Task Status',

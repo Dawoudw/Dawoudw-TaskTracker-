@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/Services/authService.service';
  
 
 @Component({
@@ -6,10 +7,20 @@ import { Component } from '@angular/core';
   templateUrl: 'tabs.page.html',
   styleUrls: ['tabs.page.scss']
 })
-export class TabsPage {
+export class TabsPage implements OnInit {
 
-  constructor( ) {
+  constructor(private auth:AuthService ) {
    
+  }
+  ngOnInit(): void {
+    let us = this.auth.getLoggedUser();
+    console.log("TabsPage-ngOnInit-ngOnInit",us)
+    if(us)
+    {
+      this.auth.userChange.emit(us);
+    }
+ 
+
   }
 
 }

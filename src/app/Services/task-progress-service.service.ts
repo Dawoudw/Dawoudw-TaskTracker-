@@ -1,10 +1,6 @@
 import { Injectable, OnInit } from "@angular/core";
-import { EventService } from "./event-service.service";
 import { UserProgress } from "../Models/user-progress";
-import { Observable } from "rxjs";
-import { UsersService } from "./users.service";
-import { resolve } from "dns";
-import { User } from "../Models/user";
+ 
 
 @Injectable({
   providedIn: "root",
@@ -12,7 +8,7 @@ import { User } from "../Models/user";
 export class TaskProgressService implements OnInit {
   userProgress = new Array<UserProgress>();
 
-  constructor(private eventServ: EventService ) {
+  constructor() {
     this.getUsersProgress();
    
   }

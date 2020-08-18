@@ -104,7 +104,7 @@ export class AuthService {
 
         if (self.isLoggedIn()) {
           let currentUser = this.userServ.getUserByEmail(email);
-          if (currentUser) {
+          if (currentUser != null && currentUser != undefined) {
             self.setLoggedUser(currentUser);
             self.userChange.next(currentUser);
             self.redirectToHome();
@@ -130,7 +130,12 @@ export class AuthService {
     //   "userPool.getCurrentUser() != undefined",
     //   userPool.getCurrentUser() != undefined
     // );
-    return userPool.getCurrentUser() != null;
+    console.log(
+      "this.getLoggedUser()!=null  ",
+      this.getLoggedUser() != null && this.getLoggedUser() != undefined
+    );
+    return this.getLoggedUser() != null && this.getLoggedUser() != undefined;
+    //return userPool.getCurrentUser() != null;
   }
 
   getAuthenticatedUser(): User {
