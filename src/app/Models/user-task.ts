@@ -6,4 +6,6 @@ export class UserTask
     taskdate: string;
     userid: number;
     progress: string;
+
 }
+
