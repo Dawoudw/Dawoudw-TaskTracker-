@@ -17,7 +17,7 @@
                 <b> {{user.userName}}</b>
               </ion-label>
               <ion-avatar slot="start" name="avatar">
-                <img src="../assets/avatar.svg" />
+                <img src="../assets/images/avatar.svg" />
               </ion-avatar>
             </ion-item>
           </ion-col> </ion-row
@@ -50,19 +50,19 @@
                 <ion-label
                   class="ion-text-start ion-text-capitalize ion-text-wrap"
                 >
-                  <h3><b> {{i+1}}- </b>{{ item.taskName }}</h3>
+                  <h3><b> {{i+1}}- </b>{{ item.task }}</h3>
                 </ion-label>
-
+ 
                 <ion-badge
                   [color]="
-                      item.progress > 99
+                      item.progress > 0.99
                         ? 'success'
-                        : item.progress < 50
+                        : item.progress < 0.50
                         ? 'warning'
                         : 'primary'
                     "
                 >
-                  {{ item.progress }}%
+                  {{ item.progress|percent }} 
                 </ion-badge>
               </ion-item>
             </ion-col>

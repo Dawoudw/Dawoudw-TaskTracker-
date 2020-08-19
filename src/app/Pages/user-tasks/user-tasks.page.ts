@@ -1,7 +1,12 @@
 import { Component, OnInit } from "@angular/core";
-import { DataService } from "src/app/Services/data-service.service";
+import { TaskProgressService } from "src/app/Services/task-progress-service.service";
 import { ActivatedRoute } from "@angular/router";
 import { User } from "src/app/Models/user";
+import { AuthService } from "src/app/Services/authService.service";
+import { UsersService } from "src/app/Services/users.service";
+import { TasksService } from "src/app/Services/tasks.service";
+import { Task } from "src/app/Models/task";
+
 @Component({
   selector: "app-user-tasks",
   templateUrl: "user-tasks.page.html",
@@ -9,11 +14,15 @@ import { User } from "src/app/Models/user";
 })
 export class UserTasksPage implements OnInit {
   userProgress: Array<any> = [];
-  user: User = new User(1, "Wael Dawoud");
+  tasks: Task[] = new Array();
+  user:User = Object.create(User);
   //  listingdata:Array<any> = [];
   constructor(
-    private datasev: DataService,
-    private activeroute: ActivatedRoute
+    private datasev: TaskProgressService,
+    private activeroute: ActivatedRoute,
+    private aut: AuthService,
+    private usrServ: UsersService,
+    private taskServ: TasksService
   ) {}
 
   private getUserTasks() {
@@ -24,26 +33,29 @@ export class UserTasksPage implements OnInit {
         return;
       }
       userid = Number.parseInt(param.get("userid"));
+      this.user.userId = userid;
       // console.log(userid);
-      this.userProgress = this.datasev.getUserTasks(userid);
+
+      this.taskServ.fetchMyTasks("" + userid).subscribe((tasks) => {
+        this.userProgress = tasks;
+      });
     });
   }
 
   ngOnInit() {}
   ionViewWillEnter() {
     //  console.log("this.ionViewWillEnter");
-    this.getUserTasks();
+  
+    this.getUserTasks();  this.user = this.usrServ.getUserById(this.user.userId)
     //console.log(this.userProgress);
   }
   ionViewDidLoad() {
     // console.log("this.ionViewDidLoad");
   }
-  getTotalInProgress():any
-  {
-    return this.userProgress.filter((x) => x.progress<100).length ;
+  getTotalInProgress(): any {
+    return this.userProgress.filter((x) => x.progress < 100).length;
   }
-  getTotalCompleted():any
-  {
-    return this.userProgress.filter((x) => x.progress>=100).length ;
+  getTotalCompleted(): any {
+    return this.userProgress.filter((x) => x.progress >= 100).length;
   }
 }
