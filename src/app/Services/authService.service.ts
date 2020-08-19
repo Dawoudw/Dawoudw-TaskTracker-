@@ -8,8 +8,10 @@ import {
 import Observable from "zen-observable";
 import { BehaviorSubject, throwError } from "rxjs";
 import { User } from "../Models/user";
-import { NavController } from "@ionic/angular";
+
 import { UsersService } from "./users.service";
+import { Router } from "@angular/router";
+import { buffer } from "rxjs/operators";
 
 const poolData = {
   UserPoolId: "us-east-2_JQy9YBUJg", // Your user pool id here
@@ -25,7 +27,7 @@ export class AuthService {
   newPassword;
   errmessage: EventEmitter<any> = new EventEmitter();
   userChange: EventEmitter<User> = new EventEmitter();
-  constructor(private navCtrl: NavController, private userServ: UsersService) {}
+  constructor(private navCtrl: Router, private userServ: UsersService) {}
 
   register(email, password) {
     const attributeList = [];
@@ -123,12 +125,21 @@ export class AuthService {
     );
   }
 
-  isLoggedIn() {
+  isLoggedIn(): boolean {
     // console.log(
     //   "this.getLoggedUser()!=null  ",
     //   this.getLoggedUser() != null && this.getLoggedUser() != undefined
     // );
-    return this.getLoggedUser() != null && this.getLoggedUser() != undefined;
+    try {
+      let usr = this.getLoggedUser();
+      if (usr == undefined) return false;
+      else if (usr == null) return false;
+      // therage user in the local storage is not null
+      return usr.email ? true : false;
+      // check if the email is not null or mepty
+    } catch {
+      return false;
+    }
   }
   isUserPoolLoggedIn() {
     return userPool.getCurrentUser() != null;
@@ -161,7 +172,7 @@ export class AuthService {
     let client = new User();
     client = JSON.parse(val);
     //console.log("getLoggedUser", client);
-    
+
     return client;
   }
   getGuestUser(): any {
@@ -173,12 +184,12 @@ export class AuthService {
   public redirectToHome(): void {
     //  if (this.checkCurrentUser())
     // console.log("this.navCtrl.navigateRoot(/);");
-    this.navCtrl.navigateRoot("tasktracker/users-progress");
+    this.navCtrl.navigate(["tasktracker/users-progress"]);
     //this.router.navigate["/"];
   }
   public redirectToLogin(): void {
     // if (!this.checkCurrentUser())
-    this.navCtrl.navigateRoot("/");
+    this.navCtrl.navigateByUrl("/");
     // this.router.navigate["login"];
   }
 

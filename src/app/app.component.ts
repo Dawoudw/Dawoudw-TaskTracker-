@@ -1,9 +1,16 @@
 import { Component } from "@angular/core";
-import { Platform, NavController, MenuController } from "@ionic/angular";
+import {
+  Platform,
+  NavController,
+  MenuController,
+  ModalController,
+} from "@ionic/angular";
 import { SplashScreen } from "@ionic-native/splash-screen/ngx";
 import { StatusBar } from "@ionic-native/status-bar/ngx";
 import { AuthService } from "./Services/authService.service";
 import { User } from "./Models/user";
+import { Router } from "@angular/router";
+import { CreateTaskPage } from "./Pages/create-task/create-task.page";
 
 @Component({
   selector: "app-root",
@@ -20,7 +27,9 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private auth: AuthService,
-    private menuCtr: MenuController
+    private menuCtr: MenuController,
+    private router: Router,
+    private modalCtrl: ModalController,  private navCtrl: NavController
   ) {
     this.initializeApp();
     //console.log("AppComponent constructor");
@@ -52,5 +61,25 @@ export class AppComponent {
   openMenu() {
     this.menuCtr.enable(true, "main-menu");
     this.menuCtr.open("main-menu");
+  }
+  openTeamProgress()
+  {
+    this.navCtrl.navigateForward("tasktracker/users-progress")
+  }
+
+  openNewTaskModal() {
+    this.modalCtrl
+      .create({
+        component: CreateTaskPage,
+      })
+      .then((modalElement) => {
+        modalElement.present();
+        return modalElement.onDidDismiss();
+      })
+      .then((resultData) => {
+        this.router.navigate(['tasktracker/mytasks'])
+        console.log("ResultData: ", resultData);
+      });
+    this.closeMenu();
   }
 }
