@@ -26,7 +26,7 @@ export class Tab3Page implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.taskSub = this.tasksService.myTasks.subscribe((tasks) => {
-      this.loadedTasks = tasks;
+      this.loadedTasks = tasks.slice();
     });
   }
 
@@ -37,7 +37,7 @@ export class Tab3Page implements OnInit, OnDestroy {
       this.isLoading = true;
     } else {
       this.isLoadingError = true;
-      return;
+    //  return;
     }
 
     // Testing
@@ -91,5 +91,15 @@ export class Tab3Page implements OnInit, OnDestroy {
     if (this.taskSub) {
       this.taskSub.unsubscribe();
     }
+  }
+
+  getTotalInProgress(): any {
+    return this.loadedTasks.filter((x) => this.parsPercentage(x.progress) < 100).slice().length;
+  }
+  getTotalCompleted(): any {
+    return this.loadedTasks.filter((x) => this.parsPercentage(x.progress)  >= 100).slice().length;
+  }
+  parsPercentage(val): number {
+    return parseFloat(val) > 1 ? parseFloat(val) : parseFloat(val) * 100;
   }
 }

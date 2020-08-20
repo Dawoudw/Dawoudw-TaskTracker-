@@ -37,7 +37,7 @@ export class UserTasksPage implements OnInit {
       // console.log(userid);
 
       this.taskServ.fetchMyTasks("" + userid).subscribe((tasks) => {
-        this.userProgress = tasks;
+        this.userProgress = tasks.slice();
       });
     });
   }
@@ -53,9 +53,12 @@ export class UserTasksPage implements OnInit {
     // console.log("this.ionViewDidLoad");
   }
   getTotalInProgress(): any {
-    return this.userProgress.filter((x) => x.progress < 100).length;
+    return this.userProgress.filter((x) => this.parsPercentage(x.progress) < 100).slice().length;
   }
   getTotalCompleted(): any {
-    return this.userProgress.filter((x) => x.progress >= 100).length;
+    return this.userProgress.filter((x) => this.parsPercentage(x.progress)  >= 100).slice().length;
+  }
+  parsPercentage(val): number {
+    return parseFloat(val) > 1 ? parseFloat(val) : parseFloat(val) * 100;
   }
 }
