@@ -7,6 +7,7 @@ import { Task } from "src/app/Models/task";
 import { ReportService } from "src/app/Services/report.service";
 import { User } from "src/app/Models/user";
 import { UsersService } from "src/app/Services/users.service";
+import { TasksService } from 'src/app/Services/tasks.service';
 
 @Component({
   selector: "app-users-progress",
@@ -17,96 +18,109 @@ export class UsersProgressComponent implements OnInit {
   userProgress = new Array<UserProgress>();
   tasks: Task[] = new Array();
   users: User[] = new Array();
+
   constructor(
     private datasev: TaskProgressService,
     private repServ: ReportService,
-    private usrServ: UsersService
+    private usrServ: UsersService,
+    private taskServ: TasksService
   ) {
-    this.datasev.getTasksGroupByUserId();
-     this.userProgress = this.getUsersProgress();
-
     this.repServ.getTasks().subscribe((data) => {
-      for (const t of data) {
-        this.tasks.push(t);
-      }
+      this.tasks = data;
     });
+    //Get All Users
     this.users = this.usrServ.usersList;
-
-    // let result = this.tasks.reduce(function (r, a) {
-    //   r[a.userid] = r[a.userid] || [];
-    //   r[a.userid].push(a);
-    //   return r;
-    // }, Object.create(null));
-
-    for (let usr of this.users) {
-      let up: UserProgress = new UserProgress();
-
-      up.userName = usr.userName;
-      up.userId = usr.userId;
-      up.totaltasks = this.getTotalUserTasks(usr.userId);
-
-      //
-      this.userProgress.push(up);
-    }
-
-    console.log("this.userProgress", this.userProgress);
-    console.log("usrServ.usersList;", this.users);
-    console.log(" this.userProgress;", this.userProgress);
+    this.doRefresh(undefined)
   }
-
+  isLoaded: boolean = false;
   ngOnInit() {
-    // this.userProgress = this.datasev.userProgressAry;
-    // console.log(this.datasev.userProgressAry);
+    this.doRefresh(undefined)
+    //  this.isLoaded = true;
+    //  this.getTotalUserTasks();
   }
-  getTotalUserTasks(id): Number {
-    let x = 222;
-    let xxx: Task[] = new Array();
-    this.repServ.getTasks().subscribe((data) => {
-      xxx = data;
- 
-      for(let e of this.tasks)
-      {
-        if(parseInt( e.userid)===parseInt(id) )
-        x++
-      }
-    });
-
-    return x;
+  ionViewWillLeave() {
+   
   }
-  getUsersProgress(): Array<UserProgress> {
-    let avg: number = 0;
-    let taskslist: Array<Array<Task>> = this.datasev.getTasksGroupByUserId();
-    console.log("getUsersProgress Start", taskslist.length);
-    let tempProgressAry = new Array<UserProgress>();
-    let up: UserProgress;
-
-    for (let i = 0; i < this.datasev.getTasksGroupByUserId().length; i++) {
-      let total = 0;
-      console.log("let tr of this.UsersTasks", taskslist[i]);
-      // if (null != tr && undefined != tr && tr.length > 0) {
-      let inproglist = taskslist[i].filter(
-        (t) => this.parsPercentage(t.progress) < 100
-      );
-      up = new UserProgress();
-      for (let ut of inproglist) {
-        total = total + ut.progress;
-      }
-      up.userId = taskslist[i][0].userid;
-      up.totaltasks = taskslist[i].length + 1;
-      up.totalInCompeletd =
-        taskslist[i].filter((t) => this.parsPercentage(t.progress) >= 100)
-          .length + 1;
-      up.totalInProgress =
-        taskslist[i].filter((t) => this.parsPercentage(t.progress) < 100)
-          .length + 1;
-      up.avgProgress = total / up.totalInProgress;
-      //}
-
-      tempProgressAry.push(up);
-    }
-    return tempProgressAry;
+  ionViewDisLeave() {
+  
   }
+  ionViewDidEnter() {}
+  ionViewWillEnter() {
+    this.userProgress = this.getUserProgress();
+  }
+
+  getUserProgress(): Array<UserProgress> {
+    //  if (!this.isLoaded) {
+    let userProgAr = new Array<UserProgress>();
+    console.log("ionViewWillEnter this.tasks", this.tasks);
+
+    //Group Tasks By   getTotalUserTasks() {User ID
+    let tasksGroupByUsr = new Array<Array<Task>>();
+    tasksGroupByUsr = this.tasks.reduce((r, a) => {
+      r[a.userid] = r[a.userid] || [];
+      r[a.userid].push(a);
+      return r;
+    }, Object.create(null));
+
+    let prom = new Promise((resolve) => {
+      resolve(tasksGroupByUsr);
+    })
+      .then((res) => {
+        console.log("Array<Array<Task>> ", res);
+
+        return Array.of(res);
+      })
+      .then((res) => {
+        let up: UserProgress;
+        let totaltasks, totalInProgress, totalInCompeletd, avgProgress: number;
+        // Iterate over the grouped Array by  group by value :
+        for (let id of Object.keys(res[0])) {
+          up = new UserProgress();
+          totaltasks = totalInProgress = totalInCompeletd = avgProgress = 0;
+          up.userId = id;
+          up.userName = this.users.find((x) => x.userId == id).userName;
+          let val = res[0][id];
+          console.log("id, val", id, val);
+          //Get the Task Object from the arry
+          for (let tid of Object.keys(val)) {
+            ++totaltasks;
+            let percentage = this.parsPercentage(val[tid].progress);
+            let val2 = val[tid].task;
+            if (percentage < 100) {
+              avgProgress += percentage;
+              ++totalInProgress;
+            }
+            if (percentage >= 100) ++totalInCompeletd;
+
+            console.log("tid, val2", tid, val2);
+          }
+          up.totaltasks = totaltasks;
+          up.totalInCompeletd = totalInCompeletd;
+          up.totalInProgress = totalInProgress;
+          if (avgProgress > 0 && totalInProgress > 0)
+            avgProgress = avgProgress / totalInProgress;
+          up.avgProgress = avgProgress;
+          userProgAr.push(up);
+        }
+      });
+    console.log("userProgAr", userProgAr);
+    this.isLoaded = false;
+    return userProgAr;
+    // }
+  }
+
   parsPercentage(val): number {
-    return parseFloat(val) > 1 ? parseFloat(val) * 0.01 : parseFloat(val);
+    return parseFloat(val) > 1 ? parseFloat(val) : parseFloat(val) * 100;
+  }
+
+  async doRefresh(event) {
+    this.isLoaded = true;
+    await new Promise(() => {
+      event.target ? (event.target.disabled = true) : false;
+      setTimeout(() => {
+        this.ionViewWillEnter();
+        event.target ? (event.target.disabled = false) : true;
+        this.isLoaded = false;  }, 1500);
+   }).catch((error) => error);
   }
 }

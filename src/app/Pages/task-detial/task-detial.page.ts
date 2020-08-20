@@ -55,7 +55,7 @@ export class TaskDetialPage implements OnInit {
   deleteTask(){
     console.log("Trying to delete task with ID: ", this.loadedTask.id);
     this.tasksService.deleteTask(this.loadedTask.id).subscribe();
-    this.navCtrl.navigateBack("/tasktracker/submit-my-progress");
+    this.navCtrl.navigateBack("/tasktracker/mytasks");
     return;
   }
 

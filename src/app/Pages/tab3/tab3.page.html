@@ -32,7 +32,7 @@
         </div>
       </ion-col>
     </ion-row>
-    <ion-row *ngIf="!isLoading && loadedTasks.length <= 0">
+    <ion-row *ngIf="loadedTasks.length <= 0">
       <ion-col size="12" size-lg="6" offset-med="3" offset-lg="3">
         <ion-chip class="ion-text-center" outline color="danger">
           <ion-label>
@@ -51,12 +51,12 @@
           </ion-col>
           <ion-col size="auto">
             <ion-chip outline color="warning">
-              <ion-label> In-Progress <b>({{1}}) </b> </ion-label>
+              <ion-label> In-Progress <b>({{getTotalInProgress()}}) </b> </ion-label>
             </ion-chip>
           </ion-col>
           <ion-col size="auto">
             <ion-chip outline color="success">
-              <ion-label> Done <b>({{1}}) </b> </ion-label>
+              <ion-label> Done <b>({{getTotalCompleted()}}) </b> </ion-label>
             </ion-chip>
           </ion-col>
         </ion-row>

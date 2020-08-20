@@ -23,7 +23,7 @@ export class ActivateGuard implements CanActivate {
     | UrlTree {
     if (this.authServ.isLoggedIn()) return true;
     else {
-      this.authServ.redirectToHome();
+      //this.authServ.redirectToHome();
       return false;
     }
   }

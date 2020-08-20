@@ -12,6 +12,7 @@ import { User } from "../Models/user";
 import { UsersService } from "./users.service";
 import { Router } from "@angular/router";
 import { buffer } from "rxjs/operators";
+import { NavController } from '@ionic/angular';
 
 const poolData = {
   UserPoolId: "us-east-2_JQy9YBUJg", // Your user pool id here
@@ -27,7 +28,7 @@ export class AuthService {
   newPassword;
   errmessage: EventEmitter<any> = new EventEmitter();
   userChange: EventEmitter<User> = new EventEmitter();
-  constructor(private navCtrl: Router, private userServ: UsersService) {}
+  constructor(private navCtrl:NavController , private router: Router, private userServ: UsersService) {}
 
   register(email, password) {
     const attributeList = [];
@@ -184,12 +185,12 @@ export class AuthService {
   public redirectToHome(): void {
     //  if (this.checkCurrentUser())
     // console.log("this.navCtrl.navigateRoot(/);");
-    this.navCtrl.navigate(["tasktracker/users-progress"]);
+    this.navCtrl.navigateRoot("tasktracker/mytasks");
     //this.router.navigate["/"];
   }
   public redirectToLogin(): void {
     // if (!this.checkCurrentUser())
-    this.navCtrl.navigateByUrl("/");
+    this.navCtrl.navigateRoot("login");
     // this.router.navigate["login"];
   }
 
