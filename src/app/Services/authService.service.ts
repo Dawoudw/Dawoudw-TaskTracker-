@@ -133,9 +133,9 @@ export class AuthService {
     // );
     try {
       let usr = this.getLoggedUser();
-      if (usr == undefined) return false;
-      else if (usr == null) return false;
-      // therage user in the local storage is not null
+      if (usr == undefined ||usr === undefined )  return false;
+      else if (usr == null||usr === null) return false;
+      // the  user in the local storage is not null
       return usr.email ? true : false;
       // check if the email is not null or mepty
     } catch {
@@ -185,12 +185,12 @@ export class AuthService {
   public redirectToHome(): void {
     //  if (this.checkCurrentUser())
     // console.log("this.navCtrl.navigateRoot(/);");
-    this.navCtrl.navigateRoot("tasktracker/mytasks");
+    this.navCtrl.navigateRoot("tasktracker/home");
     //this.router.navigate["/"];
   }
   public redirectToLogin(): void {
     // if (!this.checkCurrentUser())
-    this.navCtrl.navigateRoot("login");
+    this.navCtrl.navigateRoot("index");
     // this.router.navigate["login"];
   }
 
@@ -198,6 +198,8 @@ export class AuthService {
     userPool.getCurrentUser().signOut();
     this.cognitoUser = null;
     localStorage.clear();
+    sessionStorage.clear();
+    window.location.reload();
     this.redirectToLogin();
   }
   // async openDialog(email): Promise <any>{

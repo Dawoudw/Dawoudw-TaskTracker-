@@ -24,3 +24,14 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@media screen and (max-width: 600px) {
+   #cold {
+        border: 0px; border-style: none;  
+    }
+  }
+  @media screen and (min-width: 601px) {
+    #cold {
+         border: 1px; border-style: solid; border-color: rgb(190, 237, 252);margin-bottom: 1px;padding:0px
+     }
+   }

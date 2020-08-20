@@ -51,7 +51,7 @@
       </ion-col>
     </ion-row>
   </ion-grid> -->
-  <ion-toolbar  >
+  <ion-toolbar *ngIf="!auth.isLoggedIn()" >
     <ion-button 
       color="primary"
       style="width: 180px;align-items: center !important;"

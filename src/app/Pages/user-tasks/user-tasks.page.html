@@ -8,7 +8,7 @@
               <ion-buttons slot="start">
                 <ion-back-button
                   text=""
-                  defaultHref="tasktracker/users-progress"
+                  defaultHref="tasktracker/team-progress"
                 ></ion-back-button>
               </ion-buttons>
 
@@ -52,7 +52,7 @@
                   <h3><b> {{i+1}}- </b>{{ item.task }}</h3>
 
                   <ion-note size="samll" slot="start" class="default">
-                    <i style="font-size: smaller;"> <u>Last Update:</u>{{item.taskdate}}</i>
+                    <i style="font-size: smaller;"> {{item.taskdate}}</i>
                   </ion-note>
                 </ion-label>
 

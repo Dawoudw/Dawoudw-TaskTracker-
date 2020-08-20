@@ -26,7 +26,7 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private auth: AuthService,
+    public auth: AuthService,
     private menuCtr: MenuController,
     private router: Router,
     private modalCtrl: ModalController,
@@ -64,7 +64,7 @@ export class AppComponent {
     this.menuCtr.open("main-menu");
   }
   openTeamProgress() {
-    this.navCtrl.navigateRoot("tasktracker/users-progress");
+    this.navCtrl.navigateRoot("tasktracker/team-progress");
   }
 
   openNewTaskModal() {
@@ -77,14 +77,14 @@ export class AppComponent {
         return modalElement.onDidDismiss();
       })
       .then((resultData) => {
-        this.router.navigate(["tasktracker/mytasks"]);
+        this.navCtrl.navigateRoot(["tasktracker/mytasks"]);
         console.log("ResultData: ", resultData);
       });
     this.closeMenu();
   }
   openlogin()
   {
-    this.navCtrl.navigateRoot("login");
+    this.navCtrl.navigateRoot("tasktracker/login");
    
     //console.log("openlogin")
   }

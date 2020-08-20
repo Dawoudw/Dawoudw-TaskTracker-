@@ -8,7 +8,7 @@ const routes: Routes = [
     component: Tab1Page,
   },
   // {
-  //   path: "", //redirectTo: 'users-progress', // loadChildren:'../tab1/tab1.module#Tab1PageModule',
+  //   path: "", //redirectTo: 'team-progress', // loadChildren:'../tab1/tab1.module#Tab1PageModule',
   //   loadChildren: () =>
   //     import("../tab1/tab1.module").then((m) => m.Tab1PageModule),
   //   //component: Tab1Page,

@@ -10,7 +10,7 @@ import { UsersService } from "src/app/Services/users.service";
 import { TasksService } from 'src/app/Services/tasks.service';
 
 @Component({
-  selector: "app-users-progress",
+  selector: "app-team-progress",
   templateUrl: "./users-progress.component.html",
   styleUrls: ["./users-progress.component.scss"],
 })

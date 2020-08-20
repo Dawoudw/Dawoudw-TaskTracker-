@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from "@angular/core";
+import { Component, HostListener } from "@angular/core";
 import { UserProgress } from "src/app/Models/user-progress";
 import { Task } from "src/app/Models/task";
 import { User } from "src/app/Models/user";
@@ -6,14 +6,6 @@ import { TaskProgressService } from "src/app/Services/task-progress-service.serv
 import { ReportService } from "src/app/Services/report.service";
 import { UsersService } from "src/app/Services/users.service";
 import { TasksService } from "src/app/Services/tasks.service";
-import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
-import { CommonModule } from "@angular/common";
-import { from, of } from "rxjs";
-import { map, take } from "rxjs/operators";
-import { AnyARecord } from "dns";
-import { Key } from "protractor";
-import { threadId } from "worker_threads";
 
 @Component({
   selector: "app-tab1",
@@ -46,6 +38,7 @@ export class Tab1Page {
   ionViewWillLeave() {}
   ionViewDisLeave() {}
   ionViewDidEnter() {}
+  //@HostListener()
   ionViewWillEnter() {
     this.userProgress = this.getUserProgress();
   }
