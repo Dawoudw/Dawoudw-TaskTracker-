@@ -64,7 +64,14 @@ export class AppComponent {
     this.menuCtr.open("main-menu");
   }
   openTeamProgress() {
+    //window.location.replace("tasktracker/team-progress");
     this.navCtrl.navigateRoot("tasktracker/team-progress");
+  }
+  openWebSiteApp() {
+
+    window.open('http://taskapp-lti.s3-website.us-east-2.amazonaws.com/home', '_self' );
+   //window.location.replace('http://taskapp-lti.s3-website.us-east-2.amazonaws.com/home');
+   
   }
 
   openNewTaskModal() {

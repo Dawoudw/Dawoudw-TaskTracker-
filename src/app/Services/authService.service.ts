@@ -199,8 +199,8 @@ export class AuthService {
     this.cognitoUser = null;
     localStorage.clear();
     sessionStorage.clear();
-    window.location.reload();
-    this.redirectToLogin();
+    window.location.replace("index");
+  // /  this.redirectToLogin();
   }
   // async openDialog(email): Promise <any>{
   // let dialogRef = this.dialog.open(ForgotComponent, {data : {email: email}});

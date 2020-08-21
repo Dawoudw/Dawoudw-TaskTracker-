@@ -63,6 +63,7 @@ const routes: Routes = [
       },
       {
         path: "mytasks",
+        canActivate:[ActivateGuard],
         children: [
           {
             path: "",
@@ -107,7 +108,7 @@ const routes: Routes = [
   },
   {
     path: "",
-    redirectTo: "index",
+    redirectTo: "/tasktracker/team-progress",
     pathMatch: "full",
   },
 ];

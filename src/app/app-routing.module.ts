@@ -48,7 +48,7 @@ import { HomePage } from "./Pages/home/home.page";
 //       //   loadChildren: () =>
 //       //     import("./Pages/tab2/tab2.module").then((m) => m.Tab2PageModule),
 //       // },
- 
+
 //     ],
 //   },
 //   {
@@ -79,8 +79,29 @@ import { HomePage } from "./Pages/home/home.page";
 //   // },
 // ];
 const routes: Routes = [
-  { path: '', loadChildren: './Pages/tabs/tabs.module#TabsPageModule' },
-  { path: 'index', loadChildren: './Pages/home/home.module#HomePageModule' }
+  { path: "", loadChildren: "./Pages/tabs/tabs.module#TabsPageModule" },
+
+  { path: "index", loadChildren: "./Pages/home/home.module#HomePageModule" },
+  {
+    path: "**",
+    redirectTo: "index",
+    pathMatch: "full",
+  },
+  //  {
+  //     path: "**",
+  //     loadChildren: "./Pages/tabs/tabs.module#TabsPageModule",
+  //   },
+  // {
+  //   path: "**",
+  //   loadChildren: "./Pages/home/home.module#HomePageModule",
+  //   children: [
+  //     { path: "", loadChildren: "./Pages/home/home.module#HomePageModule" },
+  //     {
+  //       path: "team-progress",
+  //       loadChildren: "./Pages/tab1/tab1.module#Tab1PageModule",
+  //     },
+  //   ],
+  // },
 ];
 @NgModule({
   imports: [

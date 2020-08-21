@@ -28,6 +28,7 @@
     "@ionic/angular": "^5.0.0",
     "aws-amplify": "^3.0.23",
     "aws-amplify-angular": "^5.0.23",
+    "classlist.js": "^1.1.20150312",
     "moment": "^2.27.0",
     "rxjs": "~6.5.1",
     "tslib": "^1.10.0",

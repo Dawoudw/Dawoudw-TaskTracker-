@@ -54,8 +54,8 @@
           </ion-item>
           <ion-item
             detail="false"
-            [routerLink]
-            (click)="openTeamProgress(); closeMenu()"
+            [routerLink] ="['tasktracker/team-progress']"
+            (click)=" closeMenu()"
           >
             <ion-label id="lblusers-progress">
               <ion-icon name="people-outline"></ion-icon>
@@ -70,6 +70,13 @@
             <ion-label id="lblReports">
               <ion-icon name="bar-chart-outline"></ion-icon>
               Reports
+            </ion-label>
+            
+          </ion-item>
+          <ion-item [routerLink]  (click)="openWebSiteApp();closeMenu()"  >
+            <ion-label id="lblweb">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              WebSite
             </ion-label>
           </ion-item>
           <ion-item [routerLink] (click)="logout()" *ngIf="getIsLogged()">
