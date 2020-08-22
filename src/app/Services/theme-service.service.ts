@@ -15,10 +15,12 @@ export class ThemeService {
   }
 
   enableDarkMode() {
-    this.render.addClass(this.doc.body, "dark-theme");
+  //e.target.checked?e.target.color="dark" :e.target.color="primary"
+    this.render.addClass(this.doc.body, "dark-theme");  
   }
 
   enableLightMode() {
-    this.render.removeClass(this.doc.body, "dark-theme");
+   // !e.target.checked?e.target.color="dark" :e.target.color="dark"
+    this.render.removeClass(this.doc.body, "dark-theme");     
   }
 }

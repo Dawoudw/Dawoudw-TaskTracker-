@@ -118,7 +118,7 @@ export class AppComponent {
   changeTheme(e) {
     console.log(e.target.checked);
     e.target.checked
-      ? this.themeServ.enableDarkMode()
+      ? this.themeServ.enableDarkMode() 
       : this.enableLightTheme();
   }
   enableDarkTheme() {}

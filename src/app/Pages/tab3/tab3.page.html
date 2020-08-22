@@ -17,7 +17,17 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
+
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
   <ion-grid no-padding ion-no-margin>
     <ion-row>
       <ion-col
@@ -32,11 +42,20 @@
         </div>
       </ion-col>
     </ion-row>
-    <ion-row *ngIf="loadedTasks.length <= 0">
+    <ion-row *ngIf="!isLoading && loadedTasks.length <= 0 && !isLoadingError">
       <ion-col size="12" size-lg="6" offset-med="3" offset-lg="3">
         <ion-chip class="ion-text-center" outline color="danger">
           <ion-label>
             <b>You don't have any assigend tasks </b>
+          </ion-label>
+        </ion-chip>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="isLoadingError && !isRefreshing">
+      <ion-col size="12" size-lg="6" offset-med="3" offset-lg="3">
+        <ion-chip class="ion-text-center" outline color="danger">
+          <ion-label>
+            <b>Can not access data. Please try later.</b>
           </ion-label>
         </ion-chip>
       </ion-col>
@@ -51,12 +70,12 @@
           </ion-col>
           <ion-col size="auto">
             <ion-chip outline color="warning">
-              <ion-label> In-Progress <b>({{getTotalInProgress()}}) </b> </ion-label>
+              <ion-label> In-Progress <b>({{1}}) </b> </ion-label>
             </ion-chip>
           </ion-col>
           <ion-col size="auto">
             <ion-chip outline color="success">
-              <ion-label> Done <b>({{getTotalCompleted()}}) </b> </ion-label>
+              <ion-label> Done <b>({{1}}) </b> </ion-label>
             </ion-chip>
           </ion-col>
         </ion-row>

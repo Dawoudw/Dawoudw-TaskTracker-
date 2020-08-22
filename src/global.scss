@@ -131,15 +131,29 @@
 
     // --ion-card-background: #1c1c1d;
 
-    // ion-card {
-    //   --background: #36a3f1;
-    // }
+    ion-card {
+     border-color: #58b9f1;
+     border: solid;
+     border-width: 0.5px;
+    // padding: 2px;
+  //   box-shadow: 2px 2px #d3cdcd;
+     //box-shadow:0px 2px 0px #9c9c9c;  
+     box-shadow: 0px 1px 1px rgb(54, 54, 54), 0px 2px 2px rgb(175, 173, 173)   ;
+    }
     // ion-card-title {
     //   --color: #d4ac26;
     // }
     // ion-input
     // {
     //   --background:transparent;
+    // }
+
+    // ion-toggle {
+    //   --background: #000;
+    //   --background-checked: #7a49a5;
+    
+    //   --handle-background: #7a49a5;
+    //   --handle-background-checked: #000;
     // }
   }
 }
