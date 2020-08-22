@@ -18,6 +18,7 @@ import {
   InAppBrowser,
   InAppBrowserOptions,
 } from "@ionic-native/in-app-browser/ngx";
+import { ThemeService } from "./Services/theme-service.service";
 @Component({
   selector: "app-root",
   templateUrl: "app.component.html",
@@ -43,10 +44,11 @@ export class AppComponent {
     private menu: MenuController,
     private actionSheetCtrl: ActionSheetController,
     private toastCtr: ToastController,
-    private iab: InAppBrowser
+    private iab: InAppBrowser,
+    private themeServ: ThemeService
   ) {
     this.initializeApp();
-   // this.backButtonEvent();
+    // this.backButtonEvent();
     //console.log("AppComponent constructor");
   }
 
@@ -94,29 +96,12 @@ export class AppComponent {
     this.menuCtr.open("main-menu");
   }
   openTeamProgress() {
-     window.location.replace("tasktracker/team-progress");
+    window.location.replace("tasktracker/team-progress");
     //this.navCtrl.navigateRoot("tasktracker/team-progress");
   }
   openWebSiteApp() {
-    let url: string =
-      `http://taskapp-lti.s3-website.us-east-2.amazonaws.com/home`;
-    // const browser = this.iab.create(
-    //   `http://taskapp-lti.s3-website.us-east-2.amazonaws.com/home`,
-    //   `_self`
-    // );
-
-    // //browser.executeScript(...);
-
-    // //browser.insertCSS(...);
-    // browser.on("loadstop").subscribe((event) => {
-    //   // browser.insertCSS({ code: "body{color: red;" });
-    // });
-    // browser.on("exit").subscribe((event) => {
-    //   browser.close();
-    // });
+    let url: string = `http://taskapp-lti.s3-website.us-east-2.amazonaws.com/home`;
     this.openWithInAppBrowser(url);
-  //  window.open(url, "_self");
-    //window.location.replace(url);
   }
   public openWithSystemBrowser(url: string) {
     let target = "_system";
@@ -129,6 +114,16 @@ export class AppComponent {
   public openWithCordovaBrowser(url: string) {
     let target = "_self";
     this.iab.create(url, target, this.options);
+  }
+  changeTheme(e) {
+    console.log(e.target.checked);
+    e.target.checked
+      ? this.themeServ.enableDarkMode()
+      : this.enableLightTheme();
+  }
+  enableDarkTheme() {}
+  enableLightTheme() {
+    this.themeServ.enableLightMode();
   }
   openNewTaskModal() {
     this.modalCtrl

@@ -16,6 +16,7 @@ import { UsersService } from "./Services/users.service";
 import { TasksService } from "./Services/tasks.service";
 import { ReportService } from "./Services/report.service";
 import { TaskProgressService } from "./Services/task-progress-service.service";
+import { ThemeService } from "./Services/theme-service.service";
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -38,6 +39,7 @@ import { TaskProgressService } from "./Services/task-progress-service.service";
     AuthService,
     UsersService,
     TasksService,
+    ThemeService,
     TaskProgressService,
     ReportService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
