@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\r\n<ion-tabs >\r\n  <ion-tab-bar  >\r\n    <ion-tab-button tab=\"team-progress\">\r\n      <ion-icon name=\"people-outline\"></ion-icon>\r\n      <ion-label mode=\"md\" style=\"font-size: smaller; font-stretch: condensed;\" >Team Progress</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"mytasks\">\r\n      <ion-icon name=\"list-outline\"></ion-icon>\r\n      <ion-label mode=\"md\" style=\"font-size: smaller;font-stretch: condensed;\"  >My Tasks</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"reports\">\r\n      <ion-icon  name=\"bar-chart-outline\"></ion-icon>\r\n      <ion-label mode=\"md\" style=\"font-size: smaller;font-stretch: condensed;\"  >Reports</ion-label>\r\n    </ion-tab-button>\r\n  </ion-tab-bar>\r\n</ion-tabs>\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\r\n  <ion-tabs>\r\n    <ion-tab-bar #tasktracker id=\"tasktracker\" tabs=\"tasktracker\">\r\n      <ion-tab-button tab=\"home\">\r\n        <ion-icon name=\"home\"></ion-icon>\r\n        <ion-label\r\n          mode=\"md\"\r\n          style=\"font-size: smaller; font-stretch: condensed;\"\r\n          >Home</ion-label\r\n        >\r\n      </ion-tab-button>\r\n\r\n      <ion-tab-button tab=\"mytasks\">\r\n        <ion-icon name=\"list-outline\"></ion-icon>\r\n        <ion-label\r\n          mode=\"md\"\r\n          style=\"font-size: smaller; font-stretch: condensed;\"\r\n          >My Tasks</ion-label\r\n        >\r\n      </ion-tab-button>\r\n      <ion-tab-button tab=\"teamprogress\">\r\n        <ion-icon name=\"people-outline\"></ion-icon>\r\n        <ion-label\r\n          mode=\"md\"\r\n          style=\"font-size: smaller; font-stretch: condensed;\"\r\n          >Team Progress</ion-label\r\n        >\r\n      </ion-tab-button>\r\n\r\n      <ion-tab-button tab=\"reports\">\r\n        <ion-icon name=\"bar-chart-outline\"></ion-icon>\r\n        <ion-label\r\n          mode=\"md\"\r\n          style=\"font-size: smaller; font-stretch: condensed;\"\r\n          >Reports</ion-label\r\n        >\r\n      </ion-tab-button>\r\n    </ion-tab-bar>\r\n  </ion-tabs>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -27,6 +27,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 /* harmony import */ var _tabs_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tabs.page */ "./src/app/Pages/tabs/tabs.page.ts");
+/* harmony import */ var src_app_Services_activate_guard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/Services/activate.guard */ "./src/app/Services/activate.guard.ts");
+
 
 
 
@@ -68,6 +70,8 @@ const routes = [
     {
         path: "tasktracker",
         component: _tabs_page__WEBPACK_IMPORTED_MODULE_3__["TabsPage"],
+        // loadChildren: "../tabs/tabs.module#TabsPageModule",
+        // pathMatch:'prefix',
         children: [
             {
                 path: "home",
@@ -79,16 +83,17 @@ const routes = [
                 ],
             },
             {
-                path: "team-progress",
+                path: "teamprogress",
                 children: [
                     {
                         path: "",
-                        loadChildren: "../tab1/tab1.module#Tab1PageModule",
+                        loadChildren: "../team-progress/team-progress.module#TeamProgressPageModule",
                     },
                 ],
             },
             {
                 path: "mytasks",
+                canActivate: [src_app_Services_activate_guard__WEBPACK_IMPORTED_MODULE_4__["ActivateGuard"]],
                 children: [
                     {
                         path: "",
@@ -105,35 +110,25 @@ const routes = [
                     },
                 ],
             },
-            {
-                path: "login",
-                children: [
-                    {
-                        path: "",
-                        loadChildren: "../login/login.module#LoginPageModule",
-                    },
-                ],
-            },
-            // { path: 'tab2/products/:id', loadChildren: '../tab2/view-product/view-product.module#ViewProductPageModule' },
-            {
-                path: "reports",
-                children: [
-                    {
-                        path: "",
-                        loadChildren: "../tab3/tab3.module#Tab3PageModule",
-                    },
-                ],
-            },
+            // {
+            //   path: "login",
+            //   children: [
+            //     {
+            //       path: "",
+            //       loadChildren: "../login/login.module#LoginPageModule",
+            //     },
+            //   ],
+            // },
             {
                 path: "",
-                redirectTo: "/tasktracker/home",
+                redirectTo: "tasktracker/home",
                 pathMatch: "full",
             },
         ],
     },
     {
         path: "",
-        redirectTo: "index",
+        redirectTo: "tasktracker/home",
         pathMatch: "full",
     },
 ];
@@ -244,6 +239,48 @@ TabsPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./tabs.page.scss */ "./src/app/Pages/tabs/tabs.page.scss")).default]
     })
 ], TabsPage);
+
+
+
+/***/ }),
+
+/***/ "./src/app/Services/activate.guard.ts":
+/*!********************************************!*\
+  !*** ./src/app/Services/activate.guard.ts ***!
+  \********************************************/
+/*! exports provided: ActivateGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ActivateGuard", function() { return ActivateGuard; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _authService_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./authService.service */ "./src/app/Services/authService.service.ts");
+
+
+
+let ActivateGuard = class ActivateGuard {
+    constructor(authServ) {
+        this.authServ = authServ;
+    }
+    canActivate(next, state) {
+        if (this.authServ.isLoggedIn())
+            return true;
+        else {
+            this.authServ.redirectToLogin();
+            return false;
+        }
+    }
+};
+ActivateGuard.ctorParameters = () => [
+    { type: _authService_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"] }
+];
+ActivateGuard = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: "root",
+    })
+], ActivateGuard);
 
 
 

@@ -23,24 +23,24 @@ export class Tab1Page {
     private usrServ: UsersService,
     private taskServ: TasksService
   ) {
-    this.repServ.getTasks().subscribe((data) => {
-      this.tasks = data;
-    });
-    //Get All Users
-    this.users = this.usrServ.usersList;
+    // this.repServ.getTasks().subscribe((data) => {
+    //   this.tasks = data;
+    // });
+    // //Get All Users
+    // this.users = this.usrServ.usersList;
   }
   isLoaded: boolean = false;
   ngOnInit() {
-    this.doRefresh(undefined);
+    // this.doRefresh(undefined);
     //  this.isLoaded = true;
     //  this.getTotalUserTasks();
   }
   ionViewWillLeave() {}
-  ionViewDisLeave() {}
+  ionViewDidLeave() {}
   ionViewDidEnter() {}
-  //@HostListener()
+ 
   ionViewWillEnter() {
-    this.userProgress = this.getUserProgress();
+    //this.userProgress = this.getUserProgress();
   }
 
   getUserProgress(): Array<UserProgress> {

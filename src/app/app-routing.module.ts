@@ -82,26 +82,13 @@ const routes: Routes = [
   { path: "", loadChildren: "./Pages/tabs/tabs.module#TabsPageModule" },
 
   { path: "index", loadChildren: "./Pages/home/home.module#HomePageModule" },
+
+  { path: "login", loadChildren: "./Pages/login/login.module#LoginPageModule" },
   {
     path: "**",
     redirectTo: "index",
     pathMatch: "full",
   },
-  //  {
-  //     path: "**",
-  //     loadChildren: "./Pages/tabs/tabs.module#TabsPageModule",
-  //   },
-  // {
-  //   path: "**",
-  //   loadChildren: "./Pages/home/home.module#HomePageModule",
-  //   children: [
-  //     { path: "", loadChildren: "./Pages/home/home.module#HomePageModule" },
-  //     {
-  //       path: "team-progress",
-  //       loadChildren: "./Pages/tab1/tab1.module#Tab1PageModule",
-  //     },
-  //   ],
-  // },
 ];
 @NgModule({
   imports: [

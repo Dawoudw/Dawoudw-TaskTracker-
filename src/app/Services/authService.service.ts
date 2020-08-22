@@ -12,7 +12,7 @@ import { User } from "../Models/user";
 import { UsersService } from "./users.service";
 import { Router } from "@angular/router";
 import { buffer } from "rxjs/operators";
-import { NavController } from '@ionic/angular';
+import { NavController } from "@ionic/angular";
 
 const poolData = {
   UserPoolId: "us-east-2_JQy9YBUJg", // Your user pool id here
@@ -28,7 +28,11 @@ export class AuthService {
   newPassword;
   errmessage: EventEmitter<any> = new EventEmitter();
   userChange: EventEmitter<User> = new EventEmitter();
-  constructor(private navCtrl:NavController , private router: Router, private userServ: UsersService) {}
+  constructor(
+    private navCtrl: NavController,
+    private router: Router,
+    private userServ: UsersService
+  ) {}
 
   register(email, password) {
     const attributeList = [];
@@ -133,8 +137,8 @@ export class AuthService {
     // );
     try {
       let usr = this.getLoggedUser();
-      if (usr == undefined ||usr === undefined )  return false;
-      else if (usr == null||usr === null) return false;
+      if (usr == undefined || usr === undefined) return false;
+      else if (usr == null || usr === null) return false;
       // the  user in the local storage is not null
       return usr.email ? true : false;
       // check if the email is not null or mepty
@@ -185,13 +189,15 @@ export class AuthService {
   public redirectToHome(): void {
     //  if (this.checkCurrentUser())
     // console.log("this.navCtrl.navigateRoot(/);");
-    this.navCtrl.navigateRoot("tasktracker/home");
+    // this.navCtrl.navigateRoot("tasktracker/home");
+    window.location.replace("tasktracker/home");
     //this.router.navigate["/"];
   }
   public redirectToLogin(): void {
     // if (!this.checkCurrentUser())
-    this.navCtrl.navigateRoot("index");
+    this.navCtrl.navigateRoot("login");
     // this.router.navigate["login"];
+    // window.location.replace("login");
   }
 
   logOut() {
@@ -199,8 +205,8 @@ export class AuthService {
     this.cognitoUser = null;
     localStorage.clear();
     sessionStorage.clear();
-    window.location.replace("index");
-  // /  this.redirectToLogin();
+
+    this.redirectToLogin();
   }
   // async openDialog(email): Promise <any>{
   // let dialogRef = this.dialog.open(ForgotComponent, {data : {email: email}});

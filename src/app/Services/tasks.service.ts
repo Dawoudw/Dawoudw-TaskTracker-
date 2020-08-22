@@ -29,19 +29,15 @@ export class TasksService {
     private auth: AuthService,
     private router: Router
   ) {
-    if (auth.isLoggedIn()) {
-      this.loginedUser = this.auth.getLoggedUser();
-      console.log("Constr: ", this.loginedUser);
-    } else {
-      this.router.navigate(["/"]);
-      return;
-    }
+    /*
+    //::Wael::this is  corect way , the validtion forced the app to go back home 
+     in all other forms used this service and does not require login*/
+    this.loginedUser = this.auth.getLoggedUser();
   }
   get myTasks() {
     return this._myTasks.asObservable();
   }
-  getAllTasks(): Observable<Task[]>
-  { 
+  getAllTasks(): Observable<Task[]> {
     return this.httpClient.get<Task[]>(`${this.path}/task/`);
   }
   // API Access // Get all user tasks

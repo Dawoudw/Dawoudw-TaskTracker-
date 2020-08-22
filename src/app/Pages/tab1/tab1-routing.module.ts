@@ -13,11 +13,11 @@ const routes: Routes = [
   //     import("../tab1/tab1.module").then((m) => m.Tab1PageModule),
   //   //component: Tab1Page,
   // },
-  {
-    path: ":userid",
-    loadChildren: () =>
-      import("../user-tasks/user-tasks.module").then((m) => m.UserTasksModule), // loadChildren:"../Components/user-tasks/user-tasks.module#UserTasksModule",
-  },
+  // {
+  //   path: ":userid",
+  //   loadChildren: () =>
+  //     import("../user-tasks/user-tasks.module").then((m) => m.UserTasksModule), // loadChildren:"../Components/user-tasks/user-tasks.module#UserTasksModule",
+  // },
 ];
 
 @NgModule({

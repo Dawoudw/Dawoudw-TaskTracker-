@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { Platform } from "@ionic/angular";
 import { ReportService } from "../../Services/report.service";
-import {  Task } from "../../Models/task";
+import { Task } from "../../Models/task";
 import { UserInfo } from "src/app/Models/user-info";
 
 declare var google;
@@ -14,7 +14,7 @@ declare var google;
 export class ReportPage {
   //deafult is a working userId and date case, other dates/userId combo may not work due to differing format or lack of data
 
-  tasks:  Task[] = new Array(10);
+  tasks: Task[] = new Array(10);
   userArr: UserInfo[] = new Array(0);
   userId: string = "0";
   dateArr: string[] = new Array(0);
@@ -22,11 +22,14 @@ export class ReportPage {
 
   constructor(public platform: Platform, public api: ReportService) {
     this.api.getUsers().subscribe((data) => {
-      this.userArr = data;
+      this.userArr = data.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)); 
     });
 
     this.api.getTasks().subscribe((data) => {
-      for (const t of data) {
+      let sortdata = data
+        .sort((a, b) => Date.parse(b.taskdate) - Date.parse(a.taskdate))
+        .slice();
+      for (const t of sortdata) {
         let duplicate = false;
 
         for (const d of this.dateArr) {
@@ -37,7 +40,7 @@ export class ReportPage {
           }
         }
         if (!duplicate) {
-          this.dateArr.push(t.taskdate);
+          if (t.taskdate) this.dateArr.push(t.taskdate);
         }
       }
     });
@@ -49,7 +52,7 @@ export class ReportPage {
 
   //helps with async issue
   processData() {
-    let self = this
+    let self = this;
     this.api
       .getTaskByDateAndId(this.userId, this.taskDate)
       .subscribe((data) => {
@@ -68,8 +71,8 @@ export class ReportPage {
 
     //for percent in format "#%" - parseFloat and divide by 100
     for (const t of this.tasks) {
-      data.addRows([[t.task, parseFloat(t.progress+'') / 100]]);
-      total = total + parseFloat(t.progress+'') / 100;
+      data.addRows([[t.task, parseFloat(t.progress + "") / 100]]);
+      total = total + parseFloat(t.progress + "") / 100;
     }
     if (total < 1) {
       data.addRows([["Pending", 1 - total]]);

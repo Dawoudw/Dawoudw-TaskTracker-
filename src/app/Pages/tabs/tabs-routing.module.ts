@@ -42,6 +42,8 @@ const routes: Routes = [
   {
     path: "tasktracker",
     component: TabsPage,
+    // loadChildren: "../tabs/tabs.module#TabsPageModule",
+    // pathMatch:'prefix',
     children: [
       {
         path: "home",
@@ -53,17 +55,18 @@ const routes: Routes = [
         ],
       },
       {
-        path: "team-progress",
+        path: "teamprogress",
         children: [
           {
             path: "",
-            loadChildren: "../tab1/tab1.module#Tab1PageModule",
+            loadChildren:
+              "../team-progress/team-progress.module#TeamProgressPageModule",
           },
         ],
       },
       {
         path: "mytasks",
-        canActivate:[ActivateGuard],
+        canActivate: [ActivateGuard],
         children: [
           {
             path: "",
@@ -80,35 +83,26 @@ const routes: Routes = [
           },
         ],
       },
-      {
-        path: "login",
-        children: [
-          {
-            path: "",
-            loadChildren: "../login/login.module#LoginPageModule",
-          },
-        ],
-      },
-      // { path: 'tab2/products/:id', loadChildren: '../tab2/view-product/view-product.module#ViewProductPageModule' },
-      {
-        path: "reports",
-        children: [
-          {
-            path: "",
-            loadChildren: "../tab3/tab3.module#Tab3PageModule",
-          },
-        ],
-      },
+      // {
+      //   path: "login",
+      //   children: [
+      //     {
+      //       path: "",
+      //       loadChildren: "../login/login.module#LoginPageModule",
+      //     },
+      //   ],
+      // },
+
       {
         path: "",
-        redirectTo: "/tasktracker/home",
+        redirectTo: "tasktracker/home",
         pathMatch: "full",
       },
     ],
   },
   {
     path: "",
-    redirectTo: "/tasktracker/team-progress",
+    redirectTo: "tasktracker/home",
     pathMatch: "full",
   },
 ];

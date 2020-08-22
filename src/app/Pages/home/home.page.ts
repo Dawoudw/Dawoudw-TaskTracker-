@@ -28,8 +28,8 @@ export class HomePage implements OnInit {
  
   openlogin()
   {
-    this.navCtrl.navigateRoot("tasktracker/login");
+    this.navCtrl.navigateRoot("login");
    
-    console.log("openlogin")
+    //console.log("openlogin")
   }
 }

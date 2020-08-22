@@ -22,7 +22,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-tasktracker-dev-150403-deployment/amplify-cfn-templates/auth/tasktracker3778736d-cloudformation-template.yml",
 				"logicalId": "authtasktracker3778736d"
 			},
-			"lastPushTimeStamp": "2020-08-12T19:30:14.151Z",
+			"lastPushTimeStamp": "2020-08-21T04:45:44.111Z",
 			"output": {
 				"AppClientSecret": "1bg0vustb1mlc92iumtse72g6j13hatb1mjftqlavn0d8vkl3377",
 				"UserPoolId": "us-east-2_9fLoO5YN8",
@@ -44,9 +44,34 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-tasktracker-dev-150403-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
 				"logicalId": "hostingamplifyhosting"
 			},
-			"lastPushTimeStamp": "2020-08-12T19:30:14.163Z",
+			"lastPushTimeStamp": "2020-08-21T04:45:44.113Z",
 			"output": {},
 			"lastPushDirHash": "/+VZ33seFFqAr6wbtptwbINUfSA="
+		}
+	},
+	"api": {
+		"tasktracker": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authtasktracker3778736d"
+						}
+					},
+					"additionalAuthenticationProviders": []
+				},
+				"GraphQLAPIIdOutput": "vmhoqo7q7nctffojgqnu5lbl34",
+				"GraphQLAPIEndpointOutput": "https://xfpek4eifzdupp4zykse3z334u.appsync-api.us-east-2.amazonaws.com/graphql"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-tasktracker-dev-150403-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apitasktracker"
+			},
+			"lastPushTimeStamp": "2020-08-21T04:45:46.407Z",
+			"lastPushDirHash": "ulVovDHE6DPWThprIH2cw+Hiq1k="
 		}
 	}
 }

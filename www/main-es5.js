@@ -29,11 +29,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   function $$_lazy_route_resourceLazyRecursive(module, exports, __webpack_require__) {
     var map = {
       "../home/home.module": ["./src/app/Pages/home/home.module.ts", "home-home-module"],
-      "../login/login.module": ["./src/app/Pages/login/login.module.ts", "login-login-module"],
-      "../tab1/tab1.module": ["./src/app/Pages/tab1/tab1.module.ts", "tab1-tab1-module"],
       "../tab2/tab2.module": ["./src/app/Pages/tab2/tab2.module.ts", "tab2-tab2-module"],
       "../tab3/tab3.module": ["./src/app/Pages/tab3/tab3.module.ts", "tab3-tab3-module"],
+      "../team-progress/team-progress.module": ["./src/app/Pages/team-progress/team-progress.module.ts", "team-progress-team-progress-module"],
       "./Pages/home/home.module": ["./src/app/Pages/home/home.module.ts", "home-home-module"],
+      "./Pages/login/login.module": ["./src/app/Pages/login/login.module.ts", "Pages-login-login-module"],
       "./Pages/tabs/tabs.module": ["./src/app/Pages/tabs/tabs.module.ts", "Pages-tabs-tabs-module"]
     };
 
@@ -199,7 +199,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-app>\r\n  <app-header></app-header>\r\n  <ion-content>\r\n    <ion-menu content-id=\"menu\" side=\"start\" menuId=\"main-menu\" type=\"overlay\">\r\n      <!-- <ion-header>\r\n        <ion-toolbar color=\"primary\">\r\n          <ion-title>Start Menu</ion-title>\r\n        </ion-toolbar>\r\n      </ion-header> -->\r\n      <ion-content>\r\n        <ion-list>\r\n          <!-- <ion-item\r\n            detail=\"false\"\r\n            [routerLink]=\"auth.isLoggedIn() ? 'tasktracker' : '/'\"\r\n            (click)=\"closeMenu()\"\r\n          >\r\n            <ion-label id=\"lblHome\">\r\n              <ion-icon name=\"home\"></ion-icon>\r\n              Home\r\n            </ion-label>\r\n          </ion-item> -->\r\n          <ion-item\r\n            detail=\"false\"\r\n            [routerLink]=\"auth.isLoggedIn() ? 'tasktracker/home' : 'index'\"\r\n            (click)=\"closeMenu()\"\r\n          >\r\n            <ion-label id=\"lblHome\">\r\n              <ion-icon name=\"home\"></ion-icon>\r\n              Home\r\n            </ion-label>\r\n          </ion-item>\r\n\r\n          <ion-item\r\n            [routerLink]\r\n            detail=\"false\"\r\n            *ngIf=\"getIsLogged()\"\r\n            (click)=\"openNewTaskModal()\"\r\n          >\r\n            <ion-label id=\"lblnewtask\">\r\n              <ion-icon name=\"document-text-outline\"></ion-icon>\r\n              New Task\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item\r\n            detail=\"false\"\r\n            [routerLink]=\"['tasktracker/mytasks']\"\r\n            (click)=\"closeMenu()\"\r\n            *ngIf=\"getIsLogged()\"\r\n          >\r\n            <ion-label id=\"lblmytasks\">\r\n              <ion-icon name=\"document-text-outline\"></ion-icon>\r\n              My Tasks\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item\r\n            detail=\"false\"\r\n            [routerLink]\r\n            (click)=\"openTeamProgress(); closeMenu()\"\r\n          >\r\n            <ion-label id=\"lblusers-progress\">\r\n              <ion-icon name=\"people-outline\"></ion-icon>\r\n              Team Progress\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item\r\n            detail=\"false\"\r\n            routerLink=\"tasktracker/reports\"\r\n            (click)=\"closeMenu()\"\r\n          >\r\n            <ion-label id=\"lblReports\">\r\n              <ion-icon name=\"bar-chart-outline\"></ion-icon>\r\n              Reports\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item [routerLink] (click)=\"logout()\" *ngIf=\"getIsLogged()\">\r\n            <ion-label id=\"lbllogout\">\r\n              <ion-icon name=\"lock-closed-outline\"></ion-icon>\r\n              logout\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item\r\n            [routerLink]=\"['tasktracker/login']\"\r\n            (click)=\"closeMenu()\"\r\n            *ngIf=\"!getIsLogged()\"\r\n          >\r\n            <ion-label id=\"lblSignIn\">\r\n              <ion-icon name=\"lock-open-outline\"></ion-icon> SignIn\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet\r\n      id=\"menu\"\r\n      style=\"text-align: center; padding: 0px; margin: 0px;\"\r\n    >\r\n    </ion-router-outlet\r\n  ></ion-content>\r\n</ion-app>\r\n";
+    __webpack_exports__["default"] = "<ion-app>\r\n  <app-header></app-header>\r\n  <ion-content>\r\n    <ion-menu content-id=\"menu\" side=\"start\" menuId=\"main-menu\" type=\"overlay\">\r\n      <!-- <ion-header>\r\n        <ion-toolbar color=\"primary\">\r\n          <ion-title>Start Menu</ion-title>\r\n        </ion-toolbar>\r\n      </ion-header> -->\r\n      <ion-content>\r\n        <ion-list>\r\n          <!-- <ion-item\r\n            detail=\"false\"\r\n            [routerLink]=\"auth.isLoggedIn() ? 'tasktracker' : '/'\"\r\n            (click)=\"closeMenu()\"\r\n          >\r\n            <ion-label id=\"lblHome\">\r\n              <ion-icon name=\"home\"></ion-icon>\r\n              Home\r\n            </ion-label>\r\n          </ion-item> -->\r\n          <ion-item\r\n            detail=\"false\"\r\n            [routerLink]=\"auth.isLoggedIn() ? 'tasktracker/tbHome' : 'index'\"\r\n            (click)=\"closeMenu()\"\r\n          >\r\n            <ion-label id=\"lblHome\">\r\n              <ion-icon name=\"home\"></ion-icon>\r\n              Home\r\n            </ion-label>\r\n          </ion-item>\r\n\r\n          <ion-item\r\n            [routerLink]\r\n            detail=\"false\"\r\n            *ngIf=\"getIsLogged()\"\r\n            (click)=\"openNewTaskModal()\"\r\n          >\r\n            <ion-label id=\"lblnewtask\">\r\n              <ion-icon name=\"add-outline\"></ion-icon>\r\n              New Task\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item\r\n            detail=\"false\"\r\n            [routerLink]=\"['tasktracker/mytasks']\"\r\n            (click)=\"closeMenu()\"\r\n            *ngIf=\"getIsLogged()\"\r\n          >\r\n            <ion-label id=\"lblmytasks\">\r\n              <ion-icon name=\"document-text-outline\"></ion-icon>\r\n              My Tasks\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item\r\n            detail=\"false\"\r\n            [routerLink] =\"['tasktracker/teamprogress']\"\r\n            (click)=\" closeMenu()\"\r\n          >\r\n            <ion-label id=\"lblusers-progress\">\r\n              <ion-icon name=\"people-outline\"></ion-icon>\r\n              Team Progress\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item\r\n            detail=\"false\"\r\n            routerLink=\"tasktracker/reports\"\r\n            (click)=\"closeMenu()\"\r\n          >\r\n            <ion-label id=\"lblReports\">\r\n              <ion-icon name=\"bar-chart-outline\"></ion-icon>\r\n              Reports\r\n            </ion-label>\r\n            \r\n          </ion-item>\r\n          <ion-item [routerLink]  (click)=\"openWebSiteApp();closeMenu()\"  >\r\n            <ion-label id=\"lblweb\">\r\n              <ion-icon name=\"globe-outline\"></ion-icon>\r\n              WebSite\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item [routerLink] (click)=\"logout()\" *ngIf=\"getIsLogged()\">\r\n            <ion-label id=\"lbllogout\">\r\n              <ion-icon name=\"lock-closed-outline\"></ion-icon>\r\n              logout\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item\r\n            [routerLink]=\"['login']\"\r\n            (click)=\"closeMenu()\"\r\n            *ngIf=\"!getIsLogged()\"\r\n          >\r\n            <ion-label id=\"lblSignIn\">\r\n              <ion-icon name=\"lock-open-outline\"></ion-icon> SignIn\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet\r\n      id=\"menu\"\r\n      style=\"text-align: center; padding: 0px; margin: 0px;\"\r\n    >\r\n    </ion-router-outlet\r\n  ></ion-content>\r\n</ion-app>\r\n";
     /***/
   },
 
@@ -767,13 +767,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function redirectToHome() {
           //  if (this.checkCurrentUser())
           // console.log("this.navCtrl.navigateRoot(/);");
-          this.navCtrl.navigateRoot("tasktracker/home"); //this.router.navigate["/"];
+          // this.navCtrl.navigateRoot("tasktracker/home");
+          window.location.replace("tasktracker/home"); //this.router.navigate["/"];
         }
       }, {
         key: "redirectToLogin",
         value: function redirectToLogin() {
           // if (!this.checkCurrentUser())
-          this.navCtrl.navigateRoot("index"); // this.router.navigate["login"];
+          this.navCtrl.navigateRoot("login"); // this.router.navigate["login"];
+          // window.location.replace("login");
         }
       }, {
         key: "logOut",
@@ -782,7 +784,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.cognitoUser = null;
           localStorage.clear();
           sessionStorage.clear();
-          window.location.reload();
           this.redirectToLogin();
         }
       }]);
@@ -1090,14 +1091,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this._myTasks = new rxjs__WEBPACK_IMPORTED_MODULE_5__["BehaviorSubject"]([]);
         this.loginedUser = new _Models_user__WEBPACK_IMPORTED_MODULE_6__["User"]();
         this.path = "https://46odim7l6f.execute-api.us-east-2.amazonaws.com/beta";
+        /*
+        //::Wael::this is  corect way , the validtion forced the app to go back home
+         in all other forms used this service and does not require login*/
 
-        if (auth.isLoggedIn()) {
-          this.loginedUser = this.auth.getLoggedUser();
-          console.log("Constr: ", this.loginedUser);
-        } else {
-          this.router.navigate(["/"]);
-          return;
-        }
+        this.loginedUser = this.auth.getLoggedUser();
       }
 
       _createClass(TasksService, [{
@@ -1498,11 +1496,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
     var routes = [{
-      path: '',
-      loadChildren: './Pages/tabs/tabs.module#TabsPageModule'
+      path: "",
+      loadChildren: "./Pages/tabs/tabs.module#TabsPageModule"
     }, {
-      path: 'index',
-      loadChildren: './Pages/home/home.module#HomePageModule'
+      path: "index",
+      loadChildren: "./Pages/home/home.module#HomePageModule"
+    }, {
+      path: "login",
+      loadChildren: "./Pages/login/login.module#LoginPageModule"
+    }, {
+      path: "**",
+      redirectTo: "index",
+      pathMatch: "full"
     }];
 
     var AppRoutingModule = function AppRoutingModule() {
@@ -1611,11 +1616,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _Pages_create_task_create_task_page__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! ./Pages/create-task/create-task.page */
     "./src/app/Pages/create-task/create-task.page.ts");
+    /* harmony import */
+
+
+    var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    /*! @ionic-native/in-app-browser/ngx */
+    "./node_modules/@ionic-native/in-app-browser/__ivy_ngcc__/ngx/index.js");
 
     var AppComponent = /*#__PURE__*/function () {
       function AppComponent( // private router: ActivatedRoute,
       // private navCtrl: NavController,
-      platform, splashScreen, statusBar, auth, menuCtr, router, modalCtrl, navCtrl) {
+      platform, splashScreen, statusBar, auth, menuCtr, router, modalCtrl, navCtrl, menu, actionSheetCtrl, toastCtr, iab) {
         _classCallCheck(this, AppComponent);
 
         this.platform = platform;
@@ -1626,9 +1637,33 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.router = router;
         this.modalCtrl = modalCtrl;
         this.navCtrl = navCtrl;
+        this.menu = menu;
+        this.actionSheetCtrl = actionSheetCtrl;
+        this.toastCtr = toastCtr;
+        this.iab = iab;
         this.loggedin = true; // to get this value form Auth service
 
-        this.initializeApp(); //console.log("AppComponent constructor");
+        this.lastTimeBackPress = 0;
+        this.timePeriodToExit = 2000;
+        this.options = {
+          location: "yes",
+          hidden: "no",
+          clearcache: "yes",
+          clearsessioncache: "yes",
+          zoom: "yes",
+          hardwareback: "yes",
+          mediaPlaybackRequiresUserAction: "no",
+          shouldPauseOnSuspend: "no",
+          closebuttoncaption: "Close",
+          disallowoverscroll: "no",
+          toolbar: "yes",
+          enableViewportScale: "no",
+          allowInlineMediaPlayback: "no",
+          presentationstyle: "pagesheet",
+          fullscreen: "yes"
+        };
+        this.initializeApp(); // this.backButtonEvent();
+        //console.log("AppComponent constructor");
       }
 
       _createClass(AppComponent, [{
@@ -1687,7 +1722,44 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "openTeamProgress",
         value: function openTeamProgress() {
-          this.navCtrl.navigateRoot("tasktracker/team-progress");
+          window.location.replace("tasktracker/team-progress"); //this.navCtrl.navigateRoot("tasktracker/team-progress");
+        }
+      }, {
+        key: "openWebSiteApp",
+        value: function openWebSiteApp() {
+          var url = "http://taskapp-lti.s3-website.us-east-2.amazonaws.com/home"; // const browser = this.iab.create(
+          //   `http://taskapp-lti.s3-website.us-east-2.amazonaws.com/home`,
+          //   `_self`
+          // );
+          // //browser.executeScript(...);
+          // //browser.insertCSS(...);
+          // browser.on("loadstop").subscribe((event) => {
+          //   // browser.insertCSS({ code: "body{color: red;" });
+          // });
+          // browser.on("exit").subscribe((event) => {
+          //   browser.close();
+          // });
+
+          this.openWithInAppBrowser(url); //  window.open(url, "_self");
+          //window.location.replace(url);
+        }
+      }, {
+        key: "openWithSystemBrowser",
+        value: function openWithSystemBrowser(url) {
+          var target = "_system";
+          this.iab.create(url, target, this.options);
+        }
+      }, {
+        key: "openWithInAppBrowser",
+        value: function openWithInAppBrowser(url) {
+          var target = "_blank";
+          this.iab.create(url, target, this.options);
+        }
+      }, {
+        key: "openWithCordovaBrowser",
+        value: function openWithCordovaBrowser(url) {
+          var target = "_self";
+          this.iab.create(url, target, this.options);
         }
       }, {
         key: "openNewTaskModal",
@@ -1710,6 +1782,175 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "openlogin",
         value: function openlogin() {
           this.navCtrl.navigateRoot("tasktracker/login"); //console.log("openlogin")
+        } // active hardware back button
+
+      }, {
+        key: "backButtonEvent",
+        value: function backButtonEvent() {
+          var _this11 = this;
+
+          this.platform.backButton.subscribe(function () {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this11, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
+              var _this12 = this;
+
+              var element, _element, _element2;
+
+              return regeneratorRuntime.wrap(function _callee5$(_context5) {
+                while (1) {
+                  switch (_context5.prev = _context5.next) {
+                    case 0:
+                      _context5.prev = 0;
+                      _context5.next = 3;
+                      return this.actionSheetCtrl.getTop();
+
+                    case 3:
+                      element = _context5.sent;
+
+                      if (!element) {
+                        _context5.next = 7;
+                        break;
+                      }
+
+                      element.dismiss();
+                      return _context5.abrupt("return");
+
+                    case 7:
+                      _context5.next = 11;
+                      break;
+
+                    case 9:
+                      _context5.prev = 9;
+                      _context5.t0 = _context5["catch"](0);
+
+                    case 11:
+                      _context5.prev = 11;
+                      _context5.next = 14;
+                      return this.modalCtrl.getTop();
+
+                    case 14:
+                      _element = _context5.sent;
+
+                      if (!_element) {
+                        _context5.next = 18;
+                        break;
+                      }
+
+                      _element.dismiss();
+
+                      return _context5.abrupt("return");
+
+                    case 18:
+                      _context5.next = 23;
+                      break;
+
+                    case 20:
+                      _context5.prev = 20;
+                      _context5.t1 = _context5["catch"](11);
+                      console.log(_context5.t1);
+
+                    case 23:
+                      _context5.prev = 23;
+                      _context5.next = 26;
+                      return this.menu.getOpen();
+
+                    case 26:
+                      _element2 = _context5.sent;
+
+                      if (!(_element2 !== null)) {
+                        _context5.next = 30;
+                        break;
+                      }
+
+                      this.menu.close();
+                      return _context5.abrupt("return");
+
+                    case 30:
+                      _context5.next = 34;
+                      break;
+
+                    case 32:
+                      _context5.prev = 32;
+                      _context5.t2 = _context5["catch"](23);
+
+                    case 34:
+                      this.routerOutlets.forEach(function (outlet) {
+                        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this12, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+                          var toast;
+                          return regeneratorRuntime.wrap(function _callee4$(_context4) {
+                            while (1) {
+                              switch (_context4.prev = _context4.next) {
+                                case 0:
+                                  if (!(outlet && outlet.canGoBack())) {
+                                    _context4.next = 4;
+                                    break;
+                                  }
+
+                                  outlet.pop();
+                                  _context4.next = 14;
+                                  break;
+
+                                case 4:
+                                  if (!(this.router.url === "/home")) {
+                                    _context4.next = 14;
+                                    break;
+                                  }
+
+                                  if (!(new Date().getTime() - this.lastTimeBackPress < this.timePeriodToExit)) {
+                                    _context4.next = 9;
+                                    break;
+                                  }
+
+                                  // this.platform.exitApp(); // Exit from app
+                                  navigator["app"].exitApp(); // work for ionic 4
+
+                                  _context4.next = 14;
+                                  break;
+
+                                case 9:
+                                  _context4.next = 11;
+                                  return this.toastCtr.create({
+                                    header: "Info",
+                                    message: "Your settings have been saved.",
+                                    duration: 2000,
+                                    position: "middle",
+                                    buttons: [{
+                                      side: "start",
+                                      icon: "star",
+                                      text: "Favorite",
+                                      handler: function handler() {
+                                        console.log("Favorite clicked");
+                                      }
+                                    }, {
+                                      text: "Done",
+                                      role: "cancel",
+                                      handler: function handler() {
+                                        console.log("Cancel clicked");
+                                      }
+                                    }]
+                                  });
+
+                                case 11:
+                                  toast = _context4.sent;
+                                  toast.present();
+                                  this.lastTimeBackPress = new Date().getTime();
+
+                                case 14:
+                                case "end":
+                                  return _context4.stop();
+                              }
+                            }
+                          }, _callee4, this);
+                        }));
+                      });
+
+                    case 35:
+                    case "end":
+                      return _context5.stop();
+                  }
+                }
+              }, _callee5, this, [[0, 9], [11, 20], [23, 32]]);
+            }));
+          });
         }
       }]);
 
@@ -1733,9 +1974,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"]
       }, {
         type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavController"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["MenuController"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ActionSheetController"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ToastController"]
+      }, {
+        type: _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_9__["InAppBrowser"]
       }];
     };
 
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChildren"])(_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonRouterOutlet"])], AppComponent.prototype, "routerOutlets", void 0);
     AppComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: "app-root",
       template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
@@ -1812,67 +2062,73 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! @ionic-native/in-app-browser/ngx */
+    "./node_modules/@ionic-native/in-app-browser/__ivy_ngcc__/ngx/index.js");
+    /* harmony import */
+
+
+    var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! @ionic-native/splash-screen/ngx */
     "./node_modules/@ionic-native/splash-screen/__ivy_ngcc__/ngx/index.js");
     /* harmony import */
 
 
-    var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! @ionic-native/status-bar/ngx */
     "./node_modules/@ionic-native/status-bar/__ivy_ngcc__/ngx/index.js");
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
     /*! @angular/common/http */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
     /* harmony import */
 
 
-    var _app_routing_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    var _app_routing_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
     /*! ./app-routing.module */
     "./src/app/app-routing.module.ts");
     /* harmony import */
 
 
-    var _app_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    var _app_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
     /*! ./app.component */
     "./src/app/app.component.ts");
     /* harmony import */
 
 
-    var _Components_header_header_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    var _Components_header_header_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
     /*! ./Components/header/header.component */
     "./src/app/Components/header/header.component.ts");
     /* harmony import */
 
 
-    var _Services_authService_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+    var _Services_authService_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
     /*! ./Services/authService.service */
     "./src/app/Services/authService.service.ts");
     /* harmony import */
 
 
-    var _Services_users_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+    var _Services_users_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
     /*! ./Services/users.service */
     "./src/app/Services/users.service.ts");
     /* harmony import */
 
 
-    var _Services_tasks_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+    var _Services_tasks_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
     /*! ./Services/tasks.service */
     "./src/app/Services/tasks.service.ts");
     /* harmony import */
 
 
-    var _Services_report_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+    var _Services_report_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
     /*! ./Services/report.service */
     "./src/app/Services/report.service.ts");
     /* harmony import */
 
 
-    var _Services_task_progress_service_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+    var _Services_task_progress_service_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
     /*! ./Services/task-progress-service.service */
     "./src/app/Services/task-progress-service.service.ts");
 
@@ -1881,14 +2137,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     };
 
     AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_11__["AppComponent"], _Components_header_header_component__WEBPACK_IMPORTED_MODULE_12__["HeaderComponent"]],
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_12__["AppComponent"], _Components_header_header_component__WEBPACK_IMPORTED_MODULE_13__["HeaderComponent"]],
       entryComponents: [],
-      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["IonicModule"].forRoot(), _angular_common__WEBPACK_IMPORTED_MODULE_5__["CommonModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_10__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["IonicModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"]],
-      providers: [_ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_8__["StatusBar"], _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_7__["SplashScreen"], _Services_authService_service__WEBPACK_IMPORTED_MODULE_13__["AuthService"], _Services_users_service__WEBPACK_IMPORTED_MODULE_14__["UsersService"], _Services_tasks_service__WEBPACK_IMPORTED_MODULE_15__["TasksService"], _Services_task_progress_service_service__WEBPACK_IMPORTED_MODULE_17__["TaskProgressService"], _Services_report_service__WEBPACK_IMPORTED_MODULE_16__["ReportService"], {
+      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["IonicModule"].forRoot(), _angular_common__WEBPACK_IMPORTED_MODULE_5__["CommonModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_11__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["IonicModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"]],
+      providers: [_ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_9__["StatusBar"], _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_8__["SplashScreen"], _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_7__["InAppBrowser"], _Services_authService_service__WEBPACK_IMPORTED_MODULE_14__["AuthService"], _Services_users_service__WEBPACK_IMPORTED_MODULE_15__["UsersService"], _Services_tasks_service__WEBPACK_IMPORTED_MODULE_16__["TasksService"], _Services_task_progress_service_service__WEBPACK_IMPORTED_MODULE_18__["TaskProgressService"], _Services_report_service__WEBPACK_IMPORTED_MODULE_17__["ReportService"], {
         provide: _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouteReuseStrategy"],
         useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["IonicRouteStrategy"]
       }],
-      bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_11__["AppComponent"]],
+      bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_12__["AppComponent"]],
       schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["CUSTOM_ELEMENTS_SCHEMA"]]
     })], AppModule);
     /***/

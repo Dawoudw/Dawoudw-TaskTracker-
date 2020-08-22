@@ -27,7 +27,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header  translucent =\"false\">\n  <ion-toolbar>\n    <ion-label position=\"fixed\" color=\"primary\">\n      <p\n        style=\"\n          font-size:18px;\n           \n          text-align: center !important;\n        \"\n      >\n        Users Progress Report\n      </p>\n    </ion-label>\n    <ion-buttons slot=\"start\">\n      <ion-back-button\n        text=\"\"\n        routerLink=\"/tasktracker/reports\"\n      ></ion-back-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<!-- <ion-content [fullscreen]=\"true\">\n  <div class=\"ion-padding\">\n<label for=\"users\">Choose a User By Name and ID:</label>\n   <ion-select name=\"users\" id=\"users\" [(ngModel)]=\"userId\">\n      <ion-select-option *ngFor=\"let user of userArr\" value=\"{{user.id}}\"\n        >{{user.name}} - {{user.id}}\n      </ion-select-option>\n    </ion-select>\n  </div>\n</ion-content> -->\n\n<ion-content  [fullscreen]=\"true\" calss=\"ion-no-padding ion-no-margin\">\n  <ion-grid>\n    <ion-row>\n      <ion-col size=\"12\" size-lg=\"6\" size-md=\"6\" offset-med=\"3\" offset-lg=\"3\">\n        <ion-row style=\"justify-items: left;\">\n          <ion-col>\n            <ion-list>\n              <ion-item detail=\"false\">\n                <ion-label\n                  size=\"small\"\n                  color=\"medium\"\n                  position=\"stacked\"\n                  class=\"ion-text-start ion-text-capitalize ion-text-wrap\"\n                >\n                  Choose a User By Name and ID:\n                </ion-label>\n                <ion-select name=\"users\" id=\"users\" [(ngModel)]=\"userId\">\n                  <ion-select-option\n                    color=\"secondary\"\n                    *ngFor=\"let user of userArr\"\n                    value=\"{{user.id}}\"\n                    >{{user.name}} - {{user.id}}\n                  </ion-select-option>\n                </ion-select>\n              </ion-item>\n\n              <ion-item detail=\"false\">\n                <ion-label\n                  size=\"small\"\n                  color=\"medium\"\n                  position=\"stacked\"\n                  class=\"ion-text-start ion-text-capitalize ion-text-wrap\"\n                >\n                  Choose a report date\n                </ion-label>\n\n                <ion-select   calss=\"ion-dark\" color=\"dark\" name=\"dates\" id=\"dates\" [(ngModel)]=\"taskDate\">\n                  <ion-select-option\n                    size=\"samll\"\n                 \n                    *ngFor=\"let date of dateArr\"\n                    value=\"{{date}}\"\n                    >{{date}}</ion-select-option\n                  >\n                </ion-select>\n              </ion-item>\n              <div\n                style=\"\n                  text-align: center !important;\n                  margin-left: 20%;\n                  margin-right: 20%;\n                \"\n              >\n                <ion-button\n                  color=\"primary\"\n                  expand=\"block\"\n                  (click)=\"processData()\"\n                  >Generate Report</ion-button\n                >\n              </div>\n            </ion-list>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col size=\"12\" class=\"ion-border\" color=\"light\">\n            <div\n              style=\"text-align: center !important;\"\n              id=\"div_pie\"\n              class=\"ion-padding\"\n            ></div>\n          </ion-col>\n        </ion-row>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>";
+    __webpack_exports__["default"] = "<ion-header translucent=\"false\">\n  <ion-toolbar>\n    <ion-label position=\"fixed\" color=\"primary\">\n      <p\n        style=\"\n          font-size: 18px;\n\n          text-align: center !important;\n        \"\n      >\n        Users Progress Report\n      </p>\n    </ion-label>\n    <ion-buttons slot=\"start\">\n      <ion-back-button\n        text=\"\"\n        routerLink=\"/tasktracker/reports\"\n      ></ion-back-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<!-- <ion-content [fullscreen]=\"true\">\n  <div class=\"ion-padding\">\n<label for=\"users\">Choose a User By Name and ID:</label>\n   <ion-select name=\"users\" id=\"users\" [(ngModel)]=\"userId\">\n      <ion-select-option *ngFor=\"let user of userArr\" value=\"{{user.id}}\"\n        >{{user.name}} - {{user.id}}\n      </ion-select-option>\n    </ion-select>\n  </div>\n</ion-content> -->\n\n<ion-content [fullscreen]=\"true\" calss=\"ion-no-padding ion-no-margin\">\n  <ion-grid>\n    <ion-row>\n      <ion-col size=\"12\" size-lg=\"6\" size-md=\"6\" offset-med=\"3\" offset-lg=\"3\">\n        <ion-row style=\"justify-items: left;\">\n          <ion-col>\n            <ion-list>\n              <ion-item detail=\"false\">\n                <ion-label\n                  size=\"small\"\n                  color=\"medium\"\n                  position=\"stacked\"\n                  class=\"ion-text-start ion-text-capitalize ion-text-wrap\"\n                >\n                  Choose a User By Name \n                </ion-label>\n                <ion-select name=\"users\" id=\"users\" [(ngModel)]=\"userId\">\n                  <ion-select-option\n                    color=\"secondary\"\n                    *ngFor=\"let user of userArr\"\n                    value=\"{{user.id}}\"\n                    >{{user.name}}\n                  </ion-select-option>\n                </ion-select>\n              </ion-item>\n\n              <ion-item detail=\"false\">\n                <ion-label\n                  size=\"small\"\n                  color=\"medium\"\n                  position=\"stacked\"\n                  class=\"ion-text-start ion-text-capitalize ion-text-wrap\"\n                >\n                  Choose a Report Date\n                </ion-label>\n\n                <ion-select\n                  calss=\"ion-dark\"\n                  color=\"dark\"\n                  name=\"dates\"\n                  id=\"dates\"\n                  [(ngModel)]=\"taskDate\"\n                >\n                  <ion-select-option\n                    size=\"samll\"\n                    *ngFor=\"let date of dateArr\"\n                    value=\"{{date}}\"\n                    >{{date}}</ion-select-option\n                  >\n                </ion-select>\n              </ion-item>\n              <div\n                style=\"\n                  text-align: center !important;\n                  margin-left: 20%;\n                  margin-right: 20%;\n                \"\n              >\n                <ion-button\n                  class=\"ion-text-capitalize\"\n                  color=\"primary\"\n                  expand=\"block\"\n                  (click)=\"processData()\"\n                  >Generate Report</ion-button\n                >\n              </div>\n            </ion-list>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col size=\"12\" class=\"ion-border\" color=\"light\">\n            <div\n              style=\"text-align: center !important;\"\n              id=\"div_pie\"\n              class=\"ion-padding\"\n            ></div>\n          </ion-col>\n        </ion-row>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n";
     /***/
   },
 
@@ -256,10 +256,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.dateArr = new Array(0);
         this.taskDate = "2020-08-14";
         this.api.getUsers().subscribe(function (data) {
-          _this.userArr = data;
+          _this.userArr = data.sort(function (a, b) {
+            return a.name > b.name ? 1 : b.name > a.name ? -1 : 0;
+          });
         });
         this.api.getTasks().subscribe(function (data) {
-          var _iterator = _createForOfIteratorHelper(data),
+          var sortdata = data.sort(function (a, b) {
+            return Date.parse(b.taskdate) - Date.parse(a.taskdate);
+          }).slice();
+
+          var _iterator = _createForOfIteratorHelper(sortdata),
               _step;
 
           try {
@@ -286,7 +292,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }
 
               if (!duplicate) {
-                _this.dateArr.push(t.taskdate);
+                if (t.taskdate) _this.dateArr.push(t.taskdate);
               }
             }
           } catch (err) {
@@ -330,8 +336,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           try {
             for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
               var t = _step3.value;
-              data.addRows([[t.task, parseFloat(t.progress + '') / 100]]);
-              total = total + parseFloat(t.progress + '') / 100;
+              data.addRows([[t.task, parseFloat(t.progress + "") / 100]]);
+              total = total + parseFloat(t.progress + "") / 100;
             }
           } catch (err) {
             _iterator3.e(err);

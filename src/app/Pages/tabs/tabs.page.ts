@@ -17,6 +17,7 @@ export class TabsPage implements OnInit {
     console.log("TabsPage-ngOnInit-ngOnInit",us)
     if(us)
     {
+      
       this.auth.userChange.emit(us);
     }
  
