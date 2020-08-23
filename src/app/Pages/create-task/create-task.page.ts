@@ -39,6 +39,7 @@ export class CreateTaskPage implements OnInit {
     console.log("New-Task Page From FORM: ", this.form.value.title, this.form.value.description);
     this.tasksService.addTask(this.form.value.title, this.form.value.description).subscribe();
     this.form.reset();
-    this.modalCtrl.dismiss(null, 'task created');
+   this.modalCtrl.dismiss(null, 'task created');
+   // window.location.replace('tasktracker/mytasks')
   }
 }
