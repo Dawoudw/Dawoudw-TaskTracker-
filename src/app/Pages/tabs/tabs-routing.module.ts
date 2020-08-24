@@ -2,8 +2,6 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { TabsPage } from "./tabs.page";
 import { ActivateGuard } from "src/app/Services/activate.guard";
- 
-
 
 const routes: Routes = [
   {
@@ -28,6 +26,16 @@ const routes: Routes = [
             path: "",
             loadChildren:
               "../team-progress/team-progress.module#TeamProgressPageModule",
+          },
+        ],
+      },
+      {
+        path: "taskview",
+        children: [
+          {
+            path: ":taskid",
+            loadChildren:
+              "../task-subview/task-subview.module#TaskSubviewPageModule",
           },
         ],
       },

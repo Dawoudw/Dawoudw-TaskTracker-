@@ -95,6 +95,9 @@ export class TasksService {
         })
       );
   }
+  getSubTasks(taskId): Promise <any>{
+    return this.httpClient.get<any>(`${this.path}/task?subtask=${taskId}`).toPromise();
+  }
 
   addTask(taskTitle: string, taskDescription: string) {
     console.log(

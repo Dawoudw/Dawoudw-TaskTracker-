@@ -6,6 +6,7 @@ import { AuthService } from "src/app/Services/authService.service";
 import { UsersService } from "src/app/Services/users.service";
 import { TasksService } from "src/app/Services/tasks.service";
 import { Task } from "src/app/Models/task";
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: "app-user-tasks",
@@ -22,7 +23,8 @@ export class UserTasksPage implements OnInit {
     private activeroute: ActivatedRoute,
     private aut: AuthService,
     private usrServ: UsersService,
-    private taskServ: TasksService
+    private taskServ: TasksService,
+    public navCtr:NavController,
   ) {}
 
   private getUserTasks() {
@@ -41,7 +43,10 @@ export class UserTasksPage implements OnInit {
       });
     });
   }
-
+  back()
+  {
+    this.navCtr.back();
+  }
   ngOnInit() {}
   ionViewWillEnter() {
     //  console.log("this.ionViewWillEnter");

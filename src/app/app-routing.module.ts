@@ -89,6 +89,11 @@ const routes: Routes = [
     redirectTo: "index",
     pathMatch: "full",
   },
+   
+  // {
+  //   path: 'task-subview',
+  //   loadChildren: () => import('./Pages/task-subview/task-subview.module').then( m => m.TaskSubviewPageModule)
+  // },
 ];
 @NgModule({
   imports: [

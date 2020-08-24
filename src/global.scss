@@ -63,12 +63,20 @@
   button.alertButton {
     color: var(--ion-color-danger-contrast);
     background: var(--ion-color-danger-tint);
+    text-align: center;
+    text-transform: capitalize;
   }
   .alertHeader {
     color: var(--ion-color-danger);
   }
 }
+// ion-refresher ion-refresher-content {
+//   --color:rgb(179, 27, 27) !important;
 
+//   .refresher-pulling-text, .refresher-refreshing-text, .refresher-refreshing-icon, .refresher-pulling-icon {
+//     color: rgb(180, 124, 124) !important;
+//   }
+// }
 :root {
   .dark-theme {
     //--ion-toolbar-background: #1e1e1e;
@@ -161,7 +169,6 @@
       color: var(--ion-color-danger-contrast);
     }
     .alertButton {
-   
       --background: var(--ion-color-dark-tint);
       button.alertButton {
         color: var(--ion-color-danger-contrast);
@@ -170,6 +177,9 @@
       .alertHeader {
         color: var(--ion-color-danger);
       }
+    }
+    ion-chip {
+      --background: var(--ion-color-dark-tint);
     }
 
     // --ion-card-background: #1c1c1d;

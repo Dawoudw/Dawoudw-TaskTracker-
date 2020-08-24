@@ -9,6 +9,7 @@ import { TeamProgressPageRoutingModule } from './team-progress-routing.module';
 import { TeamProgressPage } from './team-progress.page';
  
 import { UserTasksPage } from '../user-tasks/user-tasks.page';
+import { TodayTasksComponent } from 'src/app/Components/today-tasks/users-progress.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { UserTasksPage } from '../user-tasks/user-tasks.page';
     IonicModule,
     TeamProgressPageRoutingModule
   ],
-  declarations: [TeamProgressPage , UserTasksPage]
+  declarations: [TeamProgressPage , UserTasksPage , TodayTasksComponent]
 })
 export class TeamProgressPageModule {}

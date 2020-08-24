@@ -9,6 +9,7 @@
                 <ion-back-button
                   text=""
                   defaultHref="tasktracker/team-progress"
+               
                 ></ion-back-button>
               </ion-buttons>
 
@@ -45,14 +46,15 @@
             style="justify-items: left;"
           >
             <ion-col>
-              <ion-item>
+              <ion-item       [routerLink]="['/', 'tasktracker', 'taskview', item.id]"
+              detail="true">
                 <ion-label
                   class="ion-text-start ion-text-capitalize ion-text-wrap"
                 >
                   <h3><b> {{i+1}}- </b>{{ item.task }}</h3>
 
-                  <ion-note size="samll" slot="start" class="default">
-                    <i style="font-size: smaller;"> {{item.taskdate}}</i>
+                  <ion-note size="samll" slot="start" class="default" color="secondary">
+                    <i style="font-size: smaller;"> {{item.taskdate|date}}</i>
                   </ion-note>
                 </ion-label>
 

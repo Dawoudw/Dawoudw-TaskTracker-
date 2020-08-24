@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" name="return-down-back-outline"></ion-icon
+      ></ion-button>
+    </ion-buttons>
+    <ion-title size="small" color="primary">
+      <ion-label>
+        <ion-label color="primary" class="ion-text-align-center ion-text-capitalize">
+          <b>View Task Deatils</b></ion-label
+        >
+      </ion-label></ion-title
+    >
+  </ion-toolbar>
+</ion-header>
+
+<!-- Card view  -->
+<ion-content fullscreen>
+  <ion-grid>
+    <ion-row>
+      <ion-col
+        size-xs="12"
+        size-xsm="12"
+        size-xs="12"
+        size-med="6"
+        size-lg="6"
+        offset-med="3"
+        offset-lg="3"
+      >
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
+          <ion-item>
+            <ion-label
+              color="primary"
+              class="ion-text-start ion-text-capitalize ion-text-wrap"
+            >
+              <h3><b>{{ loadedTask.task }} </b></h3>
+
+              <ion-text size="samll" slot="start" color="secondary">
+                <i style="font-size: smaller;"> {{loadedTask.taskdate|date}}</i>
+              </ion-text>
+              <ion-badge
+                style="float: right;"
+                [color]="
+                loadedTask.progress > 99
+                      ? 'success'
+                      : loadedTask.progress < 50
+                      ? 'warning'
+                      : 'primary'
+                  "
+              >
+                {{ loadedTask.progress}}%
+              </ion-badge>
+              <ion-label
+                size="samll"
+                class="ion-text-start ion-text-capitalize"
+              >
+                <ion-text
+                  color="medium"
+                  size="samll"
+                  class="ion-text-start ion-text-wrap"
+                >
+                  {{ loadedTask.details}}
+                </ion-text>
+              </ion-label>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+
+        <!--     
+        <div class="ion-padding">
+          <ion-button expand="block" type="submit" class="ion-no-margin"
+            >Save</ion-button
+          >
+        </div> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
