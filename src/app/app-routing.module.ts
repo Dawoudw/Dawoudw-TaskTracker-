@@ -84,11 +84,13 @@ const routes: Routes = [
   { path: "index", loadChildren: "./Pages/home/home.module#HomePageModule" },
 
   { path: "login", loadChildren: "./Pages/login/login.module#LoginPageModule" },
-  {
-    path: "**",
-    redirectTo: "index",
-    pathMatch: "full",
-  },
+ 
+  // {
+  //   path: "**",
+  //   redirectTo: "index",
+  //   pathMatch: "full",
+  // },
+ 
    
   // {
   //   path: 'task-subview',

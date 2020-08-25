@@ -206,7 +206,7 @@ export class AuthService {
     localStorage.clear();
     sessionStorage.clear();
 
-    this.redirectToLogin();
+    this.redirectToHome();
   }
   // async openDialog(email): Promise <any>{
   // let dialogRef = this.dialog.open(ForgotComponent, {data : {email: email}});

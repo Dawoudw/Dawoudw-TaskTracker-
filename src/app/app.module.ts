@@ -17,9 +17,10 @@ import { TasksService } from "./Services/tasks.service";
 import { ReportService } from "./Services/report.service";
 import { TaskProgressService } from "./Services/task-progress-service.service";
 import { ThemeService } from "./Services/theme-service.service";
-
+// import { SubTaskComponent } from "./Components/sub-task/sub-task.component";
+// import { ExpandableComponent } from "./Components/expandable/expandable.component";
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent ],
   entryComponents: [],
   imports: [
     BrowserModule,

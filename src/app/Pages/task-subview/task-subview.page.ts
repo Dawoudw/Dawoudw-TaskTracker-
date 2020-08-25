@@ -1,9 +1,23 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Renderer2,
+  ElementRef,
+  ViewChild,
+  RendererFactory2,
+} from "@angular/core";
 import { Task } from "../../Models/task";
 import { ActivatedRoute } from "@angular/router";
-import { NavController, AlertController } from "@ionic/angular";
+import {
+  NavController,
+  AlertController,
+  ModalController,
+} from "@ionic/angular";
 import { TasksService } from "src/app/Services/tasks.service";
 import { Subscription } from "rxjs";
+
+import { CreateSubtaskPage } from "../create-subtask/create-subtask.page";
+import { AuthService } from "src/app/Services/authService.service";
 
 @Component({
   selector: "app-task-subview",
@@ -13,16 +27,29 @@ import { Subscription } from "rxjs";
 export class TaskSubviewPage implements OnInit {
   loadedTask = Object.create(Task); // Variable need to be initialized!!!
   taskSub: Subscription;
+  rendr: Renderer2;
+  subTasks: any[] = new Array();
+
+  @ViewChild("divMsg") divMsg: ElementRef;
 
   constructor(
     private route: ActivatedRoute,
     private navCtrl: NavController,
     private tasksService: TasksService,
     private alCtr: AlertController,
-    public navCtr:NavController,
-  ) {}
+    public navCtr: NavController,
+    private modalCtrl: ModalController,
+    private renderFctry: RendererFactory2,
+    public auth: AuthService
+  ) {
+    this.rendr = renderFctry.createRenderer(null, null);
+  }
 
   ngOnInit() {
+    this.loadData();
+  }
+
+  loadData() {
     this.route.paramMap.subscribe((paramMap) => {
       if (!paramMap.has("taskid")) {
         this.navCtrl.navigateBack("/tasktracker/teamprogress");
@@ -34,15 +61,37 @@ export class TaskSubviewPage implements OnInit {
         .subscribe((task) => {
           console.log("Subscripting: ", task);
           this.loadedTask = task;
-          this.loadedTask.progress=this.parsPercentage(task.progress);
+          this.loadedTask.progress = this.parsPercentage(task.progress);
           console.log("This.loadedTask.id = ", this.loadedTask.id);
+          this.getSubTasks(task.id).then((res) => {
+            // res[0].expanded=true;
+            this.subTasks = res;
+
+            this.subTasks.map((item) => {
+              item.expanded = false;
+            });
+            if (this.subTasks.length < 1) {
+              this.divMsg.nativeElement.style.display = "block";
+            } else {
+              this.divMsg.nativeElement.style.display = "none";
+              this.subTasks[0].expanded = true;
+            }
+            console.log("   this.subTasks .expanded= ; ", this.subTasks);
+          });
         });
     });
   }
+  async getSubTasks(taskid): Promise<any[]> {
+    let subtasklist = await this.tasksService
+      .getSubTasks(taskid)
+      .then((res) => {
+        console.log(" getSubTasks(taskid): Promise<SubTask[]>", res);
 
-  updateTask() {
-    console.log("The task is going to be updated with data: ", this.loadedTask);
-    this.tasksService.updateTask(this.loadedTask).subscribe();
+        return res.sort(
+          (a, b) => Date.parse(b.taskdate) - Date.parse(a.taskdate)
+        ); // order by date DESC;
+      });
+    return subtasklist;
   }
   back() {
     this.navCtrl.back();
@@ -70,5 +119,42 @@ export class TaskSubviewPage implements OnInit {
     if (this.taskSub) {
       this.taskSub.unsubscribe();
     }
+  }
+  openNewTaskModal() {
+    if (this.auth.isLoggedIn()) {
+      this.modalCtrl
+        .create({
+          component: CreateSubtaskPage,
+          componentProps: { task: this.loadedTask },
+        })
+        .then((modalElement) => {
+          modalElement.present();
+          return modalElement.onDidDismiss();
+        })
+        .then((resultData) => {
+          console.log("ResultData: ", resultData);
+          this.loadData();
+        });
+    } else return false;
+  }
+
+  itemId: any;
+  expandItem(item) {
+    this.subTasks.map((listItem: any) => {
+      if (item == listItem) {
+        listItem.expanded = !listItem.expanded;
+      } else {
+        listItem.expanded = false;
+      }
+
+      // if (!listItem) {
+      //   this.rendr.setAttribute(
+      //     this.lstTasks.nativeElement,
+      //     "detailIcon",
+      //     "chevron-down-outline"
+      //   );
+      // }
+      return listItem;
+    });
   }
 }

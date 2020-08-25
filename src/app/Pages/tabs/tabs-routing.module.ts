@@ -40,6 +40,17 @@ const routes: Routes = [
         ],
       },
       {
+        path: "create-subtask",
+        children: [
+          {
+            path: ":taskid",
+            canActivate: [ActivateGuard],
+            loadChildren:
+              "../create-subtask/create-subtask.module#CreateSubtaskPageModule",
+          },
+        ],
+      },
+      {
         path: "mytasks",
         canActivate: [ActivateGuard],
         children: [
@@ -55,6 +66,30 @@ const routes: Routes = [
           {
             path: "",
             loadChildren: "../tab2/tab2.module#Tab2PageModule",
+          },
+        ],
+      },
+      {
+        path: "group-chat",
+        children: [
+          {
+            path: "",
+            loadChildren: "../group-chat/group-chat.module#GroupChatPageModule",
+          },
+        ],
+      },
+      {
+        path: "chat",
+        children: [
+          {
+            path: "",
+
+            children: [
+              {
+                path: ":email/:userid",
+                loadChildren: "../chat/chat.module#ChatPageModule",
+              },
+            ],
           },
         ],
       },

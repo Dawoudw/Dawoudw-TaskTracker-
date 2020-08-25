@@ -7,6 +7,7 @@ import { ReportService } from "src/app/Services/report.service";
 import { UsersService } from "src/app/Services/users.service";
 import { TasksService } from "src/app/Services/tasks.service";
 import { TodayTasksComponent } from "src/app/Components/today-tasks/users-progress.component";
+import { AuthService } from 'src/app/Services/authService.service';
 @Component({
   selector: "app-team-progress",
   templateUrl: "team-progress.page.html",
@@ -16,17 +17,20 @@ export class TeamProgressPage {
   userProgress = new Array<UserProgress>();
   tasks: Task[] = new Array();
   users: User[] = new Array();
-
+user:User = new User();
   constructor(
     private datasev: TaskProgressService,
     private repServ: ReportService,
-    private usrServ: UsersService,
-    private taskServ: TasksService
+    public usrServ: UsersService,
+    private taskServ: TasksService,
+    public  auth:AuthService
   ) {
     this.getUserProgress();
+
+
   }
   isLoaded: boolean = false;
-  ngOnInit() {
+  ngOnInit() {    this.user=this.auth.getLoggedUser()
     //  this.isLoaded = true;
     //  this.getTotalUserTasks();
   }
