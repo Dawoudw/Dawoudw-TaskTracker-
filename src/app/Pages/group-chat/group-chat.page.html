@@ -1,0 +1,65 @@
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-down-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="dots"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+<ion-item-divider>
+  <ion-label>
+    Signed in as: {{ currentUserEmail }}
+  </ion-label>
+</ion-item-divider>
+
+  <!-- Showing Groups created using "Create A Group Button" -->
+  <ion-item-divider *ngIf="listOfGroups2.length!=0">
+    <ion-label>Your Groups</ion-label>
+  </ion-item-divider>
+  <ion-item button *ngFor="let item of listOfGroups2;"
+    (click)="GroupChat(item.payload.doc.data().id,item.payload.doc.data().title)"
+  >
+    <ion-label class="ion-text-wrap">
+      <ion-text color="primary">
+        <h3>{{ item.payload.doc.data().title }}</h3>
+        </ion-text>
+        <p>{{ item.payload.doc.data().users}} Users</p>
+        <!-- <p>Group id: {{ item.payload.doc.data().id }}</p> -->
+    </ion-label>
+  </ion-item>
+
+
+
+<ion-item-divider>
+  <ion-label>
+    Contacts (All Available Users)
+  </ion-label>
+</ion-item-divider>
+<ion-item button *ngFor="let item of listOfUsers;"  (click)="oneOnOneChat(item.payload.doc.data().email,item.payload.doc.data().userName)">
+  <ion-label>
+    {{ item.payload.doc.data().email }}
+    <p>{{ item.payload.doc.data().userName }}</p>
+  </ion-label>
+  <!-- Keep either a button or a routerlink--both togather will not work -->
+  <!-- <ion-button icon-only (click)="oneOnOneChat(item.payload.doc.data().email,item.payload.doc.data().nickname)">
+    <ion-icon name="chatbubble-outline"></ion-icon>
+  </ion-button> -->
+  <!-- <ion-button icon-only>
+    <ion-icon name="call-outline"></ion-icon>
+  </ion-button> -->
+</ion-item>
+
+
+
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-button color="light" fill="clear" expand="full" routerLink="/start-chat">Create a new Group</ion-button>
+  </ion-toolbar>
+</ion-footer>
