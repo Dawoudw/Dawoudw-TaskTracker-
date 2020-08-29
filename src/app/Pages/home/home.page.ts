@@ -67,6 +67,7 @@ export class HomePage implements OnInit {
           // console.log("found an existing user with this user id ="+data[0].id);
           // this.chatService.currentUserIdFromFirebase = data[0].id;
           this.chatService.currentUserIdFromFirebaseSetFromHomePage = data[0].id;
+          console.log(this.chatService.currentUserIdFromFirebaseSetFromHomePage);
           // localStorage.setItem(data[0].id, "userIdFirebase");
           localStorage.setItem("clientIdFirebase", JSON.stringify(data[0].id));
           // this.groupId = data[0].id;

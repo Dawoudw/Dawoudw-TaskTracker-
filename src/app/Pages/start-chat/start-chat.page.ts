@@ -63,7 +63,7 @@ export class StartChatPage implements OnInit {
     console.log(this.users.length);
     this.chatService.createGroup(this.title, this.users).then(res => {
       console.log("group created");
-      this.router.navigateByUrl('/chats');
+      this.router.navigateByUrl('/tasktracker/group-chat');
     });
     this.users = [];
   }

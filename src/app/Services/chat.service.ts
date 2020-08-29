@@ -133,13 +133,13 @@ export class ChatService {
   // }
 
   getAllGroups2(){
-    return this.db.collection(`usersTaskTracker/${this.currentUserIdFromFireabase}/groups`).snapshotChanges();
+    return this.db.collection(`usersTaskTracker/${this.currentUserIdFromFirebaseSetFromHomePage}/groups`).snapshotChanges();
   }
 
   createGroup(title, users) {
     let current = {
       email: this.currentUser.email,
-      id: this.currentUserIdFromFireabase,
+      id: this.currentUserIdFromFirebaseSetFromHomePage,
       userName: this.currentUser.userName
     };
     // console.log("additional user(s) is/are: ");
@@ -200,7 +200,7 @@ export class ChatService {
             // setTimeout(() => {
             //   // console.log("mId ="+mId);
             // }, 1000);
-            if((r.payload.doc.data()['readFlag'] == false) && (uId != this.currentUserIdFromFireabase)) {
+            if((r.payload.doc.data()['readFlag'] == false) && (uId != this.currentUserIdFromFirebaseSetFromHomePage)) {
               count = count+1;
             }
           });
@@ -230,7 +230,7 @@ export class ChatService {
   addChatMessage(msg, chatId) {
     return this.db.collection('groupsTaskTracker/' + chatId + '/messages').add({
       msg: msg,
-      from: this.currentUserIdFromFireabase,
+      from: this.currentUserIdFromFirebaseSetFromHomePage,
       readFlag: false,
       unreadCount: 0,
       createdAt: firebase.firestore.FieldValue.serverTimestamp()
@@ -238,7 +238,7 @@ export class ChatService {
   }
 
   addFileMessage(file, chatId) {
-    let newName = `${new Date().getTime()}-${this.currentUserIdFromFireabase}.png`;
+    let newName = `${new Date().getTime()}-${this.currentUserIdFromFirebaseSetFromHomePage}.png`;
     let storageRef: AngularFireStorageReference = this.storage.ref(`/files/${chatId}/${newName}`);
 
     return {
@@ -250,7 +250,7 @@ export class ChatService {
   saveFileMessage(filepath, chatId) {
     return this.db.collection('groupsTaskTracker/' + chatId + '/messages').add({
       file: filepath,
-      from: this.currentUserIdFromFireabase,
+      from: this.currentUserIdFromFirebaseSetFromHomePage,
       createdAt: firebase.firestore.FieldValue.serverTimestamp()
     });
   }

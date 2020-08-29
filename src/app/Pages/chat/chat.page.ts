@@ -22,9 +22,9 @@ export class ChatPage implements OnInit {
   messages: Observable<any[]>;
   newMsg = '';
   chatTitle = '';
-  // currentUserId = this.chatService.currentUserIdFromFirebaseSetFromHomePage;
+  currentUserId = this.chatService.currentUserIdFromFirebaseSetFromHomePage;
   // currentUserId = JSON.parse(localStorage.getItem("clientIdFirebase"));
-  currentUserId = this.chatService.currentUserIdFromFireabase;
+  // currentUserId = this.chatService.currentUserIdFromFireabase;
   chat = null;
   leaveGroupFlag: Boolean;
 

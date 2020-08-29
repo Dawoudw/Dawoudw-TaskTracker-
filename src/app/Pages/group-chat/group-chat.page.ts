@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ChatService } from 'src/app/Services/chat.service';
-import { forkJoin, Observable } from 'rxjs';
+import { forkJoin, Observable, Subject } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { take, map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { filter, startWith, takeUntil } from 'rxjs/operators';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
   templateUrl: './group-chat.page.html',
   styleUrls: ['./group-chat.page.scss'],
 })
-export class GroupChatPage implements OnInit {
+export class GroupChatPage implements OnDestroy,OnInit {
   
   constructor(
     public chatService: ChatService,
@@ -23,11 +24,13 @@ export class GroupChatPage implements OnInit {
   currentUserEmail = this.chatService.currentUser.email;
   listOfGroups = this.chatService.listOfGroups;
   listOfGroups2 = [];
-  currentFirebaseUserId = this.chatService.currentUserIdFromFireabase;
+  currentFirebaseUserId = this.chatService.currentUserIdFromFirebaseSetFromHomePage;
+  // currentFirebaseUserId = this.chatService.currentUserIdFromFireabase;
   titleCheck = '';
   groupId: any;
   participant = '';
   users = [];
+  private ngUnsubscribe = new Subject();
 
   ngOnInit() {
     console.log("check firebase user id set from home page here ="+this.currentFirebaseUserId);
@@ -201,7 +204,7 @@ export class GroupChatPage implements OnInit {
   createGroup(title, users) {
     let current = {
       email: this.chatService.currentUser.email,
-      id: this.chatService.currentUserIdFromFireabase,
+      id: this.chatService.currentUserIdFromFirebaseSetFromHomePage,
       userName: this.chatService.currentUser.userName
     };
     let allUsers = [current];
@@ -226,7 +229,11 @@ export class GroupChatPage implements OnInit {
   }
 
 
-
+  ngOnDestroy() {
+    console.log("ngOnDestroy() executed");
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
+}
 
 
 
