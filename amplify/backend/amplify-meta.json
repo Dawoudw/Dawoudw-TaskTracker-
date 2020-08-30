@@ -1,77 +1,15 @@
 {
     "providers": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-tasktracker-dev-150403-authRole",
-            "UnauthRoleArn": "arn:aws:iam::262059594156:role/amplify-tasktracker-dev-150403-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::262059594156:role/amplify-tasktracker-dev-150403-authRole",
+            "AuthRoleName": "amplify-tasktracker-uat-144845-authRole",
+            "UnauthRoleArn": "arn:aws:iam::262059594156:role/amplify-tasktracker-uat-144845-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::262059594156:role/amplify-tasktracker-uat-144845-authRole",
             "Region": "us-east-2",
-            "DeploymentBucketName": "amplify-tasktracker-dev-150403-deployment",
-            "UnauthRoleName": "amplify-tasktracker-dev-150403-unauthRole",
-            "StackName": "amplify-tasktracker-dev-150403",
-            "StackId": "arn:aws:cloudformation:us-east-2:262059594156:stack/amplify-tasktracker-dev-150403/977c2250-dcce-11ea-a05c-0249de0bf3ca",
-            "AmplifyAppId": "d2lb6rt5rytpng"
-        }
-    },
-    "auth": {
-        "tasktracker3778736d": {
-            "service": "Cognito",
-            "providerPlugin": "awscloudformation",
-            "dependsOn": [],
-            "customAuth": false,
-            "providerMetadata": {
-                "s3TemplateURL": "https://s3.amazonaws.com/amplify-tasktracker-dev-150403-deployment/amplify-cfn-templates/auth/tasktracker3778736d-cloudformation-template.yml",
-                "logicalId": "authtasktracker3778736d"
-            },
-            "lastPushTimeStamp": "2020-08-26T05:03:09.562Z",
-            "output": {
-                "AppClientSecret": "1bg0vustb1mlc92iumtse72g6j13hatb1mjftqlavn0d8vkl3377",
-                "UserPoolId": "us-east-2_9fLoO5YN8",
-                "AppClientIDWeb": "9m3lusa56lgttv1liis3eejil",
-                "AppClientID": "6h800n7p4tu8ajosbrriv8jkjr",
-                "IdentityPoolId": "us-east-2:31e73415-c350-43ba-b0b1-80c79c964d98",
-                "IdentityPoolName": "tasktracker3778736d_identitypool_3778736d__dev",
-                "UserPoolName": "tasktracker3778736d_userpool_3778736d"
-            },
-            "lastPushDirHash": "QwpJlCBmyGp4jqf5JqyrdhjkKjA="
-        }
-    },
-    "hosting": {
-        "amplifyhosting": {
-            "service": "amplifyhosting",
-            "providerPlugin": "awscloudformation",
-            "type": "manual",
-            "providerMetadata": {
-                "s3TemplateURL": "https://s3.amazonaws.com/amplify-tasktracker-dev-150403-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
-                "logicalId": "hostingamplifyhosting"
-            },
-            "lastPushTimeStamp": "2020-08-26T05:03:09.564Z",
-            "output": {},
-            "lastPushDirHash": "/+VZ33seFFqAr6wbtptwbINUfSA="
-        }
-    },
-    "api": {
-        "tasktracker": {
-            "service": "AppSync",
-            "providerPlugin": "awscloudformation",
-            "output": {
-                "authConfig": {
-                    "defaultAuthentication": {
-                        "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-                        "userPoolConfig": {
-                            "userPoolId": "authtasktracker3778736d"
-                        }
-                    },
-                    "additionalAuthenticationProviders": []
-                },
-                "GraphQLAPIIdOutput": "vmhoqo7q7nctffojgqnu5lbl34",
-                "GraphQLAPIEndpointOutput": "https://xfpek4eifzdupp4zykse3z334u.appsync-api.us-east-2.amazonaws.com/graphql"
-            },
-            "providerMetadata": {
-                "s3TemplateURL": "https://s3.amazonaws.com/amplify-tasktracker-dev-150403-deployment/amplify-cfn-templates/api/cloudformation-template.json",
-                "logicalId": "apitasktracker"
-            },
-            "lastPushTimeStamp": "2020-08-26T05:03:09.566Z",
-            "lastPushDirHash": "ulVovDHE6DPWThprIH2cw+Hiq1k="
+            "DeploymentBucketName": "amplify-tasktracker-uat-144845-deployment",
+            "UnauthRoleName": "amplify-tasktracker-uat-144845-unauthRole",
+            "StackName": "amplify-tasktracker-uat-144845",
+            "StackId": "arn:aws:cloudformation:us-east-2:262059594156:stack/amplify-tasktracker-uat-144845/1b2e5e50-e95f-11ea-9b5a-0a3902103c50",
+            "AmplifyAppId": "d1q7qu0yu4spdm"
         }
     }
 }

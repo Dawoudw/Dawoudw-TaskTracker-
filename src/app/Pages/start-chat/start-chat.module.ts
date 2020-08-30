@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { StartChatPageRoutingModule } from './start-chat-routing.module';
-
+import {TextAvatarModule} from '../../directives/text-avatar.directive.module'
 import { StartChatPage } from './start-chat.page';
 
 @NgModule({
@@ -13,7 +13,8 @@ import { StartChatPage } from './start-chat.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    StartChatPageRoutingModule
+    StartChatPageRoutingModule,
+    TextAvatarModule
   ],
   declarations: [StartChatPage]
 })

@@ -1,26 +1,15 @@
 {
-    "dev": {
+    "uat": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-tasktracker-dev-150403-authRole",
-            "UnauthRoleArn": "arn:aws:iam::262059594156:role/amplify-tasktracker-dev-150403-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::262059594156:role/amplify-tasktracker-dev-150403-authRole",
+            "AuthRoleName": "amplify-tasktracker-uat-144845-authRole",
+            "UnauthRoleArn": "arn:aws:iam::262059594156:role/amplify-tasktracker-uat-144845-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::262059594156:role/amplify-tasktracker-uat-144845-authRole",
             "Region": "us-east-2",
-            "DeploymentBucketName": "amplify-tasktracker-dev-150403-deployment",
-            "UnauthRoleName": "amplify-tasktracker-dev-150403-unauthRole",
-            "StackName": "amplify-tasktracker-dev-150403",
-            "StackId": "arn:aws:cloudformation:us-east-2:262059594156:stack/amplify-tasktracker-dev-150403/977c2250-dcce-11ea-a05c-0249de0bf3ca",
-            "AmplifyAppId": "d2lb6rt5rytpng"
-        },
-        "categories": {
-            "auth": {
-                "tasktracker3778736d": {}
-            },
-            "hosting": {
-                "amplifyhosting": {
-                    "appId": "d2lb6rt5rytpng",
-                    "type": "manual"
-                }
-            }
+            "DeploymentBucketName": "amplify-tasktracker-uat-144845-deployment",
+            "UnauthRoleName": "amplify-tasktracker-uat-144845-unauthRole",
+            "StackName": "amplify-tasktracker-uat-144845",
+            "StackId": "arn:aws:cloudformation:us-east-2:262059594156:stack/amplify-tasktracker-uat-144845/1b2e5e50-e95f-11ea-9b5a-0a3902103c50",
+            "AmplifyAppId": "d1q7qu0yu4spdm"
         }
     }
 }

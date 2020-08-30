@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { GroupChatPageRoutingModule } from './group-chat-routing.module';
-
+import{TextAvatarModule} from '../../directives/text-avatar.directive.module'
 import { GroupChatPage } from './group-chat.page';
 
 @NgModule({
@@ -13,7 +13,8 @@ import { GroupChatPage } from './group-chat.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    GroupChatPageRoutingModule
+    GroupChatPageRoutingModule,
+    TextAvatarModule,
   ],
   declarations: [GroupChatPage]
 })

@@ -59,10 +59,10 @@ export class TaskSubviewPage implements OnInit {
       this.taskSub = this.tasksService
         .getTask(paramMap.get("taskid"))
         .subscribe((task) => {
-          console.log("Subscripting: ", task);
+         // console.log("Subscripting: ", task);
           this.loadedTask = task;
           this.loadedTask.progress = this.parsPercentage(task.progress);
-          console.log("This.loadedTask.id = ", this.loadedTask.id);
+          //console.log("This.loadedTask.id = ", this.loadedTask.id);
           this.getSubTasks(task.id).then((res) => {
             // res[0].expanded=true;
             this.subTasks = res;
@@ -76,7 +76,7 @@ export class TaskSubviewPage implements OnInit {
               this.divMsg.nativeElement.style.display = "none";
               this.subTasks[0].expanded = true;
             }
-            console.log("   this.subTasks .expanded= ; ", this.subTasks);
+        //    console.log("   this.subTasks .expanded= ; ", this.subTasks);
           });
         });
     });
@@ -85,7 +85,7 @@ export class TaskSubviewPage implements OnInit {
     let subtasklist = await this.tasksService
       .getSubTasks(taskid)
       .then((res) => {
-        console.log(" getSubTasks(taskid): Promise<SubTask[]>", res);
+       // console.log(" getSubTasks(taskid): Promise<SubTask[]>", res);
 
         return res.sort(
           (a, b) => Date.parse(b.taskdate) - Date.parse(a.taskdate)
@@ -132,7 +132,7 @@ export class TaskSubviewPage implements OnInit {
           return modalElement.onDidDismiss();
         })
         .then((resultData) => {
-          console.log("ResultData: ", resultData);
+         // console.log("ResultData: ", resultData);
           this.loadData();
         });
     } else return false;

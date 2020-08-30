@@ -24,7 +24,7 @@ export class UsersService {
       );
     });
     console.log("usersList", users);
-    // console.log("usersAr", this.usersList);
+   console.log("usersAr", this.usersList);
     return this.usersList;
   }
   async findUserById(id): Promise<User> {

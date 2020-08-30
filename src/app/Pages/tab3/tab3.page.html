@@ -34,7 +34,7 @@
     "
   >
     <ion-refresher
-      style="position: relative; z-index: 2; top: 0px;"
+      style="position: relative; z-index: 2; top: 0px"
       slot="fixed"
       (ionRefresh)="doRefresh($event)"
     >
@@ -77,19 +77,19 @@
     <ion-row *ngIf="!isLoading && loadedTasks.length >0">
       <ion-col size="12" size-lg="6" offset-med="3" offset-lg="3">
         <ion-row>
-          <ion-col size="auto">
+          <ion-col size="auto" (click)="getAllTasks()">
             <ion-chip outline color="primary">
               <ion-label> Tasks <b>({{loadedTasks.length}}) </b></ion-label>
             </ion-chip>
           </ion-col>
-          <ion-col size="auto">
+          <ion-col size="auto" (click)="getInprogress()">
             <ion-chip outline color="warning">
               <ion-label>
                 In-Progress <b>({{getTotalInProgress()}}) </b>
               </ion-label>
             </ion-chip>
           </ion-col>
-          <ion-col size="auto">
+          <ion-col size="auto" (click)="getCompleted()">
             <ion-chip outline color="success">
               <ion-label> Done <b>({{getTotalCompleted()}}) </b> </ion-label>
             </ion-chip>
@@ -97,8 +97,8 @@
         </ion-row>
         <ion-list>
           <ion-row
-            *ngFor="let tk of loadedTasks let i = index"
-            style="justify-items: left;"
+            *ngFor="let tk of userProgress let i = index"
+            style="justify-items: left"
           >
             <ion-col>
               <ion-item-sliding #slidingItem>
@@ -115,7 +115,7 @@
                     </ion-note>
                     <ion-badge
                       slot="end"
-                      style="float: right;"
+                      style="float: right"
                       [color]="
                     tk.progress  > 0.99
                           ? 'success'

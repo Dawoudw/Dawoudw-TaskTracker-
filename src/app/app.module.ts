@@ -27,10 +27,11 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { Camera } from '@ionic-native/camera/ngx';
 import { Firebase } from '@ionic-native/firebase/ngx';
+//import { TextAvatarDirective } from './directives/text-avatar.directive';
 // import { SubTaskComponent } from "./Components/sub-task/sub-task.component";
 // import { ExpandableComponent } from "./Components/expandable/expandable.component";
 @NgModule({
-  declarations: [AppComponent, HeaderComponent ],
+  declarations: [AppComponent, HeaderComponent, ],
   entryComponents: [],
   imports: [
     BrowserModule,

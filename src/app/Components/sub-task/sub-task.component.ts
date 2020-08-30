@@ -34,4 +34,9 @@ export class SubTaskComponent implements OnInit {
   // }
 
   ngOnInit() {}
+
+  parsPercentage(val): number {
+    return parseInt(val) > 1 ? parseInt(val) : parseInt(val) * 100;
+  }
+
 }

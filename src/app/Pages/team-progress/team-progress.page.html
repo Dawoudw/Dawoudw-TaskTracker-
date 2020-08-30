@@ -26,7 +26,7 @@
     <ion-refresher
       #refTeamProgress
       id="refTeamProgress"
-      style="position: relative; z-index: 2; top: 0px;"
+      style="position: relative; z-index: 2; top: 0px"
       slot="fixed"
       (ionRefresh)="doRefresh($event)"
     >
@@ -58,11 +58,12 @@
           ngDefaultControl
           name="lstTaskProgress"
         >
-          <ion-row style="justify-items: left;">
+          <ion-row style="justify-items: left">
             <ion-col>
               <ion-item [routerLink]="['./', item.userId]" detail="true">
                 <ion-avatar slot="start" name="avatar">
-                  <img src="../assets/images/avatar.svg" />
+                  <!-- <img src="../assets/images/avatar.svg" /> -->
+                  <text-avatar  text ={{item.userName}}></text-avatar>
                 </ion-avatar>
                 <ion-label class="ion-text-start ion-text-capitalize">
                   <ion-label color="primary" mode="ios" position="stacked">
@@ -74,7 +75,7 @@
                   </ion-label>
                   <ion-label mode="ios" position="stacked">
                     <ion-badge
-                      style="margin: 0px;"
+                      style="margin: 0px"
                       [color]="
                         item.avgProgress > 99
                           ? 'success'
@@ -90,7 +91,7 @@
               </ion-item>
             </ion-col>
 
-            <ion-col size="auto">
+            <!-- <ion-col size="auto">
               <ion-icon
                 [routerLink]="['/tasktracker','chat',user? user.email:'',user? user.userId:'']"
                 color="primary"
@@ -105,7 +106,7 @@
                 "
                 class="ion-text-start"
               ></ion-icon>
-            </ion-col>
+            </ion-col> -->
           </ion-row>
         </ion-list>
       </ion-col>
