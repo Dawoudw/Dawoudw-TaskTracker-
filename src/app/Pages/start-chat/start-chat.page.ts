@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, OnDestroy } from "@angular/core";
 import { ChatService } from "src/app/Services/chat.service";
 
 import { NavController, IonSelect } from "@ionic/angular";
@@ -9,7 +9,7 @@ import { RouterOutlet, Router, ActivationStart } from "@angular/router";
   templateUrl: "./start-chat.page.html",
   styleUrls: ["./start-chat.page.scss"],
 })
-export class StartChatPage implements OnInit {
+export class StartChatPage implements OnInit ,OnDestroy {
   constructor(
     public chatService: ChatService,
     private navCtrl: NavController,
@@ -132,7 +132,7 @@ export class StartChatPage implements OnInit {
     // this.participant1 = "";
     this.title = "";
   }
-  ionWillLeave()
+  ionViewWillLeave()
   {
     this.reset();
   }

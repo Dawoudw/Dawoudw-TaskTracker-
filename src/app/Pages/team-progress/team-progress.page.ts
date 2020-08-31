@@ -7,6 +7,8 @@ import { ReportService } from "src/app/Services/report.service";
 import { UsersService } from "src/app/Services/users.service";
 import { TasksService } from "src/app/Services/tasks.service";
 import { AuthService } from "src/app/Services/authService.service";
+import { ModalController, NavController } from '@ionic/angular';
+import { CreateTaskPage } from '../create-task/create-task.page';
 @Component({
   selector: "app-team-progress",
   templateUrl: "team-progress.page.html",
@@ -22,7 +24,9 @@ export class TeamProgressPage {
     private repServ: ReportService,
     public usrServ: UsersService,
     private taskServ: TasksService,
-    public auth: AuthService
+    public auth: AuthService,
+    private modalCtrl: ModalController, 
+    private navCtrl: NavController,
   ) {
     this.getUserProgress();
   }
@@ -134,7 +138,21 @@ export class TeamProgressPage {
       (parseFloat(val) > 1 ? parseFloat(val) : parseFloat(val) * 100).toFixed(0)
     );
   }
-
+  openNewTaskModal() {
+    this.modalCtrl
+      .create({
+        component: CreateTaskPage,
+      })
+      .then((modalElement) => {
+        modalElement.present();
+        return modalElement.onDidDismiss();
+      })
+      .then((resultData) => {
+        this.navCtrl.navigateRoot(["tasktracker/mytasks"]);
+        console.log("ResultData: ", resultData);
+      });
+  
+  }
   async doRefresh(e) {
     await new Promise(() => {
       this.isLoaded = true;

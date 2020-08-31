@@ -7,7 +7,13 @@
       ></ion-back-button>
     </ion-buttons>
     <!-- <ion-title>{{ chat?.title }}</ion-title> -->
-    <ion-chip size="small" color="primary"><p>{{ chatTitle }}</p> </ion-chip>
+
+    <ion-chip class="ion-margin-start" color="primary">
+      <ion-avatar>
+        <text-avatar text="{{chatTitle}}"></text-avatar>
+      </ion-avatar>
+      <ion-label>{{ chatTitle }}</ion-label>
+    </ion-chip>
     <ion-buttons slot="end">
       <!-- <ion-button  fill="clear" (click)="leave()">
         Leave Group
@@ -20,15 +26,17 @@
 </ion-header>
 
 <ion-content #content class="ion-padding">
-  <ion-grid>
-    <ion-row *ngFor="let message of messages | async">
-      <ion-col
-        size="9"
-        size-md="6"
-        *ngIf="message.from !== currentUserId"
-        class="message other-message"
-      >
-        <strong> <small>{{ message.user }} </small></strong><br />
+  <ion-list
+    class="ion-no-padding ion-no-margin"
+    lines="none"
+    detail="false"
+    ngDefaultControl
+    [(ngModel)]="messages"
+    name="lstmessages"
+    #lstmessages
+    *ngFor="let message of messages | async"
+  >
+    <!-- <strong> <small>{{ message.user }} </small></strong><br />
         <span
           >{{ message.msg }}
           <img [src]="message.file" *ngIf="message.file" />
@@ -36,28 +44,77 @@
 
         <div class="time ion-text-right">
           <br />{{ message.createdAt?.toMillis() | date:'short' }}
-        </div>
-      </ion-col>
+        </div> -->
 
-      <ion-col
-        offset="3"
-        offset-md="6"
-        size="9"
-        size-md="6"
-        *ngIf="message.from === currentUserId"
-        class="message my-message"
-      >
-        <small>{{ message.user }}</small><br />
-        <span
-          >{{ message.msg }}
-          <img [src]="message.file" *ngIf="message.file" />
-        </span>
-        <div class="time ion-text-right">
-          <br />{{ message.createdAt?.toMillis() | date:'short' }}
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+    <ion-chip
+      *ngIf="message.from !== currentUserId"
+      slot="end"
+      color="warning"
+      outline="false"
+      style="height: auto; float: left !important"
+    >
+      <ion-label>
+       <small><b> {{ message.user }}</b></small>
+        <ion-note
+          ><p>{{message.msg}}</p>
+
+          <ion-label position="stacked">
+            <img [src]="message.file" *ngIf="message.file" />
+            <ion-note position="stacked"
+              ><p>
+                <small class="time ion-text-right"
+                  >{{ message.createdAt?.toMillis() | date:'short' }}</small
+                >
+              </p>
+            </ion-note></ion-label
+          >
+        </ion-note>
+      </ion-label>
+      <!--  -->
+    </ion-chip>
+
+    <ion-chip
+      *ngIf="message.from === currentUserId"
+      slot="end"
+      color="secondary"
+      style="height: auto; float: right !important"
+    >
+      <ion-label>
+        <small><b> {{ message.user }}</b></small>
+        <ion-note
+          ><p>{{message.msg}}</p>
+
+          <ion-label position="stacked">
+            <img [src]="message.file" *ngIf="message.file" />
+            <ion-note position="stacked"
+              ><p>
+                <small class="time ion-text-right"
+                  >{{ message.createdAt?.toMillis() | date:'short' }}</small
+                >
+              </p>
+            </ion-note></ion-label
+          >
+        </ion-note>
+      </ion-label>
+      <!-- <small class="time ion-text-right">{{ message.createdAt?.toMillis() | date:'short' }}</small> -->
+      <!-- <ion-label>
+        <ion-label position="fixed">
+          <b> <small>{{ message.user }} </small></b></ion-label
+        >
+        <ion-label> <ion-text> {{ message.msg}} </ion-text></ion-label>
+        <ion-label>
+          <p><img [src]="message.file" *ngIf="message.file" /></p>
+        </ion-label>
+        <ion-label>
+          <ion-note class="time ion-text-right">
+            <p>
+              <small>{{ message.createdAt?.toMillis() | date:'short' }}</small>
+            </p>
+          </ion-note>
+        </ion-label>
+      </ion-label> -->
+    </ion-chip>
+  </ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button size="small">

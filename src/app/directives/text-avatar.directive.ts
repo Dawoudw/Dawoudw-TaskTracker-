@@ -49,7 +49,8 @@ export class TextAvatarDirective {
       let newarray1 = [];
 
       for (var x = 0; x < array1.length; x++) {
-        newarray1.push(array1[x].charAt(0).toUpperCase());
+        if (x < 2) newarray1.push(array1[x].charAt(0).toUpperCase());
+        else break;
       }
       return newarray1.join("");
     } else return "??";

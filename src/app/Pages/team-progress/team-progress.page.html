@@ -63,7 +63,7 @@
               <ion-item [routerLink]="['./', item.userId]" detail="true">
                 <ion-avatar slot="start" name="avatar">
                   <!-- <img src="../assets/images/avatar.svg" /> -->
-                  <text-avatar  text ={{item.userName}}></text-avatar>
+                  <text-avatar text="{{item.userName}}"></text-avatar>
                 </ion-avatar>
                 <ion-label class="ion-text-start ion-text-capitalize">
                   <ion-label color="primary" mode="ios" position="stacked">
@@ -113,4 +113,15 @@
     </ion-row>
   </ion-grid>
   <app-today-tasks *ngIf='checkTeam.value =="calendar"'></app-today-tasks>
+  <ion-fab
+    *ngIf="auth.isLoggedIn()"
+    (click)="openNewTaskModal()"
+    vertical="bottom"
+    horizontal="end"
+    slot="fixed"
+  >
+    <ion-fab-button size="small">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

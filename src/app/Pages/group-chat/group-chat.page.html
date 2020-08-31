@@ -37,13 +37,12 @@
         <ion-icon
           [color]="checkTeam.value=='group' ? 'secondary' : ''"
           src="../assets/images/chat-group.svg"
-       
         ></ion-icon>
       </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
 </ion-header>
-<ion-content>
+<ion-content fullscreen>
   <ion-fab
     *ngIf=' checkTeam.value=="group" '
     vertical="top"
@@ -85,10 +84,15 @@
         <ion-list *ngFor="let item of listOfUsers;" name="lstusers">
           <ion-row style="justify-items: left">
             <ion-col>
-              <ion-item detail="false">
+              <ion-item
+                detail="false"
+                (click)="oneOnOneChat(item.payload.doc.data().email,item.payload.doc.data().userName)"
+              >
                 <ion-avatar slot="start" name="avatar">
                   <!-- <img src="../assets/images/avatar.svg" /> -->
-                  <text-avatar  text ={{item.payload.doc.data().userName}}></text-avatar>
+                  <text-avatar
+                    text="{{item.payload.doc.data().userName}}"
+                  ></text-avatar>
                 </ion-avatar>
                 <ion-label
                   color="secondary"
@@ -96,13 +100,11 @@
                   class="ion-text-start ion-text-capitalize"
                 >
                   {{ item.payload.doc.data().userName }}
-                </ion-label>
-                <ion-label
-                  position="stacked"
-                  class="ion-no-margin ion-no-padding ion-text-wrap"
-                  style="font-size: x-small"
-                >
-                  {{ item.payload.doc.data().email }}
+                  <ion-label class="ion-no-margin ion-no-padding ion-text-wrap">
+                    <ion-note position="stacked">
+                      <small> {{ item.payload.doc.data().email }}</small>
+                    </ion-note></ion-label
+                  >
                 </ion-label>
               </ion-item>
             </ion-col>

@@ -60,17 +60,21 @@ export class GroupChatPage implements OnDestroy, OnInit {
     });
   }
   getAllUserGroups() {
-    //get all groups for group chats
-    this.listOfGroups2 = new Array();
-    this.chatService.getAllGroups2().subscribe((result) => {
-      result.forEach((r) => {
-        if (r.payload.doc.data()["type"] == "group") {
-          // console.log("id of these groups =");
-          // console.log(r.payload.doc.id);
-          this.listOfGroups2.push(r);
-        }
+    try {
+      //get all groups for group chats
+      this.listOfGroups2 = new Array();
+      this.chatService.getAllGroups2().subscribe((result) => {
+        result.forEach((r) => {
+          if (r.payload.doc.data()["type"] == "group") {
+            // console.log("id of these groups =");
+            // console.log(r.payload.doc.id);
+            this.listOfGroups2.push(r);
+          }
+        });
       });
-    });
+    } catch (err) {
+      console.log(err);
+    }
   }
   //swipe down to refresh
   loading: boolean;
