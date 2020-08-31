@@ -5,7 +5,9 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IonContent } from '@ionic/angular';
 import { map } from 'rxjs/operators';
+import { Plugins } from '@capacitor/core';
 
+ 
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.page.html',
