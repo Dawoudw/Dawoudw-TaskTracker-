@@ -1,7 +1,9 @@
 {
   "name": "TaskTracker",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
-  "type": "angular"
+  "type": "angular",
+  "id": "c7388467"
 }
