@@ -78,21 +78,31 @@ const routes: Routes = [
           },
         ],
       },
-      {
-        path: "chat",
-        children: [
-          {
-            path: "",
 
-            children: [
-              {
-                path: ":email/:userid",
-                loadChildren: "../chat/chat.module#ChatPageModule",
-              },
-            ],
-          },
-        ],
-      },
+      // {
+      //   path: 'chat/:id',
+      //   children: [
+      //     {
+      //       path: "",
+      //       loadChildren: "../chat/chat.module#ChatPageModule",
+      //     },
+      //   ],
+      // },
+      // {
+      //   path: "chat",
+      //   children: [
+      //     {
+      //       path: "",
+
+      //       children: [
+      //         {
+      //           path: ":email/:userid",
+      //           loadChildren: "../chat/chat.module#ChatPageModule",
+      //         },
+      //       ],
+      //     },
+      //   ],
+      // },
       // {
       //   path: "login",
       //   children: [

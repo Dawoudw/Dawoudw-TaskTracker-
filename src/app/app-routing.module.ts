@@ -88,6 +88,12 @@ const routes: Routes = [
     path: 'start-chat',
     loadChildren: () => import('./Pages/start-chat/start-chat.module').then( m => m.StartChatPageModule)
   },
+  {
+    // path: 'chat',
+    path: 'chat/:id',
+    // path: 'chat/:groupId/:CurrentUserIdFromFirebase',
+    loadChildren: () => import('./Pages/chat/chat.module').then( m => m.ChatPageModule)
+  },
  
   // {
   //   path: "**",
