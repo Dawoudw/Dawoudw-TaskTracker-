@@ -1,47 +1,47 @@
-<ion-grid [ngClass]="{'':!SubTaskObj.expanded , 'ActiveTask':SubTaskObj.expanded}"  >
-  <ion-row > 
+<ion-grid
+  [ngClass]="{ '': !SubTaskObj.expanded, ActiveTask: SubTaskObj.expanded }"
+>
+  <ion-row>
     <ion-col class="ion-margin-horizontal">
       <ion-list
- 
         class="ion-no-margin ion-no-padding"
         [(ngModel)]="SubTaskObj"
         ngDefaultControl
         name="lstobjects"
         #lstobjects
       >
-        <ion-item lines="none"  [ngClass]="{'':!SubTaskObj.expanded , 'item-background-color':SubTaskObj.expanded}">
-          <ion-label
-        
-            class="ion-text-start ion-text-capitalize ion-text-wrap"
-          >
+        <ion-item
+          lines="none"
+          [ngClass]="{
+            '': !SubTaskObj.expanded,
+            'item-background-color': SubTaskObj.expanded
+          }"
+        >
+          <ion-label class="ion-text-start ion-text-capitalize ion-text-wrap">
             <!-- <h3>
                 <b>{{ SubTaskObj.subtask }} </b>
               </h3> -->
 
             <ion-text size="samll" slot="start" color="secondary">
-              <i style="font-size: smaller;">
+              <i style="font-size: smaller">
                 {{ SubTaskObj.taskdate | date }}</i
               >
             </ion-text>
             <ion-badge
-              style="float: right;"
+              style="float: right"
               [color]="
                 SubTaskObj.progress > 99
                   ? 'success'
-                  : SubTaskObj.progress <50
+                  : SubTaskObj.progress < 50
                   ? 'warning'
                   : 'primary'
               "
             >
-              {{ SubTaskObj.progress }}%
+              {{ parsPercentage(SubTaskObj.progress) }}%
             </ion-badge>
             <ion-label size="samll" class="ion-text-start ion-text-capitalize">
-              <ion-text
-               
-                size="samll"
-                class="ion-text-start ion-text-wrap"
-              >
-                {{ SubTaskObj.details }}
+              <ion-text size="samll" class="ion-text-start ion-text-wrap">
+                <p>{{ SubTaskObj.details }}</p>
               </ion-text>
             </ion-label>
           </ion-label>

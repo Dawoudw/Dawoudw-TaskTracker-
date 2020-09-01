@@ -12,20 +12,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_slide", function() { return Slide; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_slides", function() { return Slides; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _index_92848855_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-92848855.js */ "./node_modules/@ionic/core/dist/esm-es5/index-92848855.js");
-/* harmony import */ var _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-23e7365a.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-23e7365a.js");
+/* harmony import */ var _index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-44bf8136.js */ "./node_modules/@ionic/core/dist/esm-es5/index-44bf8136.js");
+/* harmony import */ var _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-837be8f3.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-837be8f3.js");
 
 
 
 var slideCss = "ion-slide{display:block;width:100%;height:100%}.slide-zoom{display:block;width:100%;text-align:center}.swiper-slide{display:-ms-flexbox;display:flex;position:relative;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;font-size:18px;text-align:center;-webkit-box-sizing:border-box;box-sizing:border-box}.swiper-slide img{width:auto;max-width:100%;height:auto;max-height:100%}";
 var Slide = /** @class */ (function () {
     function Slide(hostRef) {
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
     }
     Slide.prototype.render = function () {
         var _a;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: (_a = {},
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: (_a = {},
                 _a[mode] = true,
                 _a['swiper-slide'] = true,
                 _a['swiper-zoom-container'] = true,
@@ -39,23 +39,23 @@ var slidesMdCss = ".swiper-container{margin:0 auto;position:relative;overflow:hi
 var Slides = /** @class */ (function () {
     function class_1(hostRef) {
         var _this = this;
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
-        this.ionSlidesDidLoad = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlidesDidLoad", 7);
-        this.ionSlideTap = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideTap", 7);
-        this.ionSlideDoubleTap = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideDoubleTap", 7);
-        this.ionSlideWillChange = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideWillChange", 7);
-        this.ionSlideDidChange = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideDidChange", 7);
-        this.ionSlideNextStart = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideNextStart", 7);
-        this.ionSlidePrevStart = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlidePrevStart", 7);
-        this.ionSlideNextEnd = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideNextEnd", 7);
-        this.ionSlidePrevEnd = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlidePrevEnd", 7);
-        this.ionSlideTransitionStart = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideTransitionStart", 7);
-        this.ionSlideTransitionEnd = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideTransitionEnd", 7);
-        this.ionSlideDrag = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideDrag", 7);
-        this.ionSlideReachStart = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideReachStart", 7);
-        this.ionSlideReachEnd = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideReachEnd", 7);
-        this.ionSlideTouchStart = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideTouchStart", 7);
-        this.ionSlideTouchEnd = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideTouchEnd", 7);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.ionSlidesDidLoad = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlidesDidLoad", 7);
+        this.ionSlideTap = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideTap", 7);
+        this.ionSlideDoubleTap = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideDoubleTap", 7);
+        this.ionSlideWillChange = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideWillChange", 7);
+        this.ionSlideDidChange = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideDidChange", 7);
+        this.ionSlideNextStart = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideNextStart", 7);
+        this.ionSlidePrevStart = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlidePrevStart", 7);
+        this.ionSlideNextEnd = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideNextEnd", 7);
+        this.ionSlidePrevEnd = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlidePrevEnd", 7);
+        this.ionSlideTransitionStart = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideTransitionStart", 7);
+        this.ionSlideTransitionEnd = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideTransitionEnd", 7);
+        this.ionSlideDrag = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideDrag", 7);
+        this.ionSlideReachStart = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideReachStart", 7);
+        this.ionSlideReachEnd = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideReachEnd", 7);
+        this.ionSlideTouchStart = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideTouchStart", 7);
+        this.ionSlideTouchEnd = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionSlideTouchEnd", 7);
         this.swiperReady = false;
         this.swiper = new Promise(function (resolve) { _this.readySwiper = resolve; });
         this.didInit = false;
@@ -585,13 +585,13 @@ var Slides = /** @class */ (function () {
     class_1.prototype.render = function () {
         var _a;
         var _this = this;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: (_a = {},
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: (_a = {},
                 _a["" + mode] = true,
                 // Used internally for styling
                 _a["slides-" + mode] = true,
                 _a['swiper-container'] = true,
-                _a) }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "swiper-wrapper" }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null)), this.pager && Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "swiper-pagination", ref: function (el) { return _this.paginationEl = el; } }), this.scrollbar && Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "swiper-scrollbar", ref: function (el) { return _this.scrollbarEl = el; } })));
+                _a) }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "swiper-wrapper" }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null)), this.pager && Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "swiper-pagination", ref: function (el) { return _this.paginationEl = el; } }), this.scrollbar && Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "swiper-scrollbar", ref: function (el) { return _this.scrollbarEl = el; } })));
     };
     Object.defineProperty(class_1, "assetsDirs", {
         get: function () { return ["swiper"]; },
@@ -599,7 +599,7 @@ var Slides = /** @class */ (function () {
         configurable: true
     });
     Object.defineProperty(class_1.prototype, "el", {
-        get: function () { return Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        get: function () { return Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
         enumerable: false,
         configurable: true
     });

@@ -14,10 +14,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_router", function() { return Router; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_router_link", function() { return RouterLink; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _index_92848855_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-92848855.js */ "./node_modules/@ionic/core/dist/esm-es5/index-92848855.js");
-/* harmony import */ var _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-23e7365a.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-23e7365a.js");
+/* harmony import */ var _index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-44bf8136.js */ "./node_modules/@ionic/core/dist/esm-es5/index-44bf8136.js");
+/* harmony import */ var _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-837be8f3.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-837be8f3.js");
 /* harmony import */ var _helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers-5c745fbd.js */ "./node_modules/@ionic/core/dist/esm-es5/helpers-5c745fbd.js");
-/* harmony import */ var _theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./theme-5641d27f.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-5641d27f.js");
+/* harmony import */ var _theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./theme-3f0b0c04.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js");
 
 
 
@@ -25,8 +25,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var Route = /** @class */ (function () {
     function Route(hostRef) {
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
-        this.ionRouteDataChanged = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionRouteDataChanged", 7);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.ionRouteDataChanged = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionRouteDataChanged", 7);
         /**
          * Relative path that needs to match in order for this route to apply.
          *
@@ -74,8 +74,8 @@ var Route = /** @class */ (function () {
 }());
 var RouteRedirect = /** @class */ (function () {
     function RouteRedirect(hostRef) {
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
-        this.ionRouteRedirectChanged = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionRouteRedirectChanged", 7);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.ionRouteRedirectChanged = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionRouteRedirectChanged", 7);
     }
     RouteRedirect.prototype.propDidChange = function () {
         this.ionRouteRedirectChanged.emit();
@@ -526,9 +526,9 @@ var flattenNode = function (chain, routes, node) {
 };
 var Router = /** @class */ (function () {
     function class_1(hostRef) {
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
-        this.ionRouteWillChange = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionRouteWillChange", 7);
-        this.ionRouteDidChange = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionRouteDidChange", 7);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.ionRouteWillChange = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionRouteWillChange", 7);
+        this.ionRouteDidChange = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionRouteDidChange", 7);
         this.previousPath = null;
         this.busy = false;
         this.state = 0;
@@ -922,7 +922,7 @@ var Router = /** @class */ (function () {
         };
     };
     Object.defineProperty(class_1.prototype, "el", {
-        get: function () { return Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        get: function () { return Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
         enumerable: false,
         configurable: true
     });
@@ -932,28 +932,25 @@ var routerLinkCss = ":host{--background:transparent;--color:var(--ion-color-prim
 var RouterLink = /** @class */ (function () {
     function RouterLink(hostRef) {
         var _this = this;
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
         /**
          * When using a router, it specifies the transition direction when navigating to
          * another page using `href`.
          */
         this.routerDirection = 'forward';
         this.onClick = function (ev) {
-            Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_4__["o"])(_this.href, ev, _this.routerDirection, _this.routerAnimation);
+            Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_4__["o"])(_this.href, ev, _this.routerDirection, _this.routerAnimation);
         };
     }
     RouterLink.prototype.render = function () {
         var _a;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
         var attrs = {
             href: this.href,
             rel: this.rel,
             target: this.target
         };
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["H"], { onClick: this.onClick, class: Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_4__["c"])(this.color, (_a = {},
-                _a[mode] = true,
-                _a['ion-activatable'] = true,
-                _a)) }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("a", Object.assign({}, attrs), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null))));
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["H"], { onClick: this.onClick, class: Object.assign(Object.assign({}, Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_4__["c"])(this.color)), (_a = {}, _a[mode] = true, _a['ion-activatable'] = true, _a)) }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("a", Object.assign({}, attrs), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null))));
     };
     return RouterLink;
 }());

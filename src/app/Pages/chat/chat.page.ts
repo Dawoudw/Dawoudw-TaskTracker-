@@ -22,7 +22,9 @@ export class ChatPage implements OnInit {
   messages: Observable<any[]>;
   newMsg = '';
   chatTitle = '';
-  currentUserId = this.chatService.currentUserIdFromFirebaseSetFromHomePage;
+  currentFirebaseUserId = this.chatService.currentUserIdFromFirebaseSetFromHomePage;
+  currentUserEmail = this.chatService.currentUser.email;
+  // currentUserId = this.chatService.currentUserIdFromFirebaseSetFromHomePage;
   // currentUserId = JSON.parse(localStorage.getItem("clientIdFirebase"));
   // currentUserId = this.chatService.currentUserIdFromFireabase;
   chat = null;
@@ -33,62 +35,80 @@ export class ChatPage implements OnInit {
 
 
   ngOnInit() {
-    console.log("this.currentUserId on chat page ="+this.currentUserId);
-    // //scroll to bottom on init
-    // this.scrollToBottomOnInit();
-    this.route.params.subscribe(data => {
-            // // path: 'chat/:groupId/:CurrentUserIdFromFirebase',
-            // this.route.params.subscribe(data => {
-            //   // console.log("data");
-            //   // console.log("data['groupId'] ="+data['groupId']);
-            //   // console.log("data['groupId'] ="+data['CurrentUserIdFromFirebase']);
-      // console.log(data);
-      console.log("group id received ="+data.id);
-      this.chatService.getOneGroup(data.id).subscribe(res => {
-        // console.log(res);
-        // console.log("this.currentUserId");
-        // console.log(this.currentUserId);
-        
-        //setting title for this chat page
-        if(res['type']=='OneOnOne'){
-          // console.log(res['users']);
-          res['users'].forEach(element => {
-            // console.log(element);
-            // console.log(element['id']);
-            if(element['id'] != this.currentUserId) {
-              // console.log("this is the other user's nickname");
-              // console.log(element['nickname']);
-              this.chatTitle = element['userName'];
-            }
-          });
-          // this.chatTitle = this.getMsgFromName(this.currentUserId);
-          // console.log(this.chatTitle);
-        } 
-        if(res['type']=='group') {
-          this.chatTitle = res['title'];
-          this.leaveGroupFlag = true;
-        }
-
-        this.chat = res;
-        // console.log('my chat: ', this.chat);
-        // console.log("users: ");
-        // console.log(this.chat.users);
-        this.messages = this.chatService.getChatMessages(this.chat.id).pipe(
-          map(messages => {
-            for (let msg of messages) {
-              // console.log("msg");
-              // console.log(msg);
-              msg['user'] = this.getMsgFromName(msg['from']);
-            }
-            // console.log('messages: ', messages);
-            
-            //scroll to bottom on init
-            this.scrollToBottomOnInit();
-            return messages;
-          })
-        );
+    //getting firebase userid if not found
+    if(this.currentFirebaseUserId == null || this.currentFirebaseUserId == '') {
+      console.log("firebase userid not found");
+      let user = this.chatService.findUser(this.currentUserEmail);
+      //console.log(user);  //observable
+      user.subscribe((result) => {
+        // console.log("firebase user id retrieved ="+result[0].id);
+        this.chatService.currentUserIdFromFirebaseSetFromHomePage = result[0].id;
+        this.currentFirebaseUserId = result[0].id;
+      });
+    }
+    setTimeout(() => {
+      console.log(
+        "check firebase user id here =" +
+          this.currentFirebaseUserId
+      );
+      // //scroll to bottom on init
+      // this.scrollToBottomOnInit();
+      this.route.params.subscribe(data => {
+              // // path: 'chat/:groupId/:CurrentUserIdFromFirebase',
+              // this.route.params.subscribe(data => {
+              //   // console.log("data");
+              //   // console.log("data['groupId'] ="+data['groupId']);
+              //   // console.log("data['groupId'] ="+data['CurrentUserIdFromFirebase']);
+        // console.log(data);
+        console.log("group id received ="+data.id);
+        this.chatService.getOneGroup(data.id).subscribe(res => {
+          // console.log(res);
+          // console.log("this.currentUserId");
+          // console.log(this.currentUserId);
+          
+          //setting title for this chat page
+          if(res['type']=='OneOnOne'){
+            // console.log(res['users']);
+            res['users'].forEach(element => {
+              console.log(element);
+              console.log(element['id']);
+              if(element['id'] != this.currentFirebaseUserId) {
+                // console.log("this is the other user's nickname");
+                // console.log(element['nickname']);
+                this.chatTitle = element['userName'];
+              }
+            });
+            // this.chatTitle = this.getMsgFromName(this.currentUserId);
+            // console.log(this.chatTitle);
+          } 
+          if(res['type']=='group') {
+            this.chatTitle = res['title'];
+            this.leaveGroupFlag = true;
+          }
+  
+          this.chat = res;
+          // console.log('my chat: ', this.chat);
+          // console.log("users: ");
+          // console.log(this.chat.users);
+          this.messages = this.chatService.getChatMessages(this.chat.id).pipe(
+            map(messages => {
+              for (let msg of messages) {
+                // console.log("msg");
+                // console.log(msg);
+                msg['user'] = this.getMsgFromName(msg['from']);
+              }
+              // console.log('messages: ', messages);
+              
+              //scroll to bottom on init
+              this.scrollToBottomOnInit();
+              return messages;
+            })
+          );
+        })
       })
-    })
+    }, 2000);
+  
+
 
   }
 

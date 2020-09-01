@@ -11,11 +11,11 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_toggle", function() { return Toggle; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _index_92848855_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-92848855.js */ "./node_modules/@ionic/core/dist/esm-es5/index-92848855.js");
-/* harmony import */ var _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-23e7365a.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-23e7365a.js");
+/* harmony import */ var _index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-44bf8136.js */ "./node_modules/@ionic/core/dist/esm-es5/index-44bf8136.js");
+/* harmony import */ var _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-837be8f3.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-837be8f3.js");
 /* harmony import */ var _helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers-5c745fbd.js */ "./node_modules/@ionic/core/dist/esm-es5/helpers-5c745fbd.js");
 /* harmony import */ var _haptic_7b8ba70a_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./haptic-7b8ba70a.js */ "./node_modules/@ionic/core/dist/esm-es5/haptic-7b8ba70a.js");
-/* harmony import */ var _theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./theme-5641d27f.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-5641d27f.js");
+/* harmony import */ var _theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./theme-3f0b0c04.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js");
 
 
 
@@ -27,11 +27,11 @@ var toggleMdCss = ":host{-webkit-box-sizing:content-box !important;box-sizing:co
 var Toggle = /** @class */ (function () {
     function class_1(hostRef) {
         var _this = this;
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
-        this.ionChange = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionChange", 7);
-        this.ionFocus = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionFocus", 7);
-        this.ionBlur = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionBlur", 7);
-        this.ionStyle = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionStyle", 7);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.ionChange = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionChange", 7);
+        this.ionFocus = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionFocus", 7);
+        this.ionBlur = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionBlur", 7);
+        this.ionStyle = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionStyle", 7);
         this.inputId = "ion-tg-" + toggleIds++;
         this.lastDrag = 0;
         this.activated = false;
@@ -148,7 +148,7 @@ var Toggle = /** @class */ (function () {
         var _a;
         var _this = this;
         var _b = this, inputId = _b.inputId, disabled = _b.disabled, checked = _b.checked, activated = _b.activated, color = _b.color, el = _b.el;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
         var labelId = inputId + '-lbl';
         var label = Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["f"])(el);
         var value = this.getValue();
@@ -156,17 +156,10 @@ var Toggle = /** @class */ (function () {
             label.id = labelId;
         }
         Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["a"])(true, el, this.name, (checked ? value : ''), disabled);
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["H"], { onClick: this.onClick, role: "checkbox", "aria-disabled": disabled ? 'true' : null, "aria-checked": "" + checked, "aria-labelledby": labelId, class: Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_5__["c"])(color, (_a = {},
-                _a[mode] = true,
-                _a['in-item'] = Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_5__["h"])('ion-item', el),
-                _a['toggle-activated'] = activated,
-                _a['toggle-checked'] = checked,
-                _a['toggle-disabled'] = disabled,
-                _a['interactive'] = true,
-                _a)) }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toggle-icon", part: "track" }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toggle-icon-wrapper" }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toggle-inner", part: "handle" }))), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("button", { type: "button", onFocus: this.onFocus, onBlur: this.onBlur, disabled: disabled, ref: function (btnEl) { return _this.buttonEl = btnEl; }, "aria-hidden": "true" })));
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["H"], { onClick: this.onClick, role: "checkbox", "aria-disabled": disabled ? 'true' : null, "aria-checked": "" + checked, "aria-labelledby": labelId, class: Object.assign(Object.assign({}, Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_5__["c"])(color)), (_a = {}, _a[mode] = true, _a['in-item'] = Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_5__["h"])('ion-item', el), _a['toggle-activated'] = activated, _a['toggle-checked'] = checked, _a['toggle-disabled'] = disabled, _a['interactive'] = true, _a)) }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toggle-icon", part: "track" }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toggle-icon-wrapper" }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toggle-inner", part: "handle" }))), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("button", { type: "button", onFocus: this.onFocus, onBlur: this.onBlur, disabled: disabled, ref: function (btnEl) { return _this.buttonEl = btnEl; }, "aria-hidden": "true" })));
     };
     Object.defineProperty(class_1.prototype, "el", {
-        get: function () { return Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        get: function () { return Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
         enumerable: false,
         configurable: true
     });

@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\r\n  <ion-tabs>\r\n    <ion-tab-bar #tasktracker id=\"tasktracker\" tabs=\"tasktracker\">\r\n      <ion-tab-button tab=\"home\">\r\n        <ion-icon name=\"home\"></ion-icon>\r\n        <ion-label\r\n          mode=\"md\"\r\n          style=\"font-size: smaller; font-stretch: condensed;\"\r\n          >Home</ion-label\r\n        >\r\n      </ion-tab-button>\r\n\r\n      <ion-tab-button tab=\"mytasks\">\r\n        <ion-icon name=\"list-outline\"></ion-icon>\r\n        <ion-label\r\n          mode=\"md\"\r\n          style=\"font-size: smaller; font-stretch: condensed;\"\r\n          >My Tasks</ion-label\r\n        >\r\n      </ion-tab-button>\r\n      <ion-tab-button tab=\"teamprogress\">\r\n        <ion-icon name=\"people-outline\"></ion-icon>\r\n        <ion-label\r\n          mode=\"md\"\r\n          style=\"font-size: smaller; font-stretch: condensed;\"\r\n          >Team Progress</ion-label\r\n        >\r\n      </ion-tab-button>\r\n\r\n      <ion-tab-button tab=\"reports\">\r\n        <ion-icon name=\"bar-chart-outline\"></ion-icon>\r\n        <ion-label\r\n          mode=\"md\"\r\n          style=\"font-size: smaller; font-stretch: condensed;\"\r\n          >Reports</ion-label\r\n        >\r\n      </ion-tab-button>\r\n      \r\n      <ion-tab-button tab=\"group-chat\">\r\n        <ion-icon name=\"chatbubbles-outline\"></ion-icon>\r\n        <ion-label\r\n          mode=\"md\"\r\n          style=\"font-size: smaller; font-stretch: condensed;\"\r\n          >Chat</ion-label\r\n        >\r\n      </ion-tab-button>\r\n    </ion-tab-bar>\r\n  </ion-tabs>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\r\n  <ion-tabs>\r\n    <ion-tab-bar #tasktracker id=\"tasktracker\" tabs=\"tasktracker\">\r\n      <ion-tab-button tab=\"home\">\r\n        <ion-icon name=\"home\"></ion-icon>\r\n        <ion-label\r\n          mode=\"md\"\r\n          style=\"font-size: smaller; font-stretch: condensed;\"\r\n          >Home</ion-label\r\n        >\r\n      </ion-tab-button>\r\n\r\n      <ion-tab-button tab=\"mytasks\">\r\n        <ion-icon name=\"list-outline\"></ion-icon>\r\n        <ion-label\r\n          mode=\"md\"\r\n          style=\"font-size: smaller; font-stretch: condensed;\"\r\n          >My Tasks</ion-label\r\n        >\r\n      </ion-tab-button>\r\n      <ion-tab-button tab=\"teamprogress\">\r\n        <ion-icon name=\"people-outline\"></ion-icon>\r\n        <ion-label\r\n          mode=\"md\"\r\n          style=\"font-size: smaller; font-stretch: condensed;\"\r\n          >Team Progress</ion-label\r\n        >\r\n      </ion-tab-button>\r\n\r\n      <ion-tab-button tab=\"reports\">\r\n        <ion-icon name=\"bar-chart-outline\"></ion-icon>\r\n        <ion-label\r\n          mode=\"md\"\r\n          style=\"font-size: smaller; font-stretch: condensed;\"\r\n          >Reports</ion-label\r\n        >\r\n      </ion-tab-button>\r\n      \r\n      <ion-tab-button tab=\"group-chat\">\r\n        <ion-icon   src=\"../assets/images/chat-group.svg\"></ion-icon>\r\n        <ion-label\r\n          mode=\"md\"\r\n          style=\"font-size: smaller; font-stretch: condensed;\"\r\n          >Chat</ion-label\r\n        >\r\n      </ion-tab-button>\r\n    </ion-tab-bar>\r\n  </ion-tabs>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -24,8 +24,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabsPageRoutingModule", function() { return TabsPageRoutingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _tabs_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tabs.page */ "./src/app/Pages/tabs/tabs.page.ts");
 /* harmony import */ var src_app_Services_activate_guard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/Services/activate.guard */ "./src/app/Services/activate.guard.ts");
 
@@ -37,6 +37,7 @@ var routes = [
     {
         path: "tasktracker",
         component: _tabs_page__WEBPACK_IMPORTED_MODULE_3__["TabsPage"],
+        // pathMatch: 'full',
         // loadChildren: "../tabs/tabs.module#TabsPageModule",
         // pathMatch:'prefix',
         children: [
@@ -98,6 +99,8 @@ var routes = [
             },
             {
                 path: "group-chat",
+                //  pathMatch: 'full',
+                canActivate: [src_app_Services_activate_guard__WEBPACK_IMPORTED_MODULE_4__["ActivateGuard"]],
                 children: [
                     {
                         path: "",
@@ -105,15 +108,17 @@ var routes = [
                     },
                 ],
             },
-            // {
-            //   path: 'chat/:id',
-            //   children: [
-            //     {
-            //       path: "",
-            //       loadChildren: "../chat/chat.module#ChatPageModule",
-            //     },
-            //   ],
-            // },
+            {
+                path: "start-chat",
+                //  pathMatch: 'full',
+                canActivate: [src_app_Services_activate_guard__WEBPACK_IMPORTED_MODULE_4__["ActivateGuard"]],
+                children: [
+                    {
+                        path: "",
+                        loadChildren: "../start-chat/start-chat.module#StartChatPageModule",
+                    },
+                ],
+            },
             // {
             //   path: "chat",
             //   children: [
@@ -214,10 +219,10 @@ var TabsPageRoutingModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabsPageModule", function() { return TabsPageModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm5/ionic-angular.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm5/ionic-angular.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _tabs_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tabs-routing.module */ "./src/app/Pages/tabs/tabs-routing.module.ts");
 /* harmony import */ var _tabs_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tabs.page */ "./src/app/Pages/tabs/tabs.page.ts");
 
@@ -226,6 +231,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// import{TextAvatarModule} from '../../directives/text-avatar.directive.module'
 
 var TabsPageModule = /** @class */ (function () {
     function TabsPageModule() {
@@ -273,7 +279,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabsPage", function() { return TabsPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_Services_authService_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/Services/authService.service */ "./src/app/Services/authService.service.ts");
 /* harmony import */ var src_app_Services_theme_service_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/Services/theme-service.service */ "./src/app/Services/theme-service.service.ts");
 

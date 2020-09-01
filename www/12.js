@@ -13,9 +13,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_fab_button", function() { return FabButton; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_fab_list", function() { return FabList; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _index_92848855_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-92848855.js */ "./node_modules/@ionic/core/dist/esm-es5/index-92848855.js");
-/* harmony import */ var _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-23e7365a.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-23e7365a.js");
-/* harmony import */ var _theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./theme-5641d27f.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-5641d27f.js");
+/* harmony import */ var _index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-44bf8136.js */ "./node_modules/@ionic/core/dist/esm-es5/index-44bf8136.js");
+/* harmony import */ var _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-837be8f3.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-837be8f3.js");
+/* harmony import */ var _theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./theme-3f0b0c04.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js");
 
 
 
@@ -24,7 +24,7 @@ var fabCss = ":host{position:absolute;z-index:999}:host(.fab-horizontal-center){
 var Fab = /** @class */ (function () {
     function class_1(hostRef) {
         var _this = this;
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
         /**
          * If `true`, the fab will display on the edge of the header if
          * `vertical` is `"top"`, and on the edge of the footer if
@@ -77,16 +77,16 @@ var Fab = /** @class */ (function () {
     class_1.prototype.render = function () {
         var _a;
         var _b = this, horizontal = _b.horizontal, vertical = _b.vertical, edge = _b.edge;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["H"], { onClick: this.onClick, class: (_a = {},
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["H"], { onClick: this.onClick, class: (_a = {},
                 _a[mode] = true,
                 _a["fab-horizontal-" + horizontal] = horizontal !== undefined,
                 _a["fab-vertical-" + vertical] = vertical !== undefined,
                 _a['fab-edge'] = edge,
-                _a) }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null)));
+                _a) }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null)));
     };
     Object.defineProperty(class_1.prototype, "el", {
-        get: function () { return Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        get: function () { return Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
         enumerable: false,
         configurable: true
     });
@@ -107,9 +107,9 @@ var fabButtonMdCss = ":host{--color-activated:var(--color);--color-focused:var(-
 var FabButton = /** @class */ (function () {
     function FabButton(hostRef) {
         var _this = this;
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
-        this.ionFocus = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionFocus", 7);
-        this.ionBlur = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionBlur", 7);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.ionFocus = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionFocus", 7);
+        this.ionBlur = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionBlur", 7);
         /**
          * If `true`, the fab button will be show a close icon.
          */
@@ -154,8 +154,8 @@ var FabButton = /** @class */ (function () {
         var _a;
         var _this = this;
         var _b = this, el = _b.el, disabled = _b.disabled, color = _b.color, href = _b.href, activated = _b.activated, show = _b.show, translucent = _b.translucent, size = _b.size;
-        var inList = Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_3__["h"])('ion-fab-list', el);
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var inList = Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_3__["h"])('ion-fab-list', el);
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
         var TagType = href === undefined ? 'button' : 'a';
         var attrs = (TagType === 'button')
             ? { type: this.type }
@@ -165,21 +165,10 @@ var FabButton = /** @class */ (function () {
                 rel: this.rel,
                 target: this.target
             };
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["H"], { "aria-disabled": disabled ? 'true' : null, class: Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_3__["c"])(color, (_a = {},
-                _a[mode] = true,
-                _a['fab-button-in-list'] = inList,
-                _a['fab-button-translucent-in-list'] = inList && translucent,
-                _a['fab-button-close-active'] = activated,
-                _a['fab-button-show'] = show,
-                _a['fab-button-disabled'] = disabled,
-                _a['fab-button-translucent'] = translucent,
-                _a['ion-activatable'] = true,
-                _a['ion-focusable'] = true,
-                _a["fab-button-" + size] = size !== undefined,
-                _a)) }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur, onClick: function (ev) { return Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_3__["o"])(href, ev, _this.routerDirection, _this.routerAnimation); } }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-icon", { icon: this.closeIcon, part: "close-icon", class: "close-icon", lazy: false }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("span", { class: "button-inner" }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null)), mode === 'md' && Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-ripple-effect", null))));
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["H"], { "aria-disabled": disabled ? 'true' : null, class: Object.assign(Object.assign({}, Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_3__["c"])(color)), (_a = {}, _a[mode] = true, _a['fab-button-in-list'] = inList, _a['fab-button-translucent-in-list'] = inList && translucent, _a['fab-button-close-active'] = activated, _a['fab-button-show'] = show, _a['fab-button-disabled'] = disabled, _a['fab-button-translucent'] = translucent, _a['ion-activatable'] = true, _a['ion-focusable'] = true, _a["fab-button-" + size] = size !== undefined, _a)) }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur, onClick: function (ev) { return Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_3__["o"])(href, ev, _this.routerDirection, _this.routerAnimation); } }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-icon", { icon: this.closeIcon, part: "close-icon", class: "close-icon", lazy: false }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("span", { class: "button-inner" }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null)), mode === 'md' && Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-ripple-effect", null))));
     };
     Object.defineProperty(FabButton.prototype, "el", {
-        get: function () { return Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        get: function () { return Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
         enumerable: false,
         configurable: true
     });
@@ -192,7 +181,7 @@ FabButton.style = {
 var fabListCss = ":host{margin-left:0;margin-right:0;margin-top:66px;margin-bottom:66px;display:none;position:absolute;top:0;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;align-items:center;min-width:56px;min-height:56px}:host(.fab-list-active){display:-ms-flexbox;display:flex}::slotted(.fab-button-in-list){margin-left:0;margin-right:0;margin-top:8px;margin-bottom:8px;width:40px;height:40px;-webkit-transform:scale(0);transform:scale(0);opacity:0;visibility:hidden}:host(.fab-list-side-top) ::slotted(.fab-button-in-list),:host(.fab-list-side-bottom) ::slotted(.fab-button-in-list){margin-left:0;margin-right:0;margin-top:5px;margin-bottom:5px}:host(.fab-list-side-start) ::slotted(.fab-button-in-list),:host(.fab-list-side-end) ::slotted(.fab-button-in-list){margin-left:5px;margin-right:5px;margin-top:0;margin-bottom:0}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host(.fab-list-side-start) ::slotted(.fab-button-in-list),:host(.fab-list-side-end) ::slotted(.fab-button-in-list){margin-left:unset;margin-right:unset;-webkit-margin-start:5px;margin-inline-start:5px;-webkit-margin-end:5px;margin-inline-end:5px}}::slotted(.fab-button-in-list.fab-button-show){-webkit-transform:scale(1);transform:scale(1);opacity:1;visibility:visible}:host(.fab-list-side-top){top:auto;bottom:0;-ms-flex-direction:column-reverse;flex-direction:column-reverse}:host(.fab-list-side-start){margin-left:66px;margin-right:66px;margin-top:0;margin-bottom:0;right:0;-ms-flex-direction:row-reverse;flex-direction:row-reverse}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host(.fab-list-side-start){margin-left:unset;margin-right:unset;-webkit-margin-start:66px;margin-inline-start:66px;-webkit-margin-end:66px;margin-inline-end:66px}}:host-context([dir=rtl]):host(.fab-list-side-start),:host-context([dir=rtl]).fab-list-side-start{left:unset;right:unset;left:0}:host(.fab-list-side-end){margin-left:66px;margin-right:66px;margin-top:0;margin-bottom:0;left:0;-ms-flex-direction:row;flex-direction:row}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host(.fab-list-side-end){margin-left:unset;margin-right:unset;-webkit-margin-start:66px;margin-inline-start:66px;-webkit-margin-end:66px;margin-inline-end:66px}}:host-context([dir=rtl]):host(.fab-list-side-end),:host-context([dir=rtl]).fab-list-side-end{left:unset;right:unset;right:0}";
 var FabList = /** @class */ (function () {
     function FabList(hostRef) {
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
         /**
          * If `true`, the fab list will show all fab buttons in the list.
          */
@@ -212,15 +201,15 @@ var FabList = /** @class */ (function () {
     };
     FabList.prototype.render = function () {
         var _a;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: (_a = {},
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: (_a = {},
                 _a[mode] = true,
                 _a['fab-list-active'] = this.activated,
                 _a["fab-list-side-" + this.side] = true,
-                _a) }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null)));
+                _a) }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null)));
     };
     Object.defineProperty(FabList.prototype, "el", {
-        get: function () { return Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        get: function () { return Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
         enumerable: false,
         configurable: true
     });

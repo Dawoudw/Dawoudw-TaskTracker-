@@ -16,13 +16,13 @@
     "fetchSpec": "^2.0.5"
   },
   "_requiredBy": [
-    "#DEV:/",
-    "#USER"
+    "#USER",
+    "/"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-ionic-keyboard/-/cordova-plugin-ionic-keyboard-2.2.0.tgz",
   "_shasum": "53ba9ccd5e765165446a094cfe042a2ddd87d81d",
   "_spec": "cordova-plugin-ionic-keyboard@^2.0.5",
-  "_where": "/Users/tejasramani/Other-webdev/ionic/Task-Tracker-Dev20200826",
+  "_where": "D:\\Work\\LTI\\Projects\\Ionic\\TaskTracker",
   "author": {
     "name": "Apache Software Foundation"
   },

@@ -14,9 +14,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_card_header", function() { return CardHeader; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_card_subtitle", function() { return CardSubtitle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_card_title", function() { return CardTitle; });
-/* harmony import */ var _index_92848855_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-92848855.js */ "./node_modules/@ionic/core/dist/esm-es5/index-92848855.js");
-/* harmony import */ var _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-23e7365a.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-23e7365a.js");
-/* harmony import */ var _theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./theme-5641d27f.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-5641d27f.js");
+/* harmony import */ var _index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-44bf8136.js */ "./node_modules/@ionic/core/dist/esm-es5/index-44bf8136.js");
+/* harmony import */ var _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-837be8f3.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-837be8f3.js");
+/* harmony import */ var _theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./theme-3f0b0c04.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js");
 
 
 
@@ -24,7 +24,7 @@ var cardIosCss = ":host{--ion-safe-area-left:0px;--ion-safe-area-right:0px;-moz-
 var cardMdCss = ":host{--ion-safe-area-left:0px;--ion-safe-area-right:0px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:block;position:relative;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);overflow:hidden}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}:host(.card-disabled){cursor:default;opacity:0.3;pointer-events:none}.card-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;display:block;width:100%;min-height:var(--min-height);-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);outline:none;background:inherit}.card-native::-moz-focus-inner{border:0}button,a{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none}ion-ripple-effect{color:var(--ripple-color)}:host{--background:var(--ion-card-background, var(--ion-item-background, var(--ion-background-color, #fff)));--color:var(--ion-card-color, var(--ion-item-color, var(--ion-color-step-550, #737373)));margin-left:10px;margin-right:10px;margin-top:10px;margin-bottom:10px;border-radius:4px;font-size:14px;-webkit-box-shadow:0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);box-shadow:0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host{margin-left:unset;margin-right:unset;-webkit-margin-start:10px;margin-inline-start:10px;-webkit-margin-end:10px;margin-inline-end:10px}}";
 var Card = /** @class */ (function () {
     function Card(hostRef) {
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
         /**
          * If `true`, a button tag will be rendered and the card will be tappable.
          */
@@ -50,7 +50,7 @@ var Card = /** @class */ (function () {
         var clickable = this.isClickable();
         if (!clickable) {
             return [
-                Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)
+                Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)
             ];
         }
         var _a = this, href = _a.href, routerAnimation = _a.routerAnimation, routerDirection = _a.routerDirection;
@@ -63,16 +63,12 @@ var Card = /** @class */ (function () {
                 rel: this.rel,
                 target: this.target
             };
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])(TagType, Object.assign({}, attrs, { class: "card-native", part: "native", disabled: this.disabled, onClick: function (ev) { return Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_2__["o"])(href, ev, routerDirection, routerAnimation); } }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null), clickable && mode === 'md' && Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-ripple-effect", null)));
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])(TagType, Object.assign({}, attrs, { class: "card-native", part: "native", disabled: this.disabled, onClick: function (ev) { return Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_2__["o"])(href, ev, routerDirection, routerAnimation); } }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null), clickable && mode === 'md' && Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-ripple-effect", null)));
     };
     Card.prototype.render = function () {
         var _a;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.color, (_a = {},
-                _a[mode] = true,
-                _a['card-disabled'] = this.disabled,
-                _a['ion-activatable'] = this.isClickable(),
-                _a)) }, this.renderCard(mode)));
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: Object.assign(Object.assign((_a = {}, _a[mode] = true, _a), Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.color)), { 'card-disabled': this.disabled, 'ion-activatable': this.isClickable() }) }, this.renderCard(mode)));
     };
     return Card;
 }());
@@ -84,12 +80,12 @@ var cardContentIosCss = "ion-card-content{display:block;position:relative}.card-
 var cardContentMdCss = "ion-card-content{display:block;position:relative}.card-content-md{padding-left:16px;padding-right:16px;padding-top:13px;padding-bottom:13px;font-size:14px;line-height:1.5}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.card-content-md{padding-left:unset;padding-right:unset;-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px}}.card-content-md h1{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:24px;font-weight:normal}.card-content-md h2{margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:16px;font-weight:normal}.card-content-md h3,.card-content-md h4,.card-content-md h5,.card-content-md h6{margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:14px;font-weight:normal}.card-content-md p{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:14px;font-weight:normal;line-height:1.5}ion-card-header+.card-content-md{padding-top:0}";
 var CardContent = /** @class */ (function () {
     function CardContent(hostRef) {
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
     }
     CardContent.prototype.render = function () {
         var _a;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: (_a = {},
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: (_a = {},
                 _a[mode] = true,
                 // Used internally for styling
                 _a["card-content-" + mode] = true,
@@ -105,7 +101,7 @@ var cardHeaderIosCss = ":host{--background:transparent;--color:inherit;display:b
 var cardHeaderMdCss = ":host{--background:transparent;--color:inherit;display:block;position:relative;background:var(--background);color:var(--color)}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}:host{padding-left:16px;padding-right:16px;padding-top:16px;padding-bottom:16px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host{padding-left:unset;padding-right:unset;-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px}}::slotted(ion-card-title:not(:first-child)),::slotted(ion-card-subtitle:not(:first-child)){margin-top:8px}";
 var CardHeader = /** @class */ (function () {
     function CardHeader(hostRef) {
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
         /**
          * If `true`, the card header will be translucent.
          * Only applies when the mode is `"ios"` and the device supports
@@ -115,13 +111,8 @@ var CardHeader = /** @class */ (function () {
     }
     CardHeader.prototype.render = function () {
         var _a;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.color, (_a = {
-                    'card-header-translucent': this.translucent,
-                    'ion-inherit-color': true
-                },
-                _a[mode] = true,
-                _a)) }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)));
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: Object.assign(Object.assign({}, Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.color)), (_a = { 'card-header-translucent': this.translucent, 'ion-inherit-color': true }, _a[mode] = true, _a)) }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)));
     };
     return CardHeader;
 }());
@@ -133,16 +124,12 @@ var cardSubtitleIosCss = ":host{display:block;position:relative;color:var(--colo
 var cardSubtitleMdCss = ":host{display:block;position:relative;color:var(--color)}:host(.ion-color){color:var(--ion-color-base)}:host{--color:var(--ion-color-step-550, #737373);margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;font-size:14px;font-weight:500}";
 var CardSubtitle = /** @class */ (function () {
     function CardSubtitle(hostRef) {
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
     }
     CardSubtitle.prototype.render = function () {
         var _a;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["H"], { role: "heading", "aria-level": "3", class: Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.color, (_a = {
-                    'ion-inherit-color': true
-                },
-                _a[mode] = true,
-                _a)) }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)));
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["H"], { role: "heading", "aria-level": "3", class: Object.assign(Object.assign({}, Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.color)), (_a = { 'ion-inherit-color': true }, _a[mode] = true, _a)) }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)));
     };
     return CardSubtitle;
 }());
@@ -154,16 +141,12 @@ var cardTitleIosCss = ":host{display:block;position:relative;color:var(--color)}
 var cardTitleMdCss = ":host{display:block;position:relative;color:var(--color)}:host(.ion-color){color:var(--ion-color-base)}:host{--color:var(--ion-color-step-850, #262626);margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;font-size:20px;font-weight:500;line-height:1.2}";
 var CardTitle = /** @class */ (function () {
     function CardTitle(hostRef) {
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
     }
     CardTitle.prototype.render = function () {
         var _a;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["H"], { role: "heading", "aria-level": "2", class: Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.color, (_a = {
-                    'ion-inherit-color': true
-                },
-                _a[mode] = true,
-                _a)) }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)));
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["H"], { role: "heading", "aria-level": "2", class: Object.assign(Object.assign({}, Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.color)), (_a = { 'ion-inherit-color': true }, _a[mode] = true, _a)) }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)));
     };
     return CardTitle;
 }());

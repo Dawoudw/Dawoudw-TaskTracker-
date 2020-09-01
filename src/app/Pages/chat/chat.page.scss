@@ -1,39 +1,42 @@
 .message {
-    padding: 10px !important;
-    border-radius: 10px !important;
-    margin-bottom: 4px !important;
+  padding: 10px !important;
+  border-radius: 10px !important;
+  margin-bottom: 4px !important;
 
-    img {
-      width: 100%;
-    }
+  img {
+    width: 100%;
   }
-  .my-message {
-    // background: var(--ion-color-tertiary);
-    background: darkslategray;
-    color:white;
-    // color: #fff;
-  }
-  .other-message {
-    // background: var(--ion-color-medium);
-    // color: #fff;
-    // background: var(--ion-color-light);
-    background: rgb(61, 59, 59);
-    color: white;
-  }
+}
+.my-message {
+  background: darkslategray;
+  // background: rgb(216, 252, 253);
+  color: rgb(0, 0, 0);
+  font-size: small;
+  // color: #fff;
+}
+.other-message {
+  // background: var(--ion-color-medium);
+  // color: #fff;
+  // background: var(--ion-color-light);
+  // background: rgba(255, 245, 216, 0.986);
+  background: rgb(61, 59, 59);
+  color: rgb(0, 0, 0);
+  font-size: small;
+}
 
 .time {
   // color: #dfdfdf;
   color: var(--ion-color-medium);
   float: right;
-  font-size: small;
+  font-size: x-small;
+  font-style: italic;
 }
 
 .message-input {
-    width: 100%;
-    border: 1px solid var(--ion-color-medium);
-    border-radius: 10px;
-    background: rgb(39, 38, 38);
-    color: white;
-    resize: none;
+  width: 100%;
+  border: 1px solid var(--ion-color-secondary);
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  resize: none;
 }
-

@@ -16,13 +16,13 @@
     "fetchSpec": "2.4.2"
   },
   "_requiredBy": [
-    "#DEV:/",
-    "#USER"
+    "#USER",
+    "/"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-statusbar/-/cordova-plugin-statusbar-2.4.2.tgz",
   "_shasum": "fc1fbdc0d8d7033a7e8e1f1f7ff167ac9bd4faf6",
   "_spec": "cordova-plugin-statusbar@2.4.2",
-  "_where": "/Users/tejasramani/Other-webdev/ionic/Task-Tracker-Dev20200826",
+  "_where": "D:\\Work\\LTI\\Projects\\Ionic\\TaskTracker",
   "author": {
     "name": "Apache Software Foundation"
   },

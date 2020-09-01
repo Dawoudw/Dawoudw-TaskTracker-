@@ -31,16 +31,22 @@ export class TaskDetialPage implements OnInit {
       this.taskSub = this.tasksService
         .getTask(paramMap.get("taskId"))
         .subscribe((task) => {
-          console.log("Subscripting: ", task);
+          // console.log("Subscripting: ", task);
           this.loadedTask = task;
-          console.log("This.loadedTask.id = ", this.loadedTask.id);
+          // console.log("This.loadedTask.id = ", this.loadedTask.id);
         });
     });
   }
 
   updateTask() {
-    console.log("The task is going to be updated with data: ", this.loadedTask);
-    this.tasksService.updateTask(this.loadedTask).subscribe();
+    try {
+      // console.log(
+      //   "The task is going to be updated with data: ",
+      //   this.loadedTask
+      // );
+      this.tasksService.updateTask(this.loadedTask).subscribe();
+      this.back();
+    } catch (err) {}
   }
   back() {
     this.navCtrl.back();
@@ -58,10 +64,10 @@ export class TaskDetialPage implements OnInit {
             text: "Delete",
             cssClass: "alertButton",
             handler: () => {
-              console.log(
-                "Trying to delete task with ID: ",
-                this.loadedTask.id
-              );
+              // console.log(
+              //   "Trying to delete task with ID: ",
+              //   this.loadedTask.id
+              // );
               this.tasksService.deleteTask(this.loadedTask).subscribe();
               this.navCtrl.navigateBack("/tasktracker/mytasks");
             },

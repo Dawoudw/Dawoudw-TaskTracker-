@@ -11,14 +11,14 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_popover", function() { return Popover; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _index_92848855_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-92848855.js */ "./node_modules/@ionic/core/dist/esm-es5/index-92848855.js");
-/* harmony import */ var _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-23e7365a.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-23e7365a.js");
+/* harmony import */ var _index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-44bf8136.js */ "./node_modules/@ionic/core/dist/esm-es5/index-44bf8136.js");
+/* harmony import */ var _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-837be8f3.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-837be8f3.js");
 /* harmony import */ var _helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers-5c745fbd.js */ "./node_modules/@ionic/core/dist/esm-es5/helpers-5c745fbd.js");
 /* harmony import */ var _animation_a635a2fc_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./animation-a635a2fc.js */ "./node_modules/@ionic/core/dist/esm-es5/animation-a635a2fc.js");
-/* harmony import */ var _index_9b2fc761_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./index-9b2fc761.js */ "./node_modules/@ionic/core/dist/esm-es5/index-9b2fc761.js");
+/* harmony import */ var _index_37b50f53_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./index-37b50f53.js */ "./node_modules/@ionic/core/dist/esm-es5/index-37b50f53.js");
 /* harmony import */ var _hardware_back_button_7b6ede21_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./hardware-back-button-7b6ede21.js */ "./node_modules/@ionic/core/dist/esm-es5/hardware-back-button-7b6ede21.js");
-/* harmony import */ var _overlays_2cc140a1_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./overlays-2cc140a1.js */ "./node_modules/@ionic/core/dist/esm-es5/overlays-2cc140a1.js");
-/* harmony import */ var _theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./theme-5641d27f.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-5641d27f.js");
+/* harmony import */ var _overlays_7c699579_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./overlays-7c699579.js */ "./node_modules/@ionic/core/dist/esm-es5/overlays-7c699579.js");
+/* harmony import */ var _theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./theme-3f0b0c04.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js");
 /* harmony import */ var _framework_delegate_d1eb6504_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./framework-delegate-d1eb6504.js */ "./node_modules/@ionic/core/dist/esm-es5/framework-delegate-d1eb6504.js");
 
 
@@ -262,11 +262,11 @@ var popoverMdCss = ".sc-ion-popover-md-h{--background:var(--ion-background-color
 var Popover = /** @class */ (function () {
     function class_1(hostRef) {
         var _this = this;
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
-        this.didPresent = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionPopoverDidPresent", 7);
-        this.willPresent = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionPopoverWillPresent", 7);
-        this.willDismiss = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionPopoverWillDismiss", 7);
-        this.didDismiss = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionPopoverDidDismiss", 7);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.didPresent = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionPopoverDidPresent", 7);
+        this.willPresent = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionPopoverWillPresent", 7);
+        this.willDismiss = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionPopoverWillDismiss", 7);
+        this.didDismiss = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionPopoverDidDismiss", 7);
         this.presented = false;
         /**
          * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
@@ -296,7 +296,7 @@ var Popover = /** @class */ (function () {
             _this.dismiss();
         };
         this.onBackdropTap = function () {
-            _this.dismiss(undefined, _overlays_2cc140a1_js__WEBPACK_IMPORTED_MODULE_7__["B"]);
+            _this.dismiss(undefined, _overlays_7c699579_js__WEBPACK_IMPORTED_MODULE_7__["B"]);
         };
         this.onLifecycle = function (modalEvent) {
             var el = _this.usersElement;
@@ -312,7 +312,7 @@ var Popover = /** @class */ (function () {
         };
     }
     class_1.prototype.connectedCallback = function () {
-        Object(_overlays_2cc140a1_js__WEBPACK_IMPORTED_MODULE_7__["e"])(this.el);
+        Object(_overlays_7c699579_js__WEBPACK_IMPORTED_MODULE_7__["e"])(this.el);
     };
     /**
      * Present the popover overlay after it has been created.
@@ -335,10 +335,10 @@ var Popover = /** @class */ (function () {
                         return [4 /*yield*/, Object(_framework_delegate_d1eb6504_js__WEBPACK_IMPORTED_MODULE_9__["a"])(this.delegate, container, this.component, ['popover-viewport', this.el['s-sc']], data)];
                     case 1:
                         _a.usersElement = _b.sent();
-                        return [4 /*yield*/, Object(_index_9b2fc761_js__WEBPACK_IMPORTED_MODULE_5__["e"])(this.usersElement)];
+                        return [4 /*yield*/, Object(_index_37b50f53_js__WEBPACK_IMPORTED_MODULE_5__["e"])(this.usersElement)];
                     case 2:
                         _b.sent();
-                        return [2 /*return*/, Object(_overlays_2cc140a1_js__WEBPACK_IMPORTED_MODULE_7__["d"])(this, 'popoverEnter', iosEnterAnimation, mdEnterAnimation, this.event)];
+                        return [2 /*return*/, Object(_overlays_7c699579_js__WEBPACK_IMPORTED_MODULE_7__["d"])(this, 'popoverEnter', iosEnterAnimation, mdEnterAnimation, this.event)];
                 }
             });
         });
@@ -354,7 +354,7 @@ var Popover = /** @class */ (function () {
             var shouldDismiss;
             return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, Object(_overlays_2cc140a1_js__WEBPACK_IMPORTED_MODULE_7__["f"])(this, data, role, 'popoverLeave', iosLeaveAnimation, mdLeaveAnimation, this.event)];
+                    case 0: return [4 /*yield*/, Object(_overlays_7c699579_js__WEBPACK_IMPORTED_MODULE_7__["f"])(this, data, role, 'popoverLeave', iosLeaveAnimation, mdLeaveAnimation, this.event)];
                     case 1:
                         shouldDismiss = _a.sent();
                         if (!shouldDismiss) return [3 /*break*/, 3];
@@ -371,24 +371,24 @@ var Popover = /** @class */ (function () {
      * Returns a promise that resolves when the popover did dismiss.
      */
     class_1.prototype.onDidDismiss = function () {
-        return Object(_overlays_2cc140a1_js__WEBPACK_IMPORTED_MODULE_7__["g"])(this.el, 'ionPopoverDidDismiss');
+        return Object(_overlays_7c699579_js__WEBPACK_IMPORTED_MODULE_7__["g"])(this.el, 'ionPopoverDidDismiss');
     };
     /**
      * Returns a promise that resolves when the popover will dismiss.
      */
     class_1.prototype.onWillDismiss = function () {
-        return Object(_overlays_2cc140a1_js__WEBPACK_IMPORTED_MODULE_7__["g"])(this.el, 'ionPopoverWillDismiss');
+        return Object(_overlays_7c699579_js__WEBPACK_IMPORTED_MODULE_7__["g"])(this.el, 'ionPopoverWillDismiss');
     };
     class_1.prototype.render = function () {
         var _a;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
         var onLifecycle = this.onLifecycle;
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["H"], { "aria-modal": "true", "no-router": true, tabindex: "-1", style: {
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["H"], { "aria-modal": "true", "no-router": true, tabindex: "-1", style: {
                 zIndex: "" + (20000 + this.overlayIndex),
-            }, class: Object.assign(Object.assign({}, Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_8__["g"])(this.cssClass)), (_a = {}, _a[mode] = true, _a['popover-translucent'] = this.translucent, _a)), onIonPopoverDidPresent: onLifecycle, onIonPopoverWillPresent: onLifecycle, onIonPopoverWillDismiss: onLifecycle, onIonPopoverDidDismiss: onLifecycle, onIonDismiss: this.onDismiss, onIonBackdropTap: this.onBackdropTap }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-backdrop", { tappable: this.backdropDismiss, visible: this.showBackdrop }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { tabindex: "0" }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "popover-wrapper ion-overlay-wrapper" }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "popover-arrow" }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "popover-content" })), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { tabindex: "0" })));
+            }, class: Object.assign(Object.assign({}, Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_8__["g"])(this.cssClass)), (_a = {}, _a[mode] = true, _a['popover-translucent'] = this.translucent, _a)), onIonPopoverDidPresent: onLifecycle, onIonPopoverWillPresent: onLifecycle, onIonPopoverWillDismiss: onLifecycle, onIonPopoverDidDismiss: onLifecycle, onIonDismiss: this.onDismiss, onIonBackdropTap: this.onBackdropTap }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-backdrop", { tappable: this.backdropDismiss, visible: this.showBackdrop }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { tabindex: "0" }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "popover-wrapper ion-overlay-wrapper" }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "popover-arrow" }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "popover-content" })), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { tabindex: "0" })));
     };
     Object.defineProperty(class_1.prototype, "el", {
-        get: function () { return Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        get: function () { return Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
         enumerable: false,
         configurable: true
     });

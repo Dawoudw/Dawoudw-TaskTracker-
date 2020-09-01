@@ -21216,8 +21216,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageRoutingModule", function() { return HomePageRoutingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _home_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home.page */ "./src/app/Pages/home/home.page.ts");
 
 
@@ -21256,10 +21256,10 @@ var HomePageRoutingModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageModule", function() { return HomePageModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm5/ionic-angular.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm5/ionic-angular.js");
 /* harmony import */ var _home_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./home-routing.module */ "./src/app/Pages/home/home-routing.module.ts");
 /* harmony import */ var _home_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./home.page */ "./src/app/Pages/home/home.page.ts");
 
@@ -21299,7 +21299,7 @@ var HomePageModule = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("ion-content {\n  --background: none;\n  background-image: url('homeBg.png');\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: contain;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy90ZWphc3JhbWFuaS9PdGhlci13ZWJkZXYvaW9uaWMvVGFzay1UcmFja2VyLURldjIwMjAwODI2L3NyYy9hcHAvUGFnZXMvaG9tZS9ob21lLnBhZ2Uuc2NzcyIsInNyYy9hcHAvUGFnZXMvaG9tZS9ob21lLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFBO0VBQ0EsbUNBQUE7RUFDQSwyQkFBQTtFQUNBLDRCQUFBO0VBQ0Esd0JBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL1BhZ2VzL2hvbWUvaG9tZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tY29udGVudCB7XHJcbiAgLS1iYWNrZ3JvdW5kOiBub25lO1xyXG4gIGJhY2tncm91bmQtaW1hZ2U6IHVybChcIi4uLy4uLy4uL2Fzc2V0cy9pbWFnZXMvaG9tZUJnLnBuZ1wiKTtcclxuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7XHJcbiAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxuICBiYWNrZ3JvdW5kLXNpemU6IGNvbnRhaW47XHJcbi8vICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbn1cclxuXHJcbi8vICBpb24tY29udGVudCB7XHJcbi8vICAgLS1iYWNrZ3JvdW5kOiBub25lO1xyXG4vLyAgIGJhY2tncm91bmQtaW1hZ2U6IHVybChcIi4uLy4uLy4uL2Fzc2V0cy9pbWFnZXMvdGFza3RyYWNrZXItc3ZnMDAuc3ZnXCIpO1xyXG4vLyAgIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlcjtcclxuLy8gICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xyXG4vLyAgIGJhY2tncm91bmQtc2l6ZTpjb250YWluO1xyXG4gXHJcbi8vIH1cclxuXHJcbi8vICRiaWtlOiBcIiUzQ3N2ZyBoZWlnaHQ9JzI0JyB2aWV3Qm94PScwIDAgMjQgMjQnIHdpZHRoPScyNCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyUzRSUzQ3BhdGggZD0nbTUgMjAuNWEzLjUgMy41IDAgMCAxIC0zLjUtMy41IDMuNSAzLjUgMCAwIDEgMy41LTMuNSAzLjUgMy41IDAgMCAxIDMuNSAzLjUgMy41IDMuNSAwIDAgMSAtMy41IDMuNW0wLTguNWE1IDUgMCAwIDAgLTUgNSA1IDUgMCAwIDAgNSA1IDUgNSAwIDAgMCA1LTUgNSA1IDAgMCAwIC01LTVtOS44LTJoNC4ydi0xLjhoLTMuMmwtMS45NC0zLjI3Yy0uMjktLjUtLjg2LS44My0xLjQ2LS44My0uNDcgMC0uOS4xOS0xLjIuNWwtMy43IDMuNjljLS4zMS4zMS0uNS43MS0uNSAxLjIxIDAgLjYzLjMzIDEuMTYuODUgMS40N2wzLjM1IDIuMDN2NWgxLjh2LTYuNWwtMi4yNS0xLjY1IDIuMzItMi4zNW01LjkzIDEzYTMuNSAzLjUgMCAwIDEgLTMuNS0zLjUgMy41IDMuNSAwIDAgMSAzLjUtMy41IDMuNSAzLjUgMCAwIDEgMy41IDMuNSAzLjUgMy41IDAgMCAxIC0zLjUgMy41bTAtOC41YTUgNSAwIDAgMCAtNSA1IDUgNSAwIDAgMCA1IDUgNSA1IDAgMCAwIDUtNSA1IDUgMCAwIDAgLTUtNW0tMy03LjJjMSAwIDEuOC0uOCAxLjgtMS44cy0uOC0xLjgtMS44LTEuOC0xLjguOC0xLjggMS44LjggMS44IDEuOCAxLjh6Jy8lM0UlM0Mvc3ZnJTNFXCI7XHJcbi8vIC5pY29uLWJpa2Uge1xyXG4vLyAgICAgLS1iYWNrZ3JvdW5kOiBub25lO1xyXG4vLyAgICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKFwiZGF0YTppbWFnZS9zdmcreG1sLCAjeyRiaWtlfVwiKTtcclxuLy8gICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XHJcbi8vICAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXIgY2VudGVyO1xyXG4vLyAgICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxuLy8gICAgIGJhY2tncm91bmQtc2l6ZTogY29udGFpbjtcclxuIFxyXG4vLyAgIH0iLCJpb24tY29udGVudCB7XG4gIC0tYmFja2dyb3VuZDogbm9uZTtcbiAgYmFja2dyb3VuZC1pbWFnZTogdXJsKFwiLi4vLi4vLi4vYXNzZXRzL2ltYWdlcy9ob21lQmcucG5nXCIpO1xuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7XG4gIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XG4gIGJhY2tncm91bmQtc2l6ZTogY29udGFpbjtcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("ion-content {\n  --background: none;\n  background-image: url('homeBg.png');\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: contain;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy90ZWphc3JhbWFuaS9PdGhlci13ZWJkZXYvaW9uaWMvVGFzay1UcmFja2VyLURldjIwMjAwODMwL3NyYy9hcHAvUGFnZXMvaG9tZS9ob21lLnBhZ2Uuc2NzcyIsInNyYy9hcHAvUGFnZXMvaG9tZS9ob21lLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFBO0VBQ0EsbUNBQUE7RUFDQSwyQkFBQTtFQUNBLDRCQUFBO0VBQ0Esd0JBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL1BhZ2VzL2hvbWUvaG9tZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tY29udGVudCB7XHJcbiAgLS1iYWNrZ3JvdW5kOiBub25lO1xyXG4gIGJhY2tncm91bmQtaW1hZ2U6IHVybChcIi4uLy4uLy4uL2Fzc2V0cy9pbWFnZXMvaG9tZUJnLnBuZ1wiKTtcclxuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7XHJcbiAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxuICBiYWNrZ3JvdW5kLXNpemU6IGNvbnRhaW47XHJcbi8vICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbn1cclxuXHJcbi8vICBpb24tY29udGVudCB7XHJcbi8vICAgLS1iYWNrZ3JvdW5kOiBub25lO1xyXG4vLyAgIGJhY2tncm91bmQtaW1hZ2U6IHVybChcIi4uLy4uLy4uL2Fzc2V0cy9pbWFnZXMvdGFza3RyYWNrZXItc3ZnMDAuc3ZnXCIpO1xyXG4vLyAgIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlcjtcclxuLy8gICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xyXG4vLyAgIGJhY2tncm91bmQtc2l6ZTpjb250YWluO1xyXG4gXHJcbi8vIH1cclxuXHJcbi8vICRiaWtlOiBcIiUzQ3N2ZyBoZWlnaHQ9JzI0JyB2aWV3Qm94PScwIDAgMjQgMjQnIHdpZHRoPScyNCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyUzRSUzQ3BhdGggZD0nbTUgMjAuNWEzLjUgMy41IDAgMCAxIC0zLjUtMy41IDMuNSAzLjUgMCAwIDEgMy41LTMuNSAzLjUgMy41IDAgMCAxIDMuNSAzLjUgMy41IDMuNSAwIDAgMSAtMy41IDMuNW0wLTguNWE1IDUgMCAwIDAgLTUgNSA1IDUgMCAwIDAgNSA1IDUgNSAwIDAgMCA1LTUgNSA1IDAgMCAwIC01LTVtOS44LTJoNC4ydi0xLjhoLTMuMmwtMS45NC0zLjI3Yy0uMjktLjUtLjg2LS44My0xLjQ2LS44My0uNDcgMC0uOS4xOS0xLjIuNWwtMy43IDMuNjljLS4zMS4zMS0uNS43MS0uNSAxLjIxIDAgLjYzLjMzIDEuMTYuODUgMS40N2wzLjM1IDIuMDN2NWgxLjh2LTYuNWwtMi4yNS0xLjY1IDIuMzItMi4zNW01LjkzIDEzYTMuNSAzLjUgMCAwIDEgLTMuNS0zLjUgMy41IDMuNSAwIDAgMSAzLjUtMy41IDMuNSAzLjUgMCAwIDEgMy41IDMuNSAzLjUgMy41IDAgMCAxIC0zLjUgMy41bTAtOC41YTUgNSAwIDAgMCAtNSA1IDUgNSAwIDAgMCA1IDUgNSA1IDAgMCAwIDUtNSA1IDUgMCAwIDAgLTUtNW0tMy03LjJjMSAwIDEuOC0uOCAxLjgtMS44cy0uOC0xLjgtMS44LTEuOC0xLjguOC0xLjggMS44LjggMS44IDEuOCAxLjh6Jy8lM0UlM0Mvc3ZnJTNFXCI7XHJcbi8vIC5pY29uLWJpa2Uge1xyXG4vLyAgICAgLS1iYWNrZ3JvdW5kOiBub25lO1xyXG4vLyAgICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKFwiZGF0YTppbWFnZS9zdmcreG1sLCAjeyRiaWtlfVwiKTtcclxuLy8gICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XHJcbi8vICAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXIgY2VudGVyO1xyXG4vLyAgICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxuLy8gICAgIGJhY2tncm91bmQtc2l6ZTogY29udGFpbjtcclxuIFxyXG4vLyAgIH0iLCJpb24tY29udGVudCB7XG4gIC0tYmFja2dyb3VuZDogbm9uZTtcbiAgYmFja2dyb3VuZC1pbWFnZTogdXJsKFwiLi4vLi4vLi4vYXNzZXRzL2ltYWdlcy9ob21lQmcucG5nXCIpO1xuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7XG4gIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XG4gIGJhY2tncm91bmQtc2l6ZTogY29udGFpbjtcbn0iXX0= */");
 
 /***/ }),
 
@@ -21314,11 +21314,11 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePage", function() { return HomePage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm5/ionic-angular.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm5/ionic-angular.js");
 /* harmony import */ var src_app_Services_authService_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/Services/authService.service */ "./src/app/Services/authService.service.ts");
 /* harmony import */ var src_app_Services_report_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/Services/report.service */ "./src/app/Services/report.service.ts");
 /* harmony import */ var src_app_Services_chat_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/Services/chat.service */ "./src/app/Services/chat.service.ts");
@@ -21373,43 +21373,49 @@ var HomePage = /** @class */ (function () {
     };
     HomePage.prototype.checkOrCreateUserInFirebase = function () {
         var _this = this;
-        //for checking if users exists in firebase collection "usersTaskTracker"
-        var userObservable = this.chatService.findUser(this.auth.getLoggedUser().email);
-        Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["forkJoin"])(userObservable).subscribe(function (res) {
-            var e_1, _a;
-            try {
-                for (var res_1 = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__values"])(res), res_1_1 = res_1.next(); !res_1_1.done; res_1_1 = res_1.next()) {
-                    var data = res_1_1.value;
-                    if (data.length > 0) {
-                        // console.log("found an existing user with this user id ="+data[0].id);
-                        // this.chatService.currentUserIdFromFirebase = data[0].id;
-                        _this.chatService.currentUserIdFromFirebaseSetFromHomePage = data[0].id;
-                        console.log(_this.chatService.currentUserIdFromFirebaseSetFromHomePage);
-                        // localStorage.setItem(data[0].id, "userIdFirebase");
-                        localStorage.setItem("clientIdFirebase", JSON.stringify(data[0].id));
-                        // this.groupId = data[0].id;
-                        // this.router.navigateByUrl(`/chat/${this.groupId}`);
-                    }
-                    else {
-                        //User not found in firebase collection "usersTaskTracker"--creating the user
-                        console.log("user not found in firebase--in create user section");
-                        _this.db.collection('usersTaskTracker').add({
-                            email: _this.auth.getLoggedUser().email,
-                            userId: _this.auth.getLoggedUser().userId,
-                            userName: _this.auth.getLoggedUser().userName,
-                            avatar: _this.auth.getLoggedUser().avatar
-                        });
-                    }
-                }
-            }
-            catch (e_1_1) { e_1 = { error: e_1_1 }; }
-            finally {
+        try {
+            //for checking if users exists in firebase collection "usersTaskTracker"
+            var userObservable = this.chatService.findUser(this.auth.getLoggedUser().email);
+            Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["forkJoin"])(userObservable).subscribe(function (res) {
+                var e_1, _a;
                 try {
-                    if (res_1_1 && !res_1_1.done && (_a = res_1.return)) _a.call(res_1);
+                    for (var res_1 = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__values"])(res), res_1_1 = res_1.next(); !res_1_1.done; res_1_1 = res_1.next()) {
+                        var data = res_1_1.value;
+                        if (data.length > 0) {
+                            // console.log("found an existing user with this user id ="+data[0].id);
+                            // this.chatService.currentUserIdFromFirebase = data[0].id;
+                            _this.chatService.currentUserIdFromFirebaseSetFromHomePage =
+                                data[0].id;
+                            console.log(_this.chatService.currentUserIdFromFirebaseSetFromHomePage);
+                            // localStorage.setItem(data[0].id, "userIdFirebase");
+                            localStorage.setItem("clientIdFirebase", JSON.stringify(data[0].id));
+                            // this.groupId = data[0].id;
+                            // this.router.navigateByUrl(`/chat/${this.groupId}`);
+                        }
+                        else {
+                            //User not found in firebase collection "usersTaskTracker"--creating the user
+                            console.log("user not found in firebase--in create user section");
+                            _this.db.collection("usersTaskTracker").add({
+                                email: _this.auth.getLoggedUser().email,
+                                userId: _this.auth.getLoggedUser().userId,
+                                userName: _this.auth.getLoggedUser().userName,
+                                avatar: _this.auth.getLoggedUser().avatar,
+                            });
+                        }
+                    }
                 }
-                finally { if (e_1) throw e_1.error; }
-            }
-        });
+                catch (e_1_1) { e_1 = { error: e_1_1 }; }
+                finally {
+                    try {
+                        if (res_1_1 && !res_1_1.done && (_a = res_1.return)) _a.call(res_1);
+                    }
+                    finally { if (e_1) throw e_1.error; }
+                }
+            });
+        }
+        catch (err) {
+            console.log(err);
+        }
     };
     HomePage.ctorParameters = function () { return [
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },

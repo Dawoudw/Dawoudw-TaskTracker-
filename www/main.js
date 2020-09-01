@@ -11,18 +11,22 @@ var map = {
 	"../create-subtask/create-subtask.module": [
 		"./src/app/Pages/create-subtask/create-subtask.module.ts",
 		"default~create-subtask-create-subtask-module~task-subview-task-subview-module",
-		"common",
 		"create-subtask-create-subtask-module"
 	],
 	"../group-chat/group-chat.module": [
 		"./src/app/Pages/group-chat/group-chat.module.ts",
-		"default~Pages-chat-chat-module~Pages-start-chat-start-chat-module~group-chat-group-chat-module~home-~d4eeb33b",
+		"common",
 		"group-chat-group-chat-module"
 	],
 	"../home/home.module": [
 		"./src/app/Pages/home/home.module.ts",
-		"default~Pages-chat-chat-module~Pages-start-chat-start-chat-module~group-chat-group-chat-module~home-~d4eeb33b",
+		"common",
 		"home-home-module"
+	],
+	"../start-chat/start-chat.module": [
+		"./src/app/Pages/start-chat/start-chat.module.ts",
+		"common",
+		"start-chat-start-chat-module"
 	],
 	"../tab2/tab2.module": [
 		"./src/app/Pages/tab2/tab2.module.ts",
@@ -39,11 +43,12 @@ var map = {
 	],
 	"../team-progress/team-progress.module": [
 		"./src/app/Pages/team-progress/team-progress.module.ts",
+		"common",
 		"team-progress-team-progress-module"
 	],
 	"./Pages/home/home.module": [
 		"./src/app/Pages/home/home.module.ts",
-		"default~Pages-chat-chat-module~Pages-start-chat-start-chat-module~group-chat-group-chat-module~home-~d4eeb33b",
+		"common",
 		"home-home-module"
 	],
 	"./Pages/login/login.module": [
@@ -52,7 +57,6 @@ var map = {
 	],
 	"./Pages/tabs/tabs.module": [
 		"./src/app/Pages/tabs/tabs.module.ts",
-		"common",
 		"Pages-tabs-tabs-module"
 	]
 };
@@ -325,7 +329,7 @@ module.exports = webpackAsyncContext;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"primary\">\r\n\r\n    <ion-buttons slot=\"start\">\r\n      <!-- <ion-back-button text=\"\" defaultHref=\"/\"> </ion-back-button> -->\r\n      <ion-menu-button menu=\"main-menu\"></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-label\r\n      *ngIf=\"getIsLogged()\"\r\n      name=\"spntime\"\r\n      position=\"stacked\"\r\n      id=\"spntime\"\r\n      [(ngModel)]=\"userName\"\r\n      ngDefaultControl\r\n    >\r\n      <h3 style=\"padding-left: 3px;\">{{ userName }}</h3>\r\n    </ion-label>\r\n    <ion-buttons slot=\"end\" *ngIf=\"getIsLogged()\">\r\n      <ion-button (click)=\"logout()\" slot=\"secondary\">\r\n        <ion-icon\r\n  \r\n          name=\"lock-closed-outline\"\r\n        ></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <!-- \r\n    <ion-title name=\"spntime\" id=\"spntime\"></ion-title> -->\r\n  </ion-toolbar>\r\n</ion-header>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"primary\">\r\n    <ion-buttons slot=\"start\">\r\n      <!-- <ion-back-button text=\"\" defaultHref=\"/\"> </ion-back-button> -->\r\n      <ion-menu-button menu=\"main-menu\"></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-label\r\n      *ngIf=\"getIsLogged()\"\r\n      name=\"spntime\"\r\n      position=\"stacked\"\r\n      id=\"spntime\"\r\n      [(ngModel)]=\"userName\"\r\n      ngDefaultControl\r\n    >\r\n      <h3 style=\"padding-left: 3px\">{{ userName }}</h3>\r\n    </ion-label>\r\n    <ion-buttons slot=\"end\" *ngIf=\"getIsLogged()\">\r\n      <ion-button (click)=\"logout()\" slot=\"secondary\">\r\n        <ion-icon name=\"lock-closed-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n    <!-- <ion-buttons slot=\"end\" *ngIf=\"!getIsLogged()\">\r\n      <ion-button   [routerLink]=\"['login']\" slot=\"secondary\">\r\n        <ion-icon size=\"small\" name=\"lock-closed-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons> -->\r\n    <!-- \r\n    <ion-title name=\"spntime\" id=\"spntime\"></ion-title> -->\r\n  </ion-toolbar>\r\n</ion-header>\r\n");
 
 /***/ }),
 
@@ -338,7 +342,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- <ion-header  >\n  <ion-toolbar>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)=\"onCancel()\">\n        <ion-icon name=\"close-outline\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n    <ion-title size=\"small\" color=\"primary\" class=\"ion-text-center\"\n      ><h4>Create Task</h4></ion-title\n    >\n  </ion-toolbar>\n</ion-header> -->\n<ion-header  class=\"ion-no-margin\"  >\n  <ion-toolbar color=\"primary\">\n    <ion-icon\n      name=\"document-text-outline\"\n  \n      size=\"large\"\n      slot=\"start\"\n      style=\"width: 24px !important;height: 24px !important;margin-right: 5px;margin-left: 5px;\"\n    ></ion-icon>\n    <ion-label slot=\"start\" color=\"light\"> <p>Create Task</p></ion-label>\n    <ion-buttons slot=\"end\">\n      <ion-button   (click)=\"onCancel()\">\n        <ion-icon name=\"close-sharp\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n<ion-content class=\"ion-text-center\"  [fullscreen]=\"true\" >\n  <form [formGroup]=\"form\">\n    <ion-grid>\n      <ion-row>\n        <ion-col\n          size-xs=\"12\"\n          size-sm=\"12\"\n          size-med=\"10\"\n          offset-med=\"1\"\n          size-lg=\"8\"\n          offset-lg=\"2\"\n          size-xlg=\"6\"\n          offset-xlg=\"3\"\n        >\n          <ion-card>\n            <ion-row>\n              <ion-col >\n                <ion-item>\n                  <ion-label color=\"medium\" position=\"floating\">Task Title</ion-label>\n                  <ion-input\n                    type=\"text\"\n                    autocomplete\n                    autocorrect\n                    formControlName=\"title\"\n                  ></ion-input>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row>\n              <ion-col  >\n                <ion-item>\n                  <ion-label color=\"medium\"  position=\"floating\">Task Details</ion-label>\n                  <ion-textarea\n                    rows=\"10\"\n                    cols=\"20\"\n                    autocomplete\n                    autocorrect\n                    formControlName=\"description\"\n                  ></ion-textarea>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row>\n              <ion-col>\n                <ion-button\n                  class=\"primary\"\n                  expand=\"block\"\n                  style=\"\n                    margin-left: 20%;\n                    margin-right: 20%;\n                    text-align: center !important;\n                  \"\n                  (click)=\"onCreateTask()\"\n                  [disabled]=\"!form.valid\"\n                  >Create</ion-button\n                >\n              </ion-col>\n            </ion-row>\n          </ion-card>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </form>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- <ion-header  >\n  <ion-toolbar>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)=\"onCancel()\">\n        <ion-icon name=\"close-outline\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n    <ion-title size=\"small\" color=\"primary\" class=\"ion-text-center\"\n      ><h4>Create Task</h4></ion-title\n    >\n  </ion-toolbar>\n</ion-header> -->\n<ion-header class=\"ion-no-margin\">\n  <ion-toolbar color=\"primary\">\n    <ion-icon\n      name=\"document-text-outline\"\n      size=\"large\"\n      slot=\"start\"\n      style=\"\n        width: 24px !important;\n        height: 24px !important;\n        margin-right: 5px;\n        margin-left: 5px;\n      \"\n    ></ion-icon>\n    <ion-label slot=\"start\" color=\"light\"> <p>Create Task</p></ion-label>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)=\"onCancel()\">\n        <ion-icon name=\"close-sharp\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n<ion-content class=\"ion-text-center\" [fullscreen]=\"true\">\n  <form [formGroup]=\"form\">\n    <ion-grid>\n      <ion-row>\n        <ion-col\n          size-xs=\"12\"\n          size-sm=\"12\"\n          size-med=\"10\"\n          offset-med=\"1\"\n          size-lg=\"8\"\n          offset-lg=\"2\"\n          size-xlg=\"6\"\n          offset-xlg=\"3\"\n        >\n          <ion-card>\n            <ion-row>\n              <ion-col>\n                <ion-item>\n                  <ion-label color=\"medium\" position=\"floating\"\n                    >Task Title\n                    <ion-text class=\"danger\">*</ion-text></ion-label\n                  >\n                  <ion-input\n                    type=\"text\"\n                    autocomplete\n                    autocorrect\n                    formControlName=\"title\"\n                  ></ion-input>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row>\n              <ion-col>\n                <ion-item>\n                  <ion-label color=\"medium\" position=\"floating\"\n                    >Task Details <ion-text class=\"danger\"> *</ion-text>\n                  </ion-label>\n                  <ion-textarea\n                    rows=\"10\"\n                    cols=\"20\"\n                    autocomplete\n                    autocorrect\n                    formControlName=\"description\"\n                  ></ion-textarea>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row>\n              <ion-col>\n                <ion-button\n                  class=\"primary ion-text-capitalize\"\n                  expand=\"block\"\n                  style=\"\n                    margin-left: 20%;\n                    margin-right: 20%;\n                    text-align: center !important;\n                  \"\n                  (click)=\"onCreateTask()\"\n                  [disabled]=\"!form.valid\"\n                  >Create</ion-button\n                >\n              </ion-col>\n            </ion-row>\n          </ion-card>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </form>\n</ion-content>\n");
 
 /***/ }),
 
@@ -351,7 +355,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\r\n  <app-header></app-header>\r\n  <ion-content>\r\n    <ion-menu content-id=\"menu\" side=\"start\" menuId=\"main-menu\" type=\"overlay\">\r\n      <!-- <ion-header>\r\n        <ion-toolbar color=\"primary\">\r\n          <ion-title>Start Menu</ion-title>\r\n        </ion-toolbar>\r\n      </ion-header> -->\r\n      <ion-content>\r\n        <ion-list>\r\n          <!-- <ion-item\r\n            detail=\"false\"\r\n            [routerLink]=\"auth.isLoggedIn() ? 'tasktracker' : '/'\"\r\n            (click)=\"closeMenu()\"\r\n          >\r\n            <ion-label id=\"lblHome\">\r\n              <ion-icon name=\"home\"></ion-icon>\r\n              Home\r\n            </ion-label>\r\n          </ion-item> -->\r\n          <ion-item-divider\r\n            style=\"background-color: transparent;\"\r\n            class=\"ion-no-margin ion-no-padding\"\r\n          >\r\n            <ion-grid>\r\n              <ion-row class=\"ion-justify-content-left\">\r\n                <ion-col\r\n                  size=\"auto\"\r\n                  style=\"text-align: center !important;\"\r\n                  style=\"height: 80px;\"\r\n                >\r\n                  <ion-avatar name=\"avatar\" class=\"ion-no-padding ion-margin\">\r\n                    <img src=\"../assets/images/avatar.svg\" />\r\n                  </ion-avatar>\r\n                </ion-col> </ion-row\r\n              ><ion-note *ngIf=\"Email\"\r\n                class=\"ion-text-left\"\r\n                color=\"secondary\"\r\n                class=\"ion-margin-start\"\r\n                style=\"font-size: smaller; font-weight: lighter;\"\r\n                >{{ Email }}</ion-note\r\n              >\r\n            </ion-grid>\r\n          </ion-item-divider>\r\n          <ion-item>\r\n            <ion-label id=\"lbltheme\">\r\n              <ion-icon   \r\n                name=\"shirt-outline\"\r\n                style=\"width: 18px; height: 20px;\"\r\n                slot=\"start\"\r\n              ></ion-icon>\r\n              Theme\r\n            </ion-label>\r\n            <ion-toggle\r\n              style=\"max-height: 21px;\"\r\n              (ionChange)=\"changeTheme($event)\"\r\n              size=\"small\"\r\n              slot=\"end\"\r\n              class=\"ion-float-right\"\r\n            \r\n            >\r\n            </ion-toggle>\r\n          </ion-item>\r\n          <ion-item\r\n            detail=\"false\"\r\n            [routerLink]=\"auth.isLoggedIn() ? '/tasktracker/home' : 'index'\"\r\n            (click)=\"closeMenu()\"\r\n          >\r\n            <ion-label id=\"lblHome\">\r\n              <ion-icon name=\"home\"></ion-icon>\r\n              Home\r\n            </ion-label>\r\n          </ion-item>\r\n\r\n          <ion-item\r\n            [routerLink]\r\n            detail=\"false\"\r\n            *ngIf=\"getIsLogged()\"\r\n            (click)=\"openNewTaskModal()\"\r\n          >\r\n            <ion-label id=\"lblnewtask\">\r\n              <ion-icon name=\"add-outline\"></ion-icon>\r\n              New Task\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item\r\n            detail=\"false\"\r\n            [routerLink]=\"['tasktracker/mytasks']\"\r\n            (click)=\"closeMenu()\"\r\n            *ngIf=\"getIsLogged()\"\r\n          >\r\n            <ion-label id=\"lblmytasks\">\r\n              <ion-icon name=\"document-text-outline\"></ion-icon>\r\n              My Tasks\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item\r\n            detail=\"false\"\r\n            [routerLink]=\"['tasktracker/teamprogress']\"\r\n            (click)=\"closeMenu()\"\r\n          >\r\n            <ion-label id=\"lblusers-progress\">\r\n              <ion-icon name=\"people-outline\"></ion-icon>\r\n              Team Progress\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item\r\n          detail=\"false\"\r\n          [routerLink]=\"['tasktracker/group-chat']\"\r\n          (click)=\"closeMenu()\"\r\n        >\r\n          <ion-label id=\"lblgroupChat\">\r\n            <ion-icon name=\"chatbubbles-outline\"></ion-icon>\r\n           Group Caht\r\n          </ion-label>\r\n        </ion-item>\r\n          <ion-item\r\n            detail=\"false\"\r\n            routerLink=\"tasktracker/reports\"\r\n            (click)=\"closeMenu()\"\r\n          >\r\n            <ion-label id=\"lblReports\">\r\n              <ion-icon name=\"bar-chart-outline\"></ion-icon>\r\n              Reports\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item\r\n            detail=\"false\"\r\n            [routerLink]\r\n            (click)=\"openWebSiteApp(); closeMenu()\"\r\n          >\r\n            <ion-label id=\"lblweb\">\r\n              <ion-icon name=\"globe-outline\"></ion-icon>\r\n              WebSite\r\n            </ion-label>\r\n          </ion-item>\r\n\r\n          <ion-item\r\n            detail=\"false\"\r\n            [routerLink]\r\n            (click)=\"logout()\"\r\n            *ngIf=\"getIsLogged()\"\r\n          >\r\n            <ion-label id=\"lbllogout\">\r\n              <ion-icon name=\"lock-closed-outline\"></ion-icon>\r\n              logout\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item\r\n            detail=\"false\"\r\n            [routerLink]=\"['login']\"\r\n            (click)=\"closeMenu()\"\r\n            *ngIf=\"!getIsLogged()\"\r\n          >\r\n            <ion-label id=\"lblSignIn\">\r\n              <ion-icon name=\"lock-open-outline\"></ion-icon> SignIn\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet\r\n      id=\"menu\"\r\n      style=\"text-align: center; padding: 0px; margin: 0px;\"\r\n    >\r\n    </ion-router-outlet\r\n  ></ion-content>\r\n</ion-app>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\r\n  <app-header></app-header>\r\n  <ion-content>\r\n    <ion-menu content-id=\"menu\" side=\"start\" menuId=\"main-menu\" type=\"overlay\">\r\n      <!-- <ion-header>\r\n        <ion-toolbar color=\"primary\">\r\n          <ion-title>Start Menu</ion-title>\r\n        </ion-toolbar>\r\n      </ion-header> -->\r\n      <ion-content>\r\n        <ion-list>\r\n          <!-- <ion-item\r\n            detail=\"false\"\r\n            [routerLink]=\"auth.isLoggedIn() ? 'tasktracker' : '/'\"\r\n            (click)=\"closeMenu()\"\r\n          >\r\n            <ion-label id=\"lblHome\">\r\n              <ion-icon name=\"home\"></ion-icon>\r\n              Home\r\n            </ion-label>\r\n          </ion-item> -->\r\n          <ion-item-divider\r\n            style=\"background-color: transparent;\"\r\n            class=\"ion-no-margin ion-no-padding\"\r\n          >\r\n            <ion-grid>\r\n              <ion-row class=\"ion-justify-content-left\">\r\n                <ion-col\r\n                  size=\"auto\"\r\n                  style=\"text-align: center !important;\"\r\n                  style=\"height: 80px;\"\r\n                >\r\n                  <ion-avatar name=\"avatar\" class=\"ion-no-padding ion-margin\">\r\n                    <img src=\"../assets/images/avatar.svg\" />\r\n                  </ion-avatar>\r\n                </ion-col> </ion-row\r\n              ><ion-note *ngIf=\"Email\"\r\n                class=\"ion-text-left\"\r\n                color=\"secondary\"\r\n                class=\"ion-margin-start\"\r\n                style=\"font-size: smaller; font-weight: lighter;\"\r\n                >{{ Email }}</ion-note\r\n              >\r\n            </ion-grid>\r\n          </ion-item-divider>\r\n          <ion-item>\r\n            <ion-label id=\"lbltheme\">\r\n              <ion-icon   \r\n                name=\"shirt-outline\"\r\n                style=\"width: 18px; height: 20px;\"\r\n                slot=\"start\"\r\n              ></ion-icon>\r\n              Theme\r\n            </ion-label>\r\n            <ion-toggle\r\n              style=\"max-height: 21px;\"\r\n              (ionChange)=\"changeTheme($event)\"\r\n              size=\"small\"\r\n              slot=\"end\"\r\n              class=\"ion-float-right\"\r\n            \r\n            >\r\n            </ion-toggle>\r\n          </ion-item>\r\n          <ion-item\r\n            detail=\"false\"\r\n            [routerLink]=\"auth.isLoggedIn() ? '/tasktracker/home' : 'index'\"\r\n            (click)=\"closeMenu()\"\r\n          >\r\n            <ion-label id=\"lblHome\">\r\n              <ion-icon name=\"home\"></ion-icon>\r\n              Home\r\n            </ion-label>\r\n          </ion-item>\r\n\r\n          <ion-item\r\n            [routerLink]\r\n            detail=\"false\"\r\n            *ngIf=\"getIsLogged()\"\r\n            (click)=\"openNewTaskModal()\"\r\n          >\r\n            <ion-label id=\"lblnewtask\">\r\n              <ion-icon name=\"add-outline\"></ion-icon>\r\n              New Task\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item\r\n            detail=\"false\"\r\n            [routerLink]=\"['tasktracker/mytasks']\"\r\n            (click)=\"closeMenu()\"\r\n            *ngIf=\"getIsLogged()\"\r\n          >\r\n            <ion-label id=\"lblmytasks\">\r\n              <ion-icon name=\"document-text-outline\"></ion-icon>\r\n              My Tasks\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item\r\n            detail=\"false\"\r\n            [routerLink]=\"['tasktracker/teamprogress']\"\r\n            (click)=\"closeMenu()\"\r\n          >\r\n            <ion-label id=\"lblusers-progress\">\r\n              <ion-icon name=\"people-outline\"></ion-icon>\r\n              Team Progress\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item\r\n          detail=\"false\"\r\n          [routerLink]=\"['tasktracker/group-chat']\"\r\n          (click)=\"closeMenu()\"\r\n        >\r\n          <ion-label id=\"lblgroupChat\">\r\n            <ion-icon   src=\"../assets/images/chat-group.svg\" ></ion-icon>\r\n             Chatting\r\n          </ion-label>\r\n        </ion-item>\r\n          <ion-item\r\n            detail=\"false\"\r\n            routerLink=\"tasktracker/reports\"\r\n            (click)=\"closeMenu()\"\r\n          >\r\n            <ion-label id=\"lblReports\">\r\n              <ion-icon name=\"bar-chart-outline\"></ion-icon>\r\n              Reports\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item\r\n            detail=\"false\"\r\n            [routerLink]\r\n            (click)=\"openWebSiteApp(); closeMenu()\"\r\n          >\r\n            <ion-label id=\"lblweb\">\r\n              <ion-icon name=\"globe-outline\"></ion-icon>\r\n              WebSite\r\n            </ion-label>\r\n          </ion-item>\r\n\r\n          <ion-item\r\n            detail=\"false\"\r\n            [routerLink]\r\n            (click)=\"logout()\"\r\n            *ngIf=\"getIsLogged()\"\r\n          >\r\n            <ion-label id=\"lbllogout\">\r\n              <ion-icon name=\"lock-closed-outline\"></ion-icon>\r\n              logout\r\n            </ion-label>\r\n          </ion-item>\r\n          <ion-item\r\n            detail=\"false\"\r\n            [routerLink]=\"['login']\"\r\n            (click)=\"closeMenu()\"\r\n            *ngIf=\"!getIsLogged()\"\r\n          >\r\n            <ion-label id=\"lblSignIn\">\r\n              <ion-icon name=\"lock-open-outline\"></ion-icon> SignIn\r\n            </ion-label>\r\n          </ion-item>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet\r\n      id=\"menu\"\r\n      style=\"text-align: center; padding: 0px; margin: 0px;\"\r\n    >\r\n    </ion-router-outlet\r\n  ></ion-content>\r\n</ion-app>\r\n");
 
 /***/ }),
 
@@ -379,7 +383,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeaderComponent", function() { return HeaderComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_Services_authService_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/Services/authService.service */ "./src/app/Services/authService.service.ts");
 
 
@@ -503,9 +507,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateTaskPage", function() { return CreateTaskPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm5/ionic-angular.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm5/ionic-angular.js");
 /* harmony import */ var src_app_Services_tasks_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/Services/tasks.service */ "./src/app/Services/tasks.service.ts");
 
 
@@ -513,44 +517,94 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var CreateTaskPage = /** @class */ (function () {
-    function CreateTaskPage(modalCtrl, tasksService) {
+    function CreateTaskPage(modalCtrl, tasksService // private formBuilder: FormBuilder
+    ) {
         this.modalCtrl = modalCtrl;
         this.tasksService = tasksService;
     }
     CreateTaskPage.prototype.ngOnInit = function () {
         this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
             title: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, {
-                updateOn: 'blur',
-                validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
+                updateOn: "blur",
+                validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             }),
             description: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, {
-                updateOn: 'blur',
-                validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
-            })
+                updateOn: "blur",
+                validators: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            }),
         });
     };
     CreateTaskPage.prototype.onCancel = function () {
-        this.modalCtrl.dismiss(null, 'cancel');
+        this.modalCtrl.dismiss(null, "cancel");
     };
     CreateTaskPage.prototype.onCreateTask = function () {
-        console.log("New-Task Page From FORM: ", this.form.value.title, this.form.value.description);
-        this.tasksService.addTask(this.form.value.title, this.form.value.description).subscribe();
-        this.form.reset();
-        this.modalCtrl.dismiss(null, 'task created');
+        if (this.form.value.title && this.form.value.description) {
+            this.tasksService
+                .addTask(this.form.value.title, this.form.value.description)
+                .subscribe();
+            this.form.reset();
+            this.modalCtrl.dismiss(null, "task created");
+        }
+        else
+            return;
         // window.location.replace('tasktracker/mytasks')
     };
     CreateTaskPage.ctorParameters = function () { return [
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"] },
-        { type: src_app_Services_tasks_service__WEBPACK_IMPORTED_MODULE_4__["TasksService"] }
+        { type: src_app_Services_tasks_service__WEBPACK_IMPORTED_MODULE_4__["TasksService"] // private formBuilder: FormBuilder
+         }
     ]; };
     CreateTaskPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-create-task',
+            selector: "app-create-task",
             template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./create-task.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/Pages/create-task/create-task.page.html")).default,
             styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./create-task.page.scss */ "./src/app/Pages/create-task/create-task.page.scss")).default]
         })
     ], CreateTaskPage);
     return CreateTaskPage;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/Services/activate.guard.ts":
+/*!********************************************!*\
+  !*** ./src/app/Services/activate.guard.ts ***!
+  \********************************************/
+/*! exports provided: ActivateGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ActivateGuard", function() { return ActivateGuard; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _authService_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./authService.service */ "./src/app/Services/authService.service.ts");
+
+
+
+var ActivateGuard = /** @class */ (function () {
+    function ActivateGuard(authServ) {
+        this.authServ = authServ;
+    }
+    ActivateGuard.prototype.canActivate = function (next, state) {
+        if (this.authServ.isLoggedIn())
+            return true;
+        else {
+            this.authServ.redirectToLogin();
+            return false;
+        }
+    };
+    ActivateGuard.ctorParameters = function () { return [
+        { type: _authService_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"] }
+    ]; };
+    ActivateGuard = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: "root",
+        })
+    ], ActivateGuard);
+    return ActivateGuard;
 }());
 
 
@@ -568,14 +622,14 @@ var CreateTaskPage = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthService", function() { return AuthService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var amazon_cognito_identity_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! amazon-cognito-identity-js */ "./node_modules/amazon-cognito-identity-js/es/index.js");
 /* harmony import */ var zen_observable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! zen-observable */ "./node_modules/zen-observable/index.js");
 /* harmony import */ var zen_observable__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(zen_observable__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Models_user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Models/user */ "./src/app/Models/user.ts");
 /* harmony import */ var _users_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./users.service */ "./src/app/Services/users.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm5/ionic-angular.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm5/ionic-angular.js");
 
 
 
@@ -789,8 +843,8 @@ var AuthService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReportService", function() { return ReportService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 
 
 
@@ -837,7 +891,7 @@ var ReportService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskProgressService", function() { return TaskProgressService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _tasks_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tasks.service */ "./src/app/Services/tasks.service.ts");
 /* harmony import */ var _users_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./users.service */ "./src/app/Services/users.service.ts");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
@@ -911,14 +965,14 @@ var TaskProgressService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TasksService", function() { return TasksService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _Models_task__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Models/task */ "./src/app/Models/task.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/http.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 /* harmony import */ var _Models_user__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Models/user */ "./src/app/Models/user.ts");
 /* harmony import */ var _authService_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./authService.service */ "./src/app/Services/authService.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 
 
 
@@ -1090,8 +1144,8 @@ var TasksService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ThemeService", function() { return ThemeService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 
 
 
@@ -1137,8 +1191,8 @@ var ThemeService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UsersService", function() { return UsersService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _Models_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Models/user */ "./src/app/Models/user.ts");
 
 
@@ -1166,7 +1220,7 @@ var UsersService = /** @class */ (function () {
                     case 2:
                         _a.sent();
                         console.log("usersList", users);
-                        // console.log("usersAr", this.usersList);
+                        console.log("usersAr", this.usersList);
                         return [2 /*return*/, this.usersList];
                 }
             });
@@ -1225,8 +1279,10 @@ var UsersService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _Services_activate_guard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Services/activate.guard */ "./src/app/Services/activate.guard.ts");
+
 
 
 
@@ -1302,18 +1358,22 @@ __webpack_require__.r(__webpack_exports__);
 //   // },
 // ];
 var routes = [
-    { path: "", loadChildren: "./Pages/tabs/tabs.module#TabsPageModule" },
+    { path: "", loadChildren: "./Pages/tabs/tabs.module#TabsPageModule"
+    },
     { path: "index", loadChildren: "./Pages/home/home.module#HomePageModule" },
     { path: "login", loadChildren: "./Pages/login/login.module#LoginPageModule" },
+    // {
+    //   path: 'start-chat',
+    // //  pathMatch: 'full',
+    //   canActivate: [ActivateGuard],
+    //   loadChildren: () => import('./Pages/start-chat/start-chat.module').then( m => m.StartChatPageModule)
+    // },
     {
-        path: 'start-chat',
-        loadChildren: function () { return Promise.all(/*! import() | Pages-start-chat-start-chat-module */[__webpack_require__.e("default~Pages-chat-chat-module~Pages-start-chat-start-chat-module~group-chat-group-chat-module~home-~d4eeb33b"), __webpack_require__.e("Pages-start-chat-start-chat-module")]).then(__webpack_require__.bind(null, /*! ./Pages/start-chat/start-chat.module */ "./src/app/Pages/start-chat/start-chat.module.ts")).then(function (m) { return m.StartChatPageModule; }); }
-    },
-    {
-        // path: 'chat',
+        //  pathMatch: 'full',
         path: 'chat/:id',
+        canActivate: [_Services_activate_guard__WEBPACK_IMPORTED_MODULE_3__["ActivateGuard"]],
         // path: 'chat/:groupId/:CurrentUserIdFromFirebase',
-        loadChildren: function () { return Promise.all(/*! import() | Pages-chat-chat-module */[__webpack_require__.e("default~Pages-chat-chat-module~Pages-start-chat-start-chat-module~group-chat-group-chat-module~home-~d4eeb33b"), __webpack_require__.e("Pages-chat-chat-module")]).then(__webpack_require__.bind(null, /*! ./Pages/chat/chat.module */ "./src/app/Pages/chat/chat.module.ts")).then(function (m) { return m.ChatPageModule; }); }
+        loadChildren: function () { return Promise.all(/*! import() | Pages-chat-chat-module */[__webpack_require__.e("common"), __webpack_require__.e("Pages-chat-chat-module")]).then(__webpack_require__.bind(null, /*! ./Pages/chat/chat.module */ "./src/app/Pages/chat/chat.module.ts")).then(function (m) { return m.ChatPageModule; }); }
     },
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -1358,13 +1418,13 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm5/ionic-angular.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm5/ionic-angular.js");
 /* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/__ivy_ngcc__/ngx/index.js");
 /* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/__ivy_ngcc__/ngx/index.js");
 /* harmony import */ var _Services_authService_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Services/authService.service */ "./src/app/Services/authService.service.ts");
 /* harmony import */ var _Models_user__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Models/user */ "./src/app/Models/user.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _Pages_create_task_create_task_page__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Pages/create-task/create-task.page */ "./src/app/Pages/create-task/create-task.page.ts");
 /* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/__ivy_ngcc__/ngx/index.js");
 /* harmony import */ var _Services_theme_service_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Services/theme-service.service */ "./src/app/Services/theme-service.service.ts");
@@ -1653,16 +1713,16 @@ var AppComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm5/platform-browser.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm5/ionic-angular.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm5/ionic-angular.js");
 /* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/__ivy_ngcc__/ngx/index.js");
 /* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/__ivy_ngcc__/ngx/index.js");
 /* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/__ivy_ngcc__/ngx/index.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/http.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _Components_header_header_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Components/header/header.component */ "./src/app/Components/header/header.component.ts");
@@ -1707,6 +1767,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+//import { TextAvatarDirective } from './directives/text-avatar.directive';
 // import { SubTaskComponent } from "./Components/sub-task/sub-task.component";
 // import { ExpandableComponent } from "./Components/expandable/expandable.component";
 var AppModule = /** @class */ (function () {
@@ -1714,7 +1775,7 @@ var AppModule = /** @class */ (function () {
     }
     AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_12__["AppComponent"], _Components_header_header_component__WEBPACK_IMPORTED_MODULE_13__["HeaderComponent"]],
+            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_12__["AppComponent"], _Components_header_header_component__WEBPACK_IMPORTED_MODULE_13__["HeaderComponent"],],
             entryComponents: [],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["BrowserModule"],
@@ -1827,8 +1888,8 @@ var environment = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
-/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/__ivy_ngcc__/fesm5/platform-browser-dynamic.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
 /* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var aws_amplify__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! aws-amplify */ "./node_modules/aws-amplify/lib-esm/index.js");
@@ -1856,7 +1917,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/tejasramani/Other-webdev/ionic/Task-Tracker-Dev20200826/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/tejasramani/Other-webdev/ionic/Task-Tracker-Dev20200830/src/main.ts */"./src/main.ts");
 
 
 /***/ })

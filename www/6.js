@@ -11,10 +11,10 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_button", function() { return Button; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_icon", function() { return Icon; });
-/* harmony import */ var _index_92848855_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-92848855.js */ "./node_modules/@ionic/core/dist/esm-es5/index-92848855.js");
-/* harmony import */ var _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-23e7365a.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-23e7365a.js");
+/* harmony import */ var _index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-44bf8136.js */ "./node_modules/@ionic/core/dist/esm-es5/index-44bf8136.js");
+/* harmony import */ var _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-837be8f3.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-837be8f3.js");
 /* harmony import */ var _helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers-5c745fbd.js */ "./node_modules/@ionic/core/dist/esm-es5/helpers-5c745fbd.js");
-/* harmony import */ var _theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./theme-5641d27f.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-5641d27f.js");
+/* harmony import */ var _theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./theme-3f0b0c04.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js");
 
 
 
@@ -59,7 +59,7 @@ var getNamedUrl = function (iconName) {
     if (url) {
         return url;
     }
-    return Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["k"])("svg/" + iconName + ".svg");
+    return Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["k"])("svg/" + iconName + ".svg");
 };
 var getName = function (iconName, icon, mode, ios, md) {
     // default to "md" if somehow the mode wasn't set
@@ -107,9 +107,9 @@ var buttonMdCss = ":host{--overflow:hidden;--ripple-color:currentColor;--border-
 var Button = /** @class */ (function () {
     function Button(hostRef) {
         var _this = this;
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
-        this.ionFocus = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this, "ionFocus", 7);
-        this.ionBlur = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this, "ionBlur", 7);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        this.ionFocus = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this, "ionFocus", 7);
+        this.ionBlur = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this, "ionBlur", 7);
         this.inItem = false;
         this.inListHeader = false;
         this.inToolbar = false;
@@ -136,7 +136,7 @@ var Button = /** @class */ (function () {
         this.type = 'button';
         this.handleClick = function (ev) {
             if (_this.type === 'button') {
-                Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_3__["o"])(_this.href, ev, _this.routerDirection, _this.routerAnimation);
+                Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_3__["o"])(_this.href, ev, _this.routerDirection, _this.routerAnimation);
             }
             else if (Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_2__["h"])(_this.el)) {
                 // this button wants to specifically submit a form
@@ -188,7 +188,7 @@ var Button = /** @class */ (function () {
     });
     Button.prototype.render = function () {
         var _a;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
         var _b = this, buttonType = _b.buttonType, type = _b.type, disabled = _b.disabled, rel = _b.rel, target = _b.target, size = _b.size, href = _b.href, color = _b.color, expand = _b.expand, hasIconOnly = _b.hasIconOnly, shape = _b.shape, strong = _b.strong;
         var finalSize = size === undefined && this.inItem ? 'small' : size;
         var TagType = href === undefined ? 'button' : 'a';
@@ -204,24 +204,10 @@ var Button = /** @class */ (function () {
         if (fill === undefined) {
             fill = this.inToolbar || this.inListHeader ? 'clear' : 'solid';
         }
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["H"], { onClick: this.handleClick, "aria-disabled": disabled ? 'true' : null, class: Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_3__["c"])(color, (_a = {},
-                _a[mode] = true,
-                _a[buttonType] = true,
-                _a[buttonType + "-" + expand] = expand !== undefined,
-                _a[buttonType + "-" + finalSize] = finalSize !== undefined,
-                _a[buttonType + "-" + shape] = shape !== undefined,
-                _a[buttonType + "-" + fill] = true,
-                _a[buttonType + "-strong"] = strong,
-                _a['in-toolbar'] = Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_3__["h"])('ion-toolbar', this.el),
-                _a['in-toolbar-color'] = Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_3__["h"])('ion-toolbar[color]', this.el),
-                _a['button-has-icon-only'] = hasIconOnly,
-                _a['button-disabled'] = disabled,
-                _a['ion-activatable'] = true,
-                _a['ion-focusable'] = true,
-                _a)) }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])("span", { class: "button-inner" }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", { name: "icon-only" }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", { name: "start" }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", { name: "end" })), mode === 'md' && Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-ripple-effect", { type: this.rippleType }))));
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["H"], { onClick: this.handleClick, "aria-disabled": disabled ? 'true' : null, class: Object.assign(Object.assign({}, Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_3__["c"])(color)), (_a = {}, _a[mode] = true, _a[buttonType] = true, _a[buttonType + "-" + expand] = expand !== undefined, _a[buttonType + "-" + finalSize] = finalSize !== undefined, _a[buttonType + "-" + shape] = shape !== undefined, _a[buttonType + "-" + fill] = true, _a[buttonType + "-strong"] = strong, _a['in-toolbar'] = Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_3__["h"])('ion-toolbar', this.el), _a['in-toolbar-color'] = Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_3__["h"])('ion-toolbar[color]', this.el), _a['button-has-icon-only'] = hasIconOnly, _a['button-disabled'] = disabled, _a['ion-activatable'] = true, _a['ion-focusable'] = true, _a)) }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])("span", { class: "button-inner" }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", { name: "icon-only" }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", { name: "start" }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", { name: "end" })), mode === 'md' && Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-ripple-effect", { type: this.rippleType }))));
     };
     Object.defineProperty(Button.prototype, "el", {
-        get: function () { return Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["i"])(this); },
+        get: function () { return Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["i"])(this); },
         enumerable: false,
         configurable: true
     });
@@ -305,7 +291,7 @@ var getSvgContent = function (url) {
 var iconCss = ":host{display:inline-block;width:1em;height:1em;contain:strict;fill:currentColor;-webkit-box-sizing:content-box !important;box-sizing:content-box !important}:host .ionicon{stroke:currentColor}.ionicon-fill-none{fill:none}.ionicon-stroke-width{stroke-width:32px;stroke-width:var(--ionicon-stroke-width, 32px)}.icon-inner,.ionicon,svg{display:block;height:100%;width:100%}:host(.flip-rtl) .icon-inner{-webkit-transform:scaleX(-1);transform:scaleX(-1)}:host(.icon-small){font-size:18px !important}:host(.icon-large){font-size:32px !important}:host(.ion-color){color:var(--ion-color-base) !important}:host(.ion-color-primary){--ion-color-base:var(--ion-color-primary, #3880ff)}:host(.ion-color-secondary){--ion-color-base:var(--ion-color-secondary, #0cd1e8)}:host(.ion-color-tertiary){--ion-color-base:var(--ion-color-tertiary, #f4a942)}:host(.ion-color-success){--ion-color-base:var(--ion-color-success, #10dc60)}:host(.ion-color-warning){--ion-color-base:var(--ion-color-warning, #ffce00)}:host(.ion-color-danger){--ion-color-base:var(--ion-color-danger, #f14141)}:host(.ion-color-light){--ion-color-base:var(--ion-color-light, #f4f5f8)}:host(.ion-color-medium){--ion-color-base:var(--ion-color-medium, #989aa2)}:host(.ion-color-dark){--ion-color-base:var(--ion-color-dark, #222428)}";
 var Icon = /** @class */ (function () {
     function Icon(hostRef) {
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
         this.isVisible = false;
         /**
          * The mode determines which platform styles to use.
@@ -379,9 +365,9 @@ var Icon = /** @class */ (function () {
         var _a, _b;
         var mode = this.mode || 'md';
         var flipRtl = this.flipRtl || (this.ariaLabel && (this.ariaLabel.indexOf('arrow') > -1 || this.ariaLabel.indexOf('chevron') > -1) && this.flipRtl !== false);
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["H"], { role: "img", class: Object.assign(Object.assign((_a = {}, _a[mode] = true, _a), createColorClasses(this.color)), (_b = {}, _b["icon-" + this.size] = !!this.size, _b['flip-rtl'] = !!flipRtl && this.el.ownerDocument.dir === 'rtl', _b)) }, ((this.svgContent)
-            ? Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "icon-inner", innerHTML: this.svgContent })
-            : Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "icon-inner" }))));
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["H"], { role: "img", class: Object.assign(Object.assign((_a = {}, _a[mode] = true, _a), createColorClasses(this.color)), (_b = {}, _b["icon-" + this.size] = !!this.size, _b['flip-rtl'] = !!flipRtl && this.el.ownerDocument.dir === 'rtl', _b)) }, ((this.svgContent)
+            ? Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "icon-inner", innerHTML: this.svgContent })
+            : Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "icon-inner" }))));
     };
     Object.defineProperty(Icon, "assetsDirs", {
         get: function () { return ["svg"]; },
@@ -389,7 +375,7 @@ var Icon = /** @class */ (function () {
         configurable: true
     });
     Object.defineProperty(Icon.prototype, "el", {
-        get: function () { return Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_0__["i"])(this); },
+        get: function () { return Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_0__["i"])(this); },
         enumerable: false,
         configurable: true
     });

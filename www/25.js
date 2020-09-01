@@ -11,10 +11,10 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_range", function() { return Range; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _index_92848855_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-92848855.js */ "./node_modules/@ionic/core/dist/esm-es5/index-92848855.js");
-/* harmony import */ var _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-23e7365a.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-23e7365a.js");
+/* harmony import */ var _index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-44bf8136.js */ "./node_modules/@ionic/core/dist/esm-es5/index-44bf8136.js");
+/* harmony import */ var _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-837be8f3.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-837be8f3.js");
 /* harmony import */ var _helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers-5c745fbd.js */ "./node_modules/@ionic/core/dist/esm-es5/helpers-5c745fbd.js");
-/* harmony import */ var _theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./theme-5641d27f.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-5641d27f.js");
+/* harmony import */ var _theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./theme-3f0b0c04.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js");
 
 
 
@@ -25,11 +25,11 @@ var rangeMdCss = ":host{--knob-handle-size:calc(var(--knob-size) * 2);display:-m
 var Range = /** @class */ (function () {
     function class_1(hostRef) {
         var _this = this;
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
-        this.ionChange = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionChange", 7);
-        this.ionStyle = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionStyle", 7);
-        this.ionFocus = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionFocus", 7);
-        this.ionBlur = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionBlur", 7);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.ionChange = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionChange", 7);
+        this.ionStyle = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionStyle", 7);
+        this.ionFocus = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionFocus", 7);
+        this.ionBlur = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionBlur", 7);
         this.noUpdate = false;
         this.hasFocus = false;
         this.ratioA = 0;
@@ -329,7 +329,7 @@ var Range = /** @class */ (function () {
         var _a, _b;
         var _this = this;
         var _c = this, min = _c.min, max = _c.max, step = _c.step, el = _c.el, handleKeyboard = _c.handleKeyboard, pressedKnob = _c.pressedKnob, disabled = _c.disabled, pin = _c.pin, ratioLower = _c.ratioLower, ratioUpper = _c.ratioUpper;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
         var barStart = ratioLower * 100 + "%";
         var barEnd = 100 - ratioUpper * 100 + "%";
         var doc = document;
@@ -359,16 +359,10 @@ var Range = /** @class */ (function () {
             }
         }
         Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["a"])(true, el, this.name, JSON.stringify(this.getValue()), disabled);
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["H"], { onFocusin: this.onFocus, onFocusout: this.onBlur, class: Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_4__["c"])(this.color, (_b = {},
-                _b[mode] = true,
-                _b['in-item'] = Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_4__["h"])('ion-item', el),
-                _b['range-disabled'] = disabled,
-                _b['range-pressed'] = pressedKnob !== undefined,
-                _b['range-has-pin'] = pin,
-                _b)) }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "start" }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "range-slider", ref: function (rangeEl) { return _this.rangeSlider = rangeEl; } }, ticks.map(function (tick) { return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { style: tickStyle(tick), role: "presentation", class: {
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["H"], { onFocusin: this.onFocus, onFocusout: this.onBlur, class: Object.assign(Object.assign({}, Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_4__["c"])(this.color)), (_b = {}, _b[mode] = true, _b['in-item'] = Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_4__["h"])('ion-item', el), _b['range-disabled'] = disabled, _b['range-pressed'] = pressedKnob !== undefined, _b['range-has-pin'] = pin, _b)) }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "start" }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "range-slider", ref: function (rangeEl) { return _this.rangeSlider = rangeEl; } }, ticks.map(function (tick) { return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { style: tickStyle(tick), role: "presentation", class: {
                 'range-tick': true,
                 'range-tick-active': tick.active
-            }, part: tick.active ? 'tick-active' : 'tick' })); }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "range-bar", role: "presentation", part: "bar" }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "range-bar range-bar-active", role: "presentation", style: barStyle, part: "bar-active" }), renderKnob(isRTL, {
+            }, part: tick.active ? 'tick-active' : 'tick' })); }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "range-bar", role: "presentation", part: "bar" }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "range-bar range-bar-active", role: "presentation", style: barStyle, part: "bar-active" }), renderKnob(isRTL, {
             knob: 'A',
             pressed: pressedKnob === 'A',
             value: this.valA,
@@ -388,10 +382,10 @@ var Range = /** @class */ (function () {
             handleKeyboard: handleKeyboard,
             min: min,
             max: max
-        })), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "end" })));
+        })), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "end" })));
     };
     Object.defineProperty(class_1.prototype, "el", {
-        get: function () { return Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        get: function () { return Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
         enumerable: false,
         configurable: true
     });
@@ -418,7 +412,7 @@ var renderKnob = function (isRTL, _a) {
         style[start] = ratio * 100 + "%";
         return style;
     };
-    return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { onKeyDown: function (ev) {
+    return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { onKeyDown: function (ev) {
             var key = ev.key;
             if (key === 'ArrowLeft' || key === 'ArrowDown') {
                 handleKeyboard(knob, false);
@@ -437,7 +431,7 @@ var renderKnob = function (isRTL, _a) {
             'range-knob-pressed': pressed,
             'range-knob-min': value === min,
             'range-knob-max': value === max
-        }, style: knobStyle(), role: "slider", tabindex: disabled ? -1 : 0, "aria-valuemin": min, "aria-valuemax": max, "aria-disabled": disabled ? 'true' : null, "aria-valuenow": value }, pin && Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "range-pin", role: "presentation", part: "pin" }, Math.round(value)), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "range-knob", role: "presentation", part: "knob" })));
+        }, style: knobStyle(), role: "slider", tabindex: disabled ? -1 : 0, "aria-valuemin": min, "aria-valuemax": max, "aria-disabled": disabled ? 'true' : null, "aria-valuenow": value }, pin && Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "range-pin", role: "presentation", part: "pin" }, Math.round(value)), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "range-knob", role: "presentation", part: "knob" })));
 };
 var ratioToValue = function (ratio, min, max, step) {
     var value = (max - min) * ratio;

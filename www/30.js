@@ -11,10 +11,10 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_searchbar", function() { return Searchbar; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _index_92848855_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-92848855.js */ "./node_modules/@ionic/core/dist/esm-es5/index-92848855.js");
-/* harmony import */ var _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-23e7365a.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-23e7365a.js");
+/* harmony import */ var _index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-44bf8136.js */ "./node_modules/@ionic/core/dist/esm-es5/index-44bf8136.js");
+/* harmony import */ var _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-837be8f3.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-837be8f3.js");
 /* harmony import */ var _helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers-5c745fbd.js */ "./node_modules/@ionic/core/dist/esm-es5/helpers-5c745fbd.js");
-/* harmony import */ var _theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./theme-5641d27f.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-5641d27f.js");
+/* harmony import */ var _theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./theme-3f0b0c04.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js");
 
 
 
@@ -25,14 +25,14 @@ var searchbarMdCss = ".sc-ion-searchbar-md-h{--placeholder-color:initial;--place
 var Searchbar = /** @class */ (function () {
     function class_1(hostRef) {
         var _this = this;
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
-        this.ionInput = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionInput", 7);
-        this.ionChange = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionChange", 7);
-        this.ionCancel = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionCancel", 7);
-        this.ionClear = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionClear", 7);
-        this.ionBlur = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionBlur", 7);
-        this.ionFocus = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionFocus", 7);
-        this.ionStyle = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionStyle", 7);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.ionInput = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionInput", 7);
+        this.ionChange = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionChange", 7);
+        this.ionCancel = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionCancel", 7);
+        this.ionClear = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionClear", 7);
+        this.ionBlur = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionBlur", 7);
+        this.ionFocus = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionFocus", 7);
+        this.ionStyle = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionStyle", 7);
         this.isCancelVisible = false;
         this.shouldAlignLeft = true;
         this.focused = false;
@@ -53,7 +53,7 @@ var Searchbar = /** @class */ (function () {
          * Set the cancel button icon. Only applies to `md` mode.
          * Defaults to `"arrow-back-sharp"`.
          */
-        this.cancelButtonIcon = _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["c"].get('backButtonIcon', 'arrow-back-sharp');
+        this.cancelButtonIcon = _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["c"].get('backButtonIcon', 'arrow-back-sharp');
         /**
          * Set the the cancel button text. Only applies to `ios` mode.
          */
@@ -174,7 +174,7 @@ var Searchbar = /** @class */ (function () {
         var _this = this;
         requestAnimationFrame(function () {
             _this.positionElements();
-            Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["j"])(_this);
+            Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["j"])(_this);
         });
     };
     class_1.prototype.connectedCallback = function () {
@@ -220,7 +220,7 @@ var Searchbar = /** @class */ (function () {
     class_1.prototype.positionElements = function () {
         var value = this.getValue();
         var prevAlignLeft = this.shouldAlignLeft;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
         var shouldAlignLeft = (!this.animated || value.trim() !== '' || !!this.focused);
         this.shouldAlignLeft = shouldAlignLeft;
         if (mode !== 'ios') {
@@ -326,27 +326,18 @@ var Searchbar = /** @class */ (function () {
         var _a;
         var _this = this;
         var cancelButtonText = this.cancelButtonText;
-        var animated = this.animated && _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["c"].getBoolean('animated', true);
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var animated = this.animated && _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["c"].getBoolean('animated', true);
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
         var clearIcon = this.clearIcon || (mode === 'ios' ? 'close-circle' : 'close-sharp');
         var searchIcon = this.searchIcon || (mode === 'ios' ? 'search-outline' : 'search-sharp');
         var shouldShowCancelButton = this.shouldShowCancelButton();
-        var cancelButton = (this.showCancelButton !== 'never') && (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("button", { "aria-label": cancelButtonText, "aria-hidden": shouldShowCancelButton ? undefined : 'true', type: "button", tabIndex: mode === 'ios' && !shouldShowCancelButton ? -1 : undefined, onMouseDown: this.onCancelSearchbar, onTouchStart: this.onCancelSearchbar, class: "searchbar-cancel-button" }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { "aria-hidden": "true" }, mode === 'md'
-            ? Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-icon", { "aria-hidden": "true", mode: mode, icon: this.cancelButtonIcon, lazy: false })
+        var cancelButton = (this.showCancelButton !== 'never') && (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("button", { "aria-label": cancelButtonText, "aria-hidden": shouldShowCancelButton ? undefined : 'true', type: "button", tabIndex: mode === 'ios' && !shouldShowCancelButton ? -1 : undefined, onMouseDown: this.onCancelSearchbar, onTouchStart: this.onCancelSearchbar, class: "searchbar-cancel-button" }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { "aria-hidden": "true" }, mode === 'md'
+            ? Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-icon", { "aria-hidden": "true", mode: mode, icon: this.cancelButtonIcon, lazy: false })
             : cancelButtonText)));
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["H"], { role: "search", "aria-disabled": this.disabled ? 'true' : null, class: Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_4__["c"])(this.color, (_a = {},
-                _a[mode] = true,
-                _a['searchbar-animated'] = animated,
-                _a['searchbar-disabled'] = this.disabled,
-                _a['searchbar-no-animate'] = animated && this.noAnimate,
-                _a['searchbar-has-value'] = this.hasValue(),
-                _a['searchbar-left-aligned'] = this.shouldAlignLeft,
-                _a['searchbar-has-focus'] = this.focused,
-                _a['searchbar-should-show-cancel'] = this.shouldShowCancelButton(),
-                _a)) }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "searchbar-input-container" }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("input", { "aria-label": "search text", disabled: this.disabled, ref: function (el) { return _this.nativeInput = el; }, class: "searchbar-input", inputMode: this.inputmode, enterKeyHint: this.enterkeyhint, onInput: this.onInput, onBlur: this.onBlur, onFocus: this.onFocus, placeholder: this.placeholder, type: this.type, value: this.getValue(), autoComplete: this.autocomplete, autoCorrect: this.autocorrect, spellcheck: this.spellcheck }), mode === 'md' && cancelButton, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-icon", { "aria-hidden": "true", mode: mode, icon: searchIcon, lazy: false, class: "searchbar-search-icon" }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("button", { "aria-label": "reset", type: "button", "no-blur": true, class: "searchbar-clear-button", onMouseDown: this.onClearInput, onTouchStart: this.onClearInput }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-icon", { "aria-hidden": "true", mode: mode, icon: clearIcon, lazy: false, class: "searchbar-clear-icon" }))), mode === 'ios' && cancelButton));
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["H"], { role: "search", "aria-disabled": this.disabled ? 'true' : null, class: Object.assign(Object.assign({}, Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_4__["c"])(this.color)), (_a = {}, _a[mode] = true, _a['searchbar-animated'] = animated, _a['searchbar-disabled'] = this.disabled, _a['searchbar-no-animate'] = animated && this.noAnimate, _a['searchbar-has-value'] = this.hasValue(), _a['searchbar-left-aligned'] = this.shouldAlignLeft, _a['searchbar-has-focus'] = this.focused, _a['searchbar-should-show-cancel'] = this.shouldShowCancelButton(), _a)) }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "searchbar-input-container" }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("input", { "aria-label": "search text", disabled: this.disabled, ref: function (el) { return _this.nativeInput = el; }, class: "searchbar-input", inputMode: this.inputmode, enterKeyHint: this.enterkeyhint, onInput: this.onInput, onBlur: this.onBlur, onFocus: this.onFocus, placeholder: this.placeholder, type: this.type, value: this.getValue(), autoComplete: this.autocomplete, autoCorrect: this.autocorrect, spellcheck: this.spellcheck }), mode === 'md' && cancelButton, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-icon", { "aria-hidden": "true", mode: mode, icon: searchIcon, lazy: false, class: "searchbar-search-icon" }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("button", { "aria-label": "reset", type: "button", "no-blur": true, class: "searchbar-clear-button", onMouseDown: this.onClearInput, onTouchStart: this.onClearInput }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-icon", { "aria-hidden": "true", mode: mode, icon: clearIcon, lazy: false, class: "searchbar-clear-icon" }))), mode === 'ios' && cancelButton));
     };
     Object.defineProperty(class_1.prototype, "el", {
-        get: function () { return Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        get: function () { return Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
         enumerable: false,
         configurable: true
     });

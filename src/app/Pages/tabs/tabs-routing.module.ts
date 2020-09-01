@@ -7,6 +7,7 @@ const routes: Routes = [
   {
     path: "tasktracker",
     component: TabsPage,
+   // pathMatch: 'full',
     // loadChildren: "../tabs/tabs.module#TabsPageModule",
     // pathMatch:'prefix',
     children: [
@@ -71,6 +72,8 @@ const routes: Routes = [
       },
       {
         path: "group-chat",
+      //  pathMatch: 'full',
+        canActivate: [ActivateGuard],
         children: [
           {
             path: "",
@@ -78,16 +81,17 @@ const routes: Routes = [
           },
         ],
       },
-
-      // {
-      //   path: 'chat/:id',
-      //   children: [
-      //     {
-      //       path: "",
-      //       loadChildren: "../chat/chat.module#ChatPageModule",
-      //     },
-      //   ],
-      // },
+      {
+        path: "start-chat",
+      //  pathMatch: 'full',
+        canActivate: [ActivateGuard],
+        children: [
+          {
+            path: "",
+            loadChildren: "../start-chat/start-chat.module#StartChatPageModule",
+          },
+        ],
+      },
       // {
       //   path: "chat",
       //   children: [

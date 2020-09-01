@@ -18,12 +18,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_title", function() { return ToolbarTitle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_toolbar", function() { return Toolbar; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _index_92848855_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-92848855.js */ "./node_modules/@ionic/core/dist/esm-es5/index-92848855.js");
-/* harmony import */ var _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-23e7365a.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-23e7365a.js");
+/* harmony import */ var _index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-44bf8136.js */ "./node_modules/@ionic/core/dist/esm-es5/index-44bf8136.js");
+/* harmony import */ var _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-837be8f3.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-837be8f3.js");
 /* harmony import */ var _helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers-5c745fbd.js */ "./node_modules/@ionic/core/dist/esm-es5/helpers-5c745fbd.js");
-/* harmony import */ var _index_9b2fc761_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index-9b2fc761.js */ "./node_modules/@ionic/core/dist/esm-es5/index-9b2fc761.js");
+/* harmony import */ var _index_37b50f53_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index-37b50f53.js */ "./node_modules/@ionic/core/dist/esm-es5/index-37b50f53.js");
 /* harmony import */ var _cubic_bezier_685f606a_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./cubic-bezier-685f606a.js */ "./node_modules/@ionic/core/dist/esm-es5/cubic-bezier-685f606a.js");
-/* harmony import */ var _theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./theme-5641d27f.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-5641d27f.js");
+/* harmony import */ var _theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./theme-3f0b0c04.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js");
 /* harmony import */ var _framework_delegate_d1eb6504_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./framework-delegate-d1eb6504.js */ "./node_modules/@ionic/core/dist/esm-es5/framework-delegate-d1eb6504.js");
 
 
@@ -36,22 +36,22 @@ __webpack_require__.r(__webpack_exports__);
 var appCss = "html.plt-mobile ion-app{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}ion-app.force-statusbar-padding{--ion-safe-area-top:20px}";
 var App = /** @class */ (function () {
     function App(hostRef) {
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
     }
     App.prototype.componentDidLoad = function () {
         {
             rIC(function () {
-                var isHybrid = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["i"])(window, 'hybrid');
-                if (!_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["c"].getBoolean('_testing')) {
-                    __webpack_require__.e(/*! import() | tap-click-252af35a-js */ "tap-click-252af35a-js").then(__webpack_require__.bind(null, /*! ./tap-click-252af35a.js */ "./node_modules/@ionic/core/dist/esm-es5/tap-click-252af35a.js")).then(function (module) { return module.startTapClick(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["c"]); });
+                var isHybrid = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["i"])(window, 'hybrid');
+                if (!_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["c"].getBoolean('_testing')) {
+                    __webpack_require__.e(/*! import() | tap-click-252af35a-js */ "tap-click-252af35a-js").then(__webpack_require__.bind(null, /*! ./tap-click-252af35a.js */ "./node_modules/@ionic/core/dist/esm-es5/tap-click-252af35a.js")).then(function (module) { return module.startTapClick(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["c"]); });
                 }
-                if (_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["c"].getBoolean('statusTap', isHybrid)) {
-                    __webpack_require__.e(/*! import() | status-tap-0b3e89c4-js */ "status-tap-0b3e89c4-js").then(__webpack_require__.bind(null, /*! ./status-tap-0b3e89c4.js */ "./node_modules/@ionic/core/dist/esm-es5/status-tap-0b3e89c4.js")).then(function (module) { return module.startStatusTap(); });
+                if (_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["c"].getBoolean('statusTap', isHybrid)) {
+                    __webpack_require__.e(/*! import() | status-tap-a9bf301d-js */ "status-tap-a9bf301d-js").then(__webpack_require__.bind(null, /*! ./status-tap-a9bf301d.js */ "./node_modules/@ionic/core/dist/esm-es5/status-tap-a9bf301d.js")).then(function (module) { return module.startStatusTap(); });
                 }
-                if (_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["c"].getBoolean('inputShims', needInputShims())) {
-                    __webpack_require__.e(/*! import() | input-shims-4f0dbb39-js */ "input-shims-4f0dbb39-js").then(__webpack_require__.bind(null, /*! ./input-shims-4f0dbb39.js */ "./node_modules/@ionic/core/dist/esm-es5/input-shims-4f0dbb39.js")).then(function (module) { return module.startInputShims(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["c"]); });
+                if (_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["c"].getBoolean('inputShims', needInputShims())) {
+                    __webpack_require__.e(/*! import() | input-shims-b956f530-js */ "input-shims-b956f530-js").then(__webpack_require__.bind(null, /*! ./input-shims-b956f530.js */ "./node_modules/@ionic/core/dist/esm-es5/input-shims-b956f530.js")).then(function (module) { return module.startInputShims(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["c"]); });
                 }
-                if (_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["c"].getBoolean('hardwareBackButton', isHybrid)) {
+                if (_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["c"].getBoolean('hardwareBackButton', isHybrid)) {
                     Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./hardware-back-button-7b6ede21.js */ "./node_modules/@ionic/core/dist/esm-es5/hardware-back-button-7b6ede21.js")).then(function (module) { return module.startHardwareBackButton(); });
                 }
                 if (typeof window !== 'undefined') {
@@ -63,22 +63,22 @@ var App = /** @class */ (function () {
     };
     App.prototype.render = function () {
         var _a;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: (_a = {},
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: (_a = {},
                 _a[mode] = true,
                 _a['ion-page'] = true,
-                _a['force-statusbar-padding'] = _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["c"].getBoolean('_forceStatusbarPadding'),
+                _a['force-statusbar-padding'] = _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["c"].getBoolean('_forceStatusbarPadding'),
                 _a) }));
     };
     Object.defineProperty(App.prototype, "el", {
-        get: function () { return Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        get: function () { return Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
         enumerable: false,
         configurable: true
     });
     return App;
 }());
 var needInputShims = function () {
-    return Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["i"])(window, 'ios') && Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["i"])(window, 'mobile');
+    return Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["i"])(window, 'ios') && Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["i"])(window, 'mobile');
 };
 var rIC = function (callback) {
     if ('requestIdleCallback' in window) {
@@ -93,7 +93,7 @@ var buttonsIosCss = ".sc-ion-buttons-ios-h{display:-ms-flexbox;display:flex;-ms-
 var buttonsMdCss = ".sc-ion-buttons-md-h{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-webkit-transform:translateZ(0);transform:translateZ(0);z-index:99}.sc-ion-buttons-md-s ion-button{--padding-top:0;--padding-bottom:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}.sc-ion-buttons-md-s ion-button{--padding-top:0;--padding-bottom:0;--padding-start:8px;--padding-end:8px;--box-shadow:none;margin-left:2px;margin-right:2px;height:32px;font-size:14px;font-weight:500}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.sc-ion-buttons-md-s ion-button{margin-left:unset;margin-right:unset;-webkit-margin-start:2px;margin-inline-start:2px;-webkit-margin-end:2px;margin-inline-end:2px}}.sc-ion-buttons-md-s ion-button:not(.button-round){--border-radius:2px}.sc-ion-buttons-md-h.ion-color.sc-ion-buttons-md-s .button,.ion-color .sc-ion-buttons-md-h.sc-ion-buttons-md-s .button{--color:initial;--color-focused:var(--ion-color-contrast);--color-hover:var(--ion-color-contrast);--background-activated:transparent;--background-focused:var(--ion-color-contrast);--background-hover:var(--ion-color-contrast)}.sc-ion-buttons-md-h.ion-color.sc-ion-buttons-md-s .button-solid,.ion-color .sc-ion-buttons-md-h.sc-ion-buttons-md-s .button-solid{--background:var(--ion-color-contrast);--background-activated:transparent;--background-focused:var(--ion-color-shade);--background-hover:var(--ion-color-base);--color:var(--ion-color-base);--color-focused:var(--ion-color-base);--color-hover:var(--ion-color-base)}.sc-ion-buttons-md-h.ion-color.sc-ion-buttons-md-s .button-outline,.ion-color .sc-ion-buttons-md-h.sc-ion-buttons-md-s .button-outline{--border-color:var(--ion-color-contrast)}.sc-ion-buttons-md-s .button-has-icon-only.button-clear{--padding-top:12px;--padding-end:12px;--padding-bottom:12px;--padding-start:12px;--border-radius:50%;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;width:48px;height:48px}.sc-ion-buttons-md-s .button{--background-hover:currentColor}.sc-ion-buttons-md-s .button-solid{--color:var(--ion-toolbar-background, var(--ion-background-color, #fff));--background:var(--ion-toolbar-color, var(--ion-text-color, #424242));--background-activated:transparent;--background-focused:currentColor}.sc-ion-buttons-md-s .button-outline{--color:initial;--background:transparent;--background-activated:transparent;--background-focused:currentColor;--background-hover:currentColor;--border-color:currentColor}.sc-ion-buttons-md-s .button-clear{--color:initial;--background:transparent;--background-activated:transparent;--background-focused:currentColor;--background-hover:currentColor}.sc-ion-buttons-md-s ion-icon[slot=start]{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;margin-right:0.3em;font-size:1.4em}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.sc-ion-buttons-md-s ion-icon[slot=start]{margin-right:unset;-webkit-margin-end:0.3em;margin-inline-end:0.3em}}.sc-ion-buttons-md-s ion-icon[slot=end]{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;margin-left:0.4em;font-size:1.4em}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.sc-ion-buttons-md-s ion-icon[slot=end]{margin-left:unset;-webkit-margin-start:0.4em;margin-inline-start:0.4em}}.sc-ion-buttons-md-s ion-icon[slot=icon-only]{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;font-size:1.8em}";
 var Buttons = /** @class */ (function () {
     function Buttons(hostRef) {
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
         /**
          * If true, buttons will disappear when its
          * parent toolbar has fully collapsed if the toolbar
@@ -110,8 +110,8 @@ var Buttons = /** @class */ (function () {
     }
     Buttons.prototype.render = function () {
         var _a;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: (_a = {},
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: (_a = {},
                 _a[mode] = true,
                 _a['buttons-collapse'] = this.collapse,
                 _a) }));
@@ -125,10 +125,10 @@ Buttons.style = {
 var contentCss = ":host{--background:var(--ion-background-color, #fff);--color:var(--ion-text-color, #000);--padding-top:0px;--padding-bottom:0px;--padding-start:0px;--padding-end:0px;--keyboard-offset:0px;--offset-top:0px;--offset-bottom:0px;--overflow:auto;display:block;position:relative;-ms-flex:1;flex:1;width:100%;height:100%;margin:0 !important;padding:0 !important;font-family:var(--ion-font-family, inherit);contain:size style}:host(.ion-color) .inner-scroll{background:var(--ion-color-base);color:var(--ion-color-contrast)}:host(.outer-content){--background:var(--ion-color-step-50, #f2f2f2)}#background-content{left:0px;right:0px;top:calc(var(--offset-top) * -1);bottom:calc(var(--offset-bottom) * -1);position:absolute;background:var(--background)}.inner-scroll{left:0px;right:0px;top:calc(var(--offset-top) * -1);bottom:calc(var(--offset-bottom) * -1);padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:calc(var(--padding-top) + var(--offset-top));padding-bottom:calc(var(--padding-bottom) + var(--keyboard-offset) + var(--offset-bottom));position:absolute;color:var(--color);-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.inner-scroll{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}.scroll-y,.scroll-x{-webkit-overflow-scrolling:touch;will-change:scroll-position}.scroll-y{-ms-touch-action:pan-y;touch-action:pan-y;overflow-y:var(--overflow);overscroll-behavior-y:contain}.scroll-x{-ms-touch-action:pan-x;touch-action:pan-x;overflow-x:var(--overflow);overscroll-behavior-x:contain}.scroll-x.scroll-y{-ms-touch-action:auto;touch-action:auto}.overscroll::before,.overscroll::after{position:absolute;width:1px;height:1px;content:\"\"}.overscroll::before{bottom:-1px}.overscroll::after{top:-1px}:host(.content-sizing){contain:none}:host(.content-sizing) .inner-scroll{position:relative}.transition-effect{display:none;position:absolute;left:-100%;width:100%;height:100vh;opacity:0;pointer-events:none}.transition-cover{position:absolute;right:0;width:100%;height:100%;background:black;opacity:0.1}.transition-shadow{display:block;position:absolute;right:0;width:10px;height:100%;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAgCAYAAAAIXrg4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTE3MDgzRkQ5QTkyMTFFOUEwNzQ5MkJFREE1NUY2MjQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTE3MDgzRkU5QTkyMTFFOUEwNzQ5MkJFREE1NUY2MjQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxMTcwODNGQjlBOTIxMUU5QTA3NDkyQkVEQTU1RjYyNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxMTcwODNGQzlBOTIxMUU5QTA3NDkyQkVEQTU1RjYyNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmePEuQAAABNSURBVHjaYvz//z8DIxAwMDAwATGMhmFmPDQuOSZks0AMmoJBaQHjkPfB0Lfg/2gQjVow+HPy/yHvg9GiYjQfjMbBqAWjFgy/4hogwADYqwdzxy5BuwAAAABJRU5ErkJggg==);background-repeat:repeat-y;background-size:10px 16px}::slotted([slot=fixed]){position:absolute}";
 var Content = /** @class */ (function () {
     function class_1(hostRef) {
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
-        this.ionScrollStart = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionScrollStart", 7);
-        this.ionScroll = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionScroll", 7);
-        this.ionScrollEnd = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionScrollEnd", 7);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.ionScrollStart = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionScrollStart", 7);
+        this.ionScroll = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionScroll", 7);
+        this.ionScrollEnd = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionScrollEnd", 7);
         this.isScrolling = false;
         this.lastScroll = 0;
         this.queued = false;
@@ -189,19 +189,19 @@ var Content = /** @class */ (function () {
     };
     class_1.prototype.shouldForceOverscroll = function () {
         var forceOverscroll = this.forceOverscroll;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
         return forceOverscroll === undefined
-            ? mode === 'ios' && Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["i"])('ios')
+            ? mode === 'ios' && Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["i"])('ios')
             : forceOverscroll;
     };
     class_1.prototype.resize = function () {
         var _this = this;
         if (this.fullscreen) {
-            Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["f"])(function () { return _this.readDimensions(); });
+            Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["f"])(function () { return _this.readDimensions(); });
         }
         else if (this.cTop !== 0 || this.cBottom !== 0) {
             this.cTop = this.cBottom = 0;
-            Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["j"])(this);
+            Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["j"])(this);
         }
     };
     class_1.prototype.readDimensions = function () {
@@ -212,7 +212,7 @@ var Content = /** @class */ (function () {
         if (dirty) {
             this.cTop = top;
             this.cBottom = bottom;
-            Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["j"])(this);
+            Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["j"])(this);
         }
     };
     class_1.prototype.onScroll = function (ev) {
@@ -225,7 +225,7 @@ var Content = /** @class */ (function () {
         }
         if (!this.queued && this.scrollEvents) {
             this.queued = true;
-            Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["f"])(function (ts) {
+            Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["f"])(function (ts) {
                 _this.queued = false;
                 _this.detail.event = ev;
                 updateScrollDetail(_this.detail, _this.scrollEl, ts, shouldStart);
@@ -359,26 +359,22 @@ var Content = /** @class */ (function () {
         var _a;
         var _this = this;
         var _b = this, scrollX = _b.scrollX, scrollY = _b.scrollY;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
         var forceOverscroll = this.shouldForceOverscroll();
-        var transitionShadow = (mode === 'ios' && _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["c"].getBoolean('experimentalTransitionShadow', true));
+        var transitionShadow = (mode === 'ios' && _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["c"].getBoolean('experimentalTransitionShadow', true));
         this.resize();
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_6__["c"])(this.color, (_a = {},
-                _a[mode] = true,
-                _a['content-sizing'] = Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_6__["h"])('ion-popover', this.el),
-                _a['overscroll'] = forceOverscroll,
-                _a)), style: {
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: Object.assign(Object.assign({}, Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_6__["c"])(this.color)), (_a = {}, _a[mode] = true, _a['content-sizing'] = Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_6__["h"])('ion-popover', this.el), _a['overscroll'] = forceOverscroll, _a)), style: {
                 '--offset-top': this.cTop + "px",
                 '--offset-bottom': this.cBottom + "px",
-            } }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { id: "background-content", part: "background" }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("main", { class: {
+            } }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { id: "background-content", part: "background" }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("main", { class: {
                 'inner-scroll': true,
                 'scroll-x': scrollX,
                 'scroll-y': scrollY,
                 'overscroll': (scrollX || scrollY) && forceOverscroll
-            }, ref: function (el) { return _this.scrollEl = el; }, onScroll: (this.scrollEvents) ? function (ev) { return _this.onScroll(ev); } : undefined, part: "scroll" }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null)), transitionShadow ? (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "transition-effect" }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "transition-cover" }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "transition-shadow" }))) : null, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "fixed" })));
+            }, ref: function (el) { return _this.scrollEl = el; }, onScroll: (this.scrollEvents) ? function (ev) { return _this.onScroll(ev); } : undefined, part: "scroll" }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null)), transitionShadow ? (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "transition-effect" }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "transition-cover" }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "transition-shadow" }))) : null, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "fixed" })));
     };
     Object.defineProperty(class_1.prototype, "el", {
-        get: function () { return Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        get: function () { return Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
         enumerable: false,
         configurable: true
     });
@@ -438,7 +434,7 @@ var footerIosCss = "ion-footer{display:block;position:relative;-ms-flex-order:1;
 var footerMdCss = "ion-footer{display:block;position:relative;-ms-flex-order:1;order:1;width:100%;z-index:10}ion-footer ion-toolbar:last-of-type{padding-bottom:var(--ion-safe-area-bottom, 0)}.footer-md::before{left:0;top:-2px;bottom:auto;background-position:left 0 top 0;position:absolute;width:100%;height:2px;background-image:url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAHBAMAAADzDtBxAAAAD1BMVEUAAAAAAAAAAAAAAAAAAABPDueNAAAABXRSTlMUCS0gBIh/TXEAAAAaSURBVAjXYxCEAgY4UIICBmMogMsgFLtAAQCNSwXZKOdPxgAAAABJRU5ErkJggg==\");background-repeat:repeat-x;content:\"\"}[dir=rtl] .footer-md::before,:host-context([dir=rtl]) .footer-md::before{left:unset;right:unset;right:0}[dir=rtl] .footer-md::before,:host-context([dir=rtl]) .footer-md::before{background-position:right 0 top 0}.footer-md.ion-no-border::before{display:none}";
 var Footer = /** @class */ (function () {
     function Footer(hostRef) {
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
         /**
          * If `true`, the footer will be translucent.
          * Only applies when the mode is `"ios"` and the device supports
@@ -451,16 +447,16 @@ var Footer = /** @class */ (function () {
     }
     Footer.prototype.render = function () {
         var _a;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
         var translucent = this.translucent;
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["H"], { role: "contentinfo", class: (_a = {},
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["H"], { role: "contentinfo", class: (_a = {},
                 _a[mode] = true,
                 // Used internally for styling
                 _a["footer-" + mode] = true,
                 _a["footer-translucent"] = translucent,
                 _a["footer-translucent-" + mode] = translucent,
                 _a) }, mode === 'ios' && translucent &&
-            Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "footer-background" }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null)));
+            Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "footer-background" }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null)));
     };
     return Footer;
 }());
@@ -500,13 +496,13 @@ var createHeaderIndex = function (headerEl) {
     };
 };
 var handleContentScroll = function (scrollEl, scrollHeaderIndex, contentEl) {
-    Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["f"])(function () {
+    Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["f"])(function () {
         var scrollTop = scrollEl.scrollTop;
         var scale = Object(_helpers_5c745fbd_js__WEBPACK_IMPORTED_MODULE_3__["c"])(1, 1 + (-scrollTop / 500), 1.1);
         // Native refresher should not cause titles to scale
         var nativeRefresher = contentEl.querySelector('ion-refresher.refresher-native');
         if (nativeRefresher === null) {
-            Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["c"])(function () {
+            Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["c"])(function () {
                 scaleLargeTitles(scrollHeaderIndex.toolbars, scale);
             });
         }
@@ -541,7 +537,7 @@ var handleToolbarBorderIntersection = function (ev, mainHeaderIndex) {
  * hide the primary toolbar content and show the scrollable toolbar content
  */
 var handleToolbarIntersection = function (ev, mainHeaderIndex, scrollHeaderIndex) {
-    Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["c"])(function () {
+    Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["c"])(function () {
         handleToolbarBorderIntersection(ev, mainHeaderIndex);
         var event = ev[0];
         var intersection = event.intersectionRect;
@@ -603,7 +599,7 @@ var headerIosCss = "ion-header{display:block;position:relative;-ms-flex-order:-1
 var headerMdCss = "ion-header{display:block;position:relative;-ms-flex-order:-1;order:-1;width:100%;z-index:10}ion-header ion-toolbar:first-of-type{padding-top:var(--ion-safe-area-top, 0)}.header-md::after{left:0;bottom:-5px;background-position:left 0 top -2px;position:absolute;width:100%;height:5px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAHBAMAAADzDtBxAAAAD1BMVEUAAAAAAAAAAAAAAAAAAABPDueNAAAABXRSTlMUCS0gBIh/TXEAAAAaSURBVAjXYxCEAgY4UIICBmMogMsgFLtAAQCNSwXZKOdPxgAAAABJRU5ErkJggg==);background-repeat:repeat-x;content:\"\"}[dir=rtl] .header-md::after,:host-context([dir=rtl]) .header-md::after{left:unset;right:unset;right:0}[dir=rtl] .header-md::after,:host-context([dir=rtl]) .header-md::after{background-position:right 0 top -2px}.header-collapse-condense{display:none}.header-md.ion-no-border::after{display:none}";
 var Header = /** @class */ (function () {
     function class_2(hostRef) {
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
         this.collapsibleHeaderInitialized = false;
         /**
          * If `true`, the header will be translucent.
@@ -639,7 +635,7 @@ var Header = /** @class */ (function () {
             });
         });
     };
-    class_2.prototype.disconnectedCallback = function () {
+    class_2.prototype.componentDidUnload = function () {
         this.destroyCollapsibleHeader();
     };
     class_2.prototype.checkCollapsibleHeader = function () {
@@ -649,7 +645,7 @@ var Header = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         hasCollapse = this.collapse === 'condense';
-                        canCollapse = (hasCollapse && Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this) === 'ios') ? hasCollapse : false;
+                        canCollapse = (hasCollapse && Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this) === 'ios') ? hasCollapse : false;
                         if (!(!canCollapse && this.collapsibleHeaderInitialized)) return [3 /*break*/, 1];
                         this.destroyCollapsibleHeader();
                         return [3 /*break*/, 3];
@@ -658,7 +654,7 @@ var Header = /** @class */ (function () {
                         pageEl = this.el.closest('ion-app,ion-page,.ion-page,page-inner');
                         contentEl = (pageEl) ? pageEl.querySelector('ion-content') : null;
                         // Cloned elements are always needed in iOS transition
-                        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["c"])(function () {
+                        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["c"])(function () {
                             var title = cloneElement('ion-title');
                             title.size = 'large';
                             cloneElement('ion-back-button');
@@ -728,7 +724,7 @@ var Header = /** @class */ (function () {
                          */
                         this.contentScrollCallback = function () { handleContentScroll(_this.scrollEl, scrollHeaderIndex, contentEl); };
                         this.scrollEl.addEventListener('scroll', this.contentScrollCallback);
-                        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["c"])(function () {
+                        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["c"])(function () {
                             if (_this.collapsibleMainHeader !== undefined) {
                                 _this.collapsibleMainHeader.classList.add('header-collapse-main');
                             }
@@ -742,9 +738,9 @@ var Header = /** @class */ (function () {
     class_2.prototype.render = function () {
         var _a;
         var translucent = this.translucent;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
         var collapse = this.collapse || 'none';
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["H"], { role: "banner", class: (_a = {},
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["H"], { role: "banner", class: (_a = {},
                 _a[mode] = true,
                 // Used internally for styling
                 _a["header-" + mode] = true,
@@ -752,10 +748,10 @@ var Header = /** @class */ (function () {
                 _a["header-collapse-" + collapse] = true,
                 _a["header-translucent-" + mode] = this.translucent,
                 _a) }, mode === 'ios' && translucent &&
-            Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "header-background" }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null)));
+            Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "header-background" }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null)));
     };
     Object.defineProperty(class_2.prototype, "el", {
-        get: function () { return Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        get: function () { return Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
         enumerable: false,
         configurable: true
     });
@@ -768,15 +764,15 @@ Header.style = {
 var routeOutletCss = ":host{left:0;right:0;top:0;bottom:0;position:absolute;contain:layout size style;overflow:hidden;z-index:0}";
 var RouterOutlet = /** @class */ (function () {
     function class_3(hostRef) {
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
-        this.ionNavWillLoad = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionNavWillLoad", 7);
-        this.ionNavWillChange = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionNavWillChange", 3);
-        this.ionNavDidChange = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionNavDidChange", 3);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.ionNavWillLoad = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionNavWillLoad", 7);
+        this.ionNavWillChange = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionNavWillChange", 3);
+        this.ionNavDidChange = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionNavDidChange", 3);
         this.animationEnabled = true;
         /**
          * The mode determines which platform styles to use.
          */
-        this.mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        this.mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
         /**
          * If `true`, the router-outlet should animate the transition of components.
          */
@@ -945,9 +941,9 @@ var RouterOutlet = /** @class */ (function () {
                         // emit nav will change event
                         this.ionNavWillChange.emit();
                         _a = this, el = _a.el, mode = _a.mode;
-                        animated = this.animated && _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["c"].getBoolean('animated', true);
-                        animationBuilder = this.animation || opts.animationBuilder || _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["c"].get('navAnimation');
-                        return [4 /*yield*/, Object(_index_9b2fc761_js__WEBPACK_IMPORTED_MODULE_4__["t"])(Object.assign(Object.assign({ mode: mode,
+                        animated = this.animated && _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["c"].getBoolean('animated', true);
+                        animationBuilder = this.animation || opts.animationBuilder || _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["c"].get('navAnimation');
+                        return [4 /*yield*/, Object(_index_37b50f53_js__WEBPACK_IMPORTED_MODULE_4__["t"])(Object.assign(Object.assign({ mode: mode,
                                 animated: animated,
                                 enteringEl: enteringEl,
                                 leavingEl: leavingEl, baseEl: el, progressCallback: (opts.progressAnimation
@@ -981,10 +977,10 @@ var RouterOutlet = /** @class */ (function () {
         });
     };
     class_3.prototype.render = function () {
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null));
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null));
     };
     Object.defineProperty(class_3.prototype, "el", {
-        get: function () { return Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        get: function () { return Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
         enumerable: false,
         configurable: true
     });
@@ -1004,8 +1000,8 @@ var titleIosCss = ":host{--color:initial;display:-ms-flexbox;display:flex;-ms-fl
 var titleMdCss = ":host{--color:initial;display:-ms-flexbox;display:flex;-ms-flex:1;flex:1;-ms-flex-align:center;align-items:center;-webkit-transform:translateZ(0);transform:translateZ(0);color:var(--color)}:host(.ion-color){color:var(--ion-color-base)}.toolbar-title{display:block;width:100%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;pointer-events:auto}:host(.title-small) .toolbar-title{white-space:normal}:host{padding-left:20px;padding-right:20px;padding-top:0;padding-bottom:0;font-size:20px;font-weight:500;letter-spacing:0.0125em}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host{padding-left:unset;padding-right:unset;-webkit-padding-start:20px;padding-inline-start:20px;-webkit-padding-end:20px;padding-inline-end:20px}}:host(.title-small){width:100%;height:100%;font-size:15px;font-weight:normal}";
 var ToolbarTitle = /** @class */ (function () {
     function ToolbarTitle(hostRef) {
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
-        this.ionStyle = Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionStyle", 7);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        this.ionStyle = Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["e"])(this, "ionStyle", 7);
     }
     ToolbarTitle.prototype.sizeChanged = function () {
         this.emitStyle();
@@ -1025,15 +1021,12 @@ var ToolbarTitle = /** @class */ (function () {
     };
     ToolbarTitle.prototype.render = function () {
         var _a;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
         var size = this.getSize();
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_6__["c"])(this.color, (_a = {},
-                _a[mode] = true,
-                _a["title-" + size] = true,
-                _a)) }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toolbar-title" }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null))));
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: Object.assign((_a = {}, _a[mode] = true, _a["title-" + size] = true, _a), Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_6__["c"])(this.color)) }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toolbar-title" }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null))));
     };
     Object.defineProperty(ToolbarTitle.prototype, "el", {
-        get: function () { return Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        get: function () { return Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
         enumerable: false,
         configurable: true
     });
@@ -1056,7 +1049,7 @@ var toolbarIosCss = ":host{--border-width:0;--border-style:solid;--opacity:1;-mo
 var toolbarMdCss = ":host{--border-width:0;--border-style:solid;--opacity:1;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;padding-left:var(--ion-safe-area-left);padding-right:var(--ion-safe-area-right);display:block;position:relative;width:100%;color:var(--color);font-family:var(--ion-font-family, inherit);contain:content;z-index:10;-webkit-box-sizing:border-box;box-sizing:border-box}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--ion-safe-area-left);padding-inline-start:var(--ion-safe-area-left);-webkit-padding-end:var(--ion-safe-area-right);padding-inline-end:var(--ion-safe-area-right)}}:host(.ion-color){color:var(--ion-color-contrast)}:host(.ion-color) .toolbar-background{background:var(--ion-color-base)}.toolbar-container{padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:-ms-flexbox;display:flex;position:relative;-ms-flex-direction:row;flex-direction:row;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;width:100%;min-height:var(--min-height);contain:content;overflow:hidden;z-index:10;-webkit-box-sizing:border-box;box-sizing:border-box}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.toolbar-container{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}.toolbar-background{left:0;right:0;top:0;bottom:0;position:absolute;-webkit-transform:translateZ(0);transform:translateZ(0);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);contain:strict;opacity:var(--opacity);z-index:-1;pointer-events:none}::slotted(ion-progress-bar){left:0;right:0;bottom:0;position:absolute}:host{--background:var(--ion-toolbar-background, var(--ion-background-color, #fff));--color:var(--ion-toolbar-color, var(--ion-text-color, #424242));--border-color:var(--ion-toolbar-border-color, var(--ion-border-color, var(--ion-color-step-150, #c1c4cd)));--padding-top:0;--padding-bottom:0;--padding-start:0;--padding-end:0;--min-height:56px}.toolbar-content{-ms-flex:1;flex:1;-ms-flex-order:3;order:3;min-width:0;max-width:100%}::slotted(ion-segment){min-height:var(--min-height)}::slotted(.buttons-first-slot){margin-left:4px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){::slotted(.buttons-first-slot){margin-left:unset;-webkit-margin-start:4px;margin-inline-start:4px}}::slotted(.buttons-last-slot){margin-right:4px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){::slotted(.buttons-last-slot){margin-right:unset;-webkit-margin-end:4px;margin-inline-end:4px}}::slotted([slot=start]){-ms-flex-order:2;order:2}::slotted([slot=secondary]){-ms-flex-order:4;order:4}::slotted([slot=primary]){-ms-flex-order:5;order:5;text-align:end}::slotted([slot=end]){-ms-flex-order:6;order:6;text-align:end}";
 var Toolbar = /** @class */ (function () {
     function Toolbar(hostRef) {
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
         this.childrenStyles = new Map();
     }
     Toolbar.prototype.componentWillLoad = function () {
@@ -1094,23 +1087,20 @@ var Toolbar = /** @class */ (function () {
         });
         if (hasStyleChange) {
             this.childrenStyles.set(tagName, newStyles);
-            Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["j"])(this);
+            Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["j"])(this);
         }
     };
     Toolbar.prototype.render = function () {
         var _a;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
         var childStyles = {};
         this.childrenStyles.forEach(function (value) {
             Object.assign(childStyles, value);
         });
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: Object.assign(Object.assign({}, childStyles), Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_6__["c"])(this.color, (_a = {},
-                _a[mode] = true,
-                _a['in-toolbar'] = Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_6__["h"])('ion-toolbar', this.el),
-                _a))) }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toolbar-background" }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toolbar-container" }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "start" }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "secondary" }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toolbar-content" }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null)), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "primary" }), Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "end" }))));
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["H"], { class: Object.assign(Object.assign((_a = { 'in-toolbar': Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_6__["h"])('ion-toolbar', this.el) }, _a[mode] = true, _a), childStyles), Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_6__["c"])(this.color)) }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toolbar-background" }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toolbar-container" }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "start" }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "secondary" }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("div", { class: "toolbar-content" }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", null)), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "primary" }), Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("slot", { name: "end" }))));
     };
     Object.defineProperty(Toolbar.prototype, "el", {
-        get: function () { return Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        get: function () { return Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
         enumerable: false,
         configurable: true
     });

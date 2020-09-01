@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<ion-content>\n  <ion-refresher slot=\"fixed\" (ionRefresh)=\"doRefresh($event)\">\n    <ion-refresher-content\n      pullingIcon=\"arrow-down-outline\"\n      pullingText=\"Pull to refresh\"\n      refreshingSpinner=\"dots\"\n      refreshingText=\"Refreshing...\">\n    </ion-refresher-content>\n  </ion-refresher>\n\n<ion-item-divider>\n  <ion-label>\n    Signed in as: {{ currentUserEmail }}\n  </ion-label>\n</ion-item-divider>\n\n  <!-- Showing Groups created using \"Create A Group Button\" -->\n  <ion-item-divider *ngIf=\"listOfGroups2.length!=0\">\n    <ion-label>Your Groups</ion-label>\n  </ion-item-divider>\n  <ion-item button *ngFor=\"let item of listOfGroups2;\"\n    (click)=\"GroupChat(item.payload.doc.data().id,item.payload.doc.data().title)\"\n  >\n    <ion-label class=\"ion-text-wrap\">\n      <ion-text color=\"primary\">\n        <h3>{{ item.payload.doc.data().title }}</h3>\n        </ion-text>\n        <p>{{ item.payload.doc.data().users}} Users</p>\n        <!-- <p>Group id: {{ item.payload.doc.data().id }}</p> -->\n    </ion-label>\n  </ion-item>\n\n\n\n<ion-item-divider>\n  <ion-label>\n    Contacts (All Available Users)\n  </ion-label>\n</ion-item-divider>\n<ion-item button *ngFor=\"let item of listOfUsers;\"  (click)=\"oneOnOneChat(item.payload.doc.data().email,item.payload.doc.data().userName)\">\n  <ion-label>\n    {{ item.payload.doc.data().email }}\n    <p>{{ item.payload.doc.data().userName }}</p>\n  </ion-label>\n  <!-- Keep either a button or a routerlink--both togather will not work -->\n  <!-- <ion-button icon-only (click)=\"oneOnOneChat(item.payload.doc.data().email,item.payload.doc.data().nickname)\">\n    <ion-icon name=\"chatbubble-outline\"></ion-icon>\n  </ion-button> -->\n  <!-- <ion-button icon-only>\n    <ion-icon name=\"call-outline\"></ion-icon>\n  </ion-button> -->\n</ion-item>\n\n\n\n\n\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar color=\"primary\">\n    <ion-button color=\"light\" fill=\"clear\" expand=\"full\" routerLink=\"/start-chat\">Create a new Group</ion-button>\n  </ion-toolbar>\n</ion-footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- <ion-refresher slot=\"fixed\" (ionRefresh)=\"doRefresh($event)\">\n  <ion-refresher-content\n    pullingIcon=\"arrow-down-outline\"\n    pullingText=\"Pull to refresh\"\n    refreshingSpinner=\"dots\"\n    refreshingText=\"Refreshing...\">\n  </ion-refresher-content>\n</ion-refresher> -->\n\n<ion-header class=\"ion-no-margin\">\n  <ion-toolbar>\n    <ion-segment\n      style=\"width: 100%\"\n      color=\"dark\"\n      (ionChange)=\"0\"\n      #checkTeam\n      value=\"chat\"\n    >\n      <ion-segment-button size=\"small\" value=\"chat\" layout=\"icon-start\">\n        <ion-label\n          [color]=\"checkTeam.value=='chat' ? 'secondary' : ''\"\n          position=\"float\"\n          >Chat</ion-label\n        >\n        <ion-icon\n          [color]=\"checkTeam.value=='chat' ? 'secondary' : ''\"\n          name=\"chatbox-ellipses-outline\"\n        ></ion-icon>\n      </ion-segment-button>\n\n      <ion-segment-button size=\"small\" value=\"group\" layout=\"icon-start\">\n        <ion-label\n          [color]=\"checkTeam.value=='group' ? 'secondary' : ''\"\n          position=\"float\"\n          >Chat Groups</ion-label\n        >\n        <ion-icon\n          [color]=\"checkTeam.value=='group' ? 'secondary' : ''\"\n          src=\"../assets/images/chat-group.svg\"\n        ></ion-icon>\n      </ion-segment-button>\n    </ion-segment>\n  </ion-toolbar>\n</ion-header>\n<ion-content fullscreen>\n  <ion-fab\n    *ngIf=' checkTeam.value==\"group\" '\n    vertical=\"top\"\n    horizontal=\"end\"\n    slot=\"fixed\"\n  >\n    <ion-fab-button\n      routerLink=\"/tasktracker/start-chat\"\n      size=\"small\"\n      color=\"light\"\n      class=\"ion-no-margin ion-no-padding\"\n    >\n      <ion-icon name=\"add\" color=\"primary\"></ion-icon>\n    </ion-fab-button>\n  </ion-fab>\n  <ion-grid *ngIf=' checkTeam.value==\"chat\" '>\n    <ion-row class=\"ion-no-margin ; no-padding\">\n      <ion-col size-med=\"6\" size-lg=\"6\" offset-med=\"3\" offset-lg=\"3\">\n        <div\n          class=\"ion-no-margin ; no-padding\"\n          style=\"\n            height: 0px;\n            text-align: center !important;\n            position: relative;\n            z-index: 1;\n          \"\n        >\n          <ion-refresher\n            #refTeamProgress\n            id=\"refTeamProgress\"\n            style=\"position: relative; z-index: 2; top: 0px\"\n            slot=\"fixed\"\n            (ionRefresh)=\"doRefresh($event)\"\n          >\n            <ion-refresher-content color=\"primary\" refreshingSpinner=\"crescent\">\n            </ion-refresher-content>\n          </ion-refresher>\n        </div>\n        <ion-list *ngFor=\"let item of listOfUsers;\" name=\"lstusers\">\n          <ion-row style=\"justify-items: left\">\n            <ion-col>\n              <ion-item\n                detail=\"false\"\n                (click)=\"oneOnOneChat(item.payload.doc.data().email,item.payload.doc.data().userName)\"\n              >\n                <ion-avatar slot=\"start\" name=\"avatar\">\n                  <!-- <img src=\"../assets/images/avatar.svg\" /> -->\n                  <text-avatar\n                    text=\"{{item.payload.doc.data().userName}}\"\n                  ></text-avatar>\n                </ion-avatar>\n                <ion-label\n                  color=\"secondary\"\n                  position=\"stacked\"\n                  class=\"ion-text-start ion-text-capitalize\"\n                >\n                  {{ item.payload.doc.data().userName }}\n                  <ion-label class=\"ion-no-margin ion-no-padding ion-text-wrap\">\n                    <ion-note position=\"stacked\">\n                      <small> {{ item.payload.doc.data().email }}</small>\n                    </ion-note></ion-label\n                  >\n                </ion-label>\n              </ion-item>\n            </ion-col>\n\n            <ion-col size=\"auto\">\n              <ion-icon\n                (click)=\"oneOnOneChat(item.payload.doc.data().email,item.payload.doc.data().userName)\"\n                color=\"primary\"\n                name=\"chatbox-ellipses-outline\"\n                style=\"\n                  flex: left;\n                  margin-top: 10px;\n                  margin-left: 5px;\n                  margin-right: 5px;\n                  width: 20px;\n                  height: 20px;\n                \"\n                class=\"ion-text-start\"\n              ></ion-icon>\n            </ion-col>\n          </ion-row>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-grid *ngIf=' checkTeam.value==\"group\" '>\n    <ion-row>\n      <ion-col>\n        <ion-item-divider\n          class=\"ion-no-margin ion-no-padding\"\n          color=\"secondary\"\n        >\n          <ion-chip outline color=\"dark\">\n            <ion-label color=\"dark\"> Your Chat Groups </ion-label>\n          </ion-chip>\n        </ion-item-divider>\n\n        <div\n          class=\"ion-no-margin ion-no-padding\"\n          style=\"\n            height: 0px;\n            text-align: center !important;\n            position: relative;\n            z-index: 1;\n          \"\n        >\n          <ion-refresher\n            #refTeamProgress2\n            id=\"refTeamProgress\"\n            style=\"position: relative; z-index: 2; top: 0px\"\n            slot=\"fixed\"\n            (ionRefresh)=\"doRefresh($event)\"\n          >\n            <ion-refresher-content color=\"primary\" refreshingSpinner=\"crescent\">\n            </ion-refresher-content>\n          </ion-refresher>\n        </div>\n        <ion-list>\n          <ion-item\n            button\n            *ngFor=\"let item of listOfGroups2;\"\n            (click)=\"GroupChat(item.payload.doc.data().id,item.payload.doc.data().title)\"\n          >\n            <ion-label class=\"ion-text-wrap\">\n              <ion-text color=\"secondary\">\n                <h3>{{ item.payload.doc.data().title }}</h3>\n              </ion-text>\n              <p>{{ item.payload.doc.data().users}} Users</p>\n              <!-- <p>Group id: {{ item.payload.doc.data().id }}</p> -->\n            </ion-label>\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n    <!-- <ion-footer>\n      <ion-toolbar color=\"primary\">\n        <ion-button\n          color=\"light\"\n          fill=\"clear\"\n          expand=\"full\"\n          routerLink=\"/start-chat\"\n          >Start new Group</ion-button\n        >\n      </ion-toolbar>\n    </ion-footer> -->\n  </ion-grid>\n</ion-content>\n");
 
 /***/ }),
 
@@ -24,8 +24,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroupChatPageRoutingModule", function() { return GroupChatPageRoutingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _group_chat_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./group-chat.page */ "./src/app/Pages/group-chat/group-chat.page.ts");
 
 
@@ -64,12 +64,14 @@ var GroupChatPageRoutingModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroupChatPageModule", function() { return GroupChatPageModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm5/ionic-angular.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm5/ionic-angular.js");
 /* harmony import */ var _group_chat_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./group-chat-routing.module */ "./src/app/Pages/group-chat/group-chat-routing.module.ts");
-/* harmony import */ var _group_chat_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./group-chat.page */ "./src/app/Pages/group-chat/group-chat.page.ts");
+/* harmony import */ var _directives_text_avatar_directive_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../directives/text-avatar.directive.module */ "./src/app/directives/text-avatar.directive.module.ts");
+/* harmony import */ var _group_chat_page__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./group-chat.page */ "./src/app/Pages/group-chat/group-chat.page.ts");
+
 
 
 
@@ -86,9 +88,10 @@ var GroupChatPageModule = /** @class */ (function () {
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
                 _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
-                _group_chat_routing_module__WEBPACK_IMPORTED_MODULE_5__["GroupChatPageRoutingModule"]
+                _group_chat_routing_module__WEBPACK_IMPORTED_MODULE_5__["GroupChatPageRoutingModule"],
+                _directives_text_avatar_directive_module__WEBPACK_IMPORTED_MODULE_6__["TextAvatarModule"],
             ],
-            declarations: [_group_chat_page__WEBPACK_IMPORTED_MODULE_6__["GroupChatPage"]]
+            declarations: [_group_chat_page__WEBPACK_IMPORTED_MODULE_7__["GroupChatPage"]]
         })
     ], GroupChatPageModule);
     return GroupChatPageModule;
@@ -122,12 +125,12 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroupChatPage", function() { return GroupChatPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_Services_chat_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/Services/chat.service */ "./src/app/Services/chat.service.ts");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 /* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire-firestore.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm5/ionic-angular.js");
 
 
 
@@ -136,78 +139,119 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var GroupChatPage = /** @class */ (function () {
-    function GroupChatPage(chatService, db, router) {
+    function GroupChatPage(chatService, db, 
+    // private router: Router,
+    navCtrl) {
         this.chatService = chatService;
         this.db = db;
-        this.router = router;
-        this.listOfUsers = [];
+        this.navCtrl = navCtrl;
+        this.listOfUsers = []; //this list can show all groups using function getAllGroups() from chat service
         this.currentUserEmail = this.chatService.currentUser.email;
         this.listOfGroups = this.chatService.listOfGroups;
         this.listOfGroups2 = [];
-        this.currentFirebaseUserId = this.chatService.currentUserIdFromFirebaseSetFromHomePage;
+        this.currentFirebaseUserId = this.chatService
+            .currentUserIdFromFirebaseSetFromHomePage;
         // currentFirebaseUserId = this.chatService.currentUserIdFromFireabase;
-        this.titleCheck = '';
-        this.participant = '';
+        this.titleCheck = "";
+        this.participant = "";
         this.users = [];
         this.ngUnsubscribe = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
     }
     GroupChatPage.prototype.ngOnInit = function () {
         var _this = this;
-        console.log("check firebase user id set from home page here =" + this.currentFirebaseUserId);
-        //checking or creating a user account for currenlty logged in user
-        //if user exists, then load groups in which this user participates
-        // this.checkOrCreateUserInFirebase();
-        //this gets a list of all users
-        this.listOfUsers = [];
-        this.chatService.getAllUsers().subscribe(function (result) {
+        //getting firebase userid if not found
+        if (this.currentFirebaseUserId == null || this.currentFirebaseUserId == '') {
+            console.log("firebase userid not found");
+            var user = this.chatService.findUser(this.currentUserEmail);
+            //console.log(user);  //observable
+            user.subscribe(function (result) {
+                // console.log("firebase user id retrieved ="+result[0].id);
+                _this.chatService.currentUserIdFromFirebaseSetFromHomePage = result[0].id;
+                _this.currentFirebaseUserId = result[0].id;
+            });
+        }
+        setTimeout(function () {
+            console.log("check firebase user id here =" +
+                _this.currentFirebaseUserId);
+            //this gets a list of all users
+            _this.getAllUsers();
+            //this gets a list of all groups created by this user (groups for group chat only)
+            _this.getAllUserGroups();
+        }, 2000);
+    };
+    GroupChatPage.prototype.getAllUsers = function () {
+        var _this = this;
+        this.listOfUsers = new Array();
+        this.chatService.getAllUsers().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["take"])(1)).subscribe(function (result) {
             // console.log("getting list of all users");
             result.forEach(function (r) {
-                if (r.payload.doc.data()['email'] != _this.chatService.currentUser.email) {
+                if (r.payload.doc.data()["email"] != _this.chatService.currentUser.email) {
                     _this.listOfUsers.push(r);
-                }
-            });
-        });
-        //get all groups for group chats
-        this.listOfGroups2 = [];
-        this.chatService.getAllGroups2().subscribe(function (result) {
-            result.forEach(function (r) {
-                if (r.payload.doc.data()['type'] == 'group') {
-                    // console.log("id of these groups =");
-                    // console.log(r.payload.doc.id);
-                    _this.listOfGroups2.push(r);
                 }
             });
         });
     };
-    //swipe down to refresh
-    GroupChatPage.prototype.doRefresh = function (event) {
+    GroupChatPage.prototype.getAllUserGroups = function () {
         var _this = this;
-        console.log('Begin async operation');
-        //this gets a list of all users
-        this.listOfUsers = [];
-        this.chatService.getAllUsers().subscribe(function (result) {
-            // console.log("getting list of all users");
-            result.forEach(function (r) {
-                if (r.payload.doc.data()['email'] != _this.chatService.currentUser.email) {
-                    _this.listOfUsers.push(r);
+        try {
+            //get all groups for group chats
+            this.listOfGroups2 = new Array();
+            // console.log("listOfGroups2 =");
+            // console.log(this.listOfGroups2);
+            this.listOfGroups2.forEach(function (item) {
+                // console.log("item");
+                // console.log(item.payload.doc.data());
+            });
+            this.chatService.getAllGroups2().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["take"])(1)).subscribe(function (result) {
+                result.forEach(function (r) {
+                    if (r.payload.doc.data()["type"] == "group") {
+                        // console.log("group id="+r.payload.doc.id);
+                        // if(this.listOfGroups2.find(item =>item.payload.doc.data()['id'] == r.payload.doc.id)) {
+                        //   console.log("found similar id ="+r.payload.doc.id);
+                        // } else {
+                        //   console.log("not found...pushing...");
+                        //    this.listOfGroups2.push(r);
+                        // }
+                        _this.listOfGroups2.push(r);
+                    }
+                });
+            });
+        }
+        catch (err) {
+            console.log(err);
+        }
+    };
+    GroupChatPage.prototype.doRefresh = function (event) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var errmessage;
+            var _this = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.loading = true;
+                        errmessage = "";
+                        return [4 /*yield*/, new Promise(function () {
+                                console.log("Begin async operation");
+                                setTimeout(function () {
+                                    try {
+                                        _this.getAllUsers();
+                                        _this.getAllUserGroups();
+                                        console.log("Async operation has ended");
+                                        event.target.complete();
+                                        _this.loading = false;
+                                    }
+                                    catch (err) {
+                                        _this.loading = false;
+                                        console.log(err);
+                                    }
+                                }, 2000);
+                            }).catch(function (error) { return console.log(error); })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
                 }
             });
         });
-        //get all groups for group chats
-        this.listOfGroups2 = [];
-        this.chatService.getAllGroups2().subscribe(function (result) {
-            result.forEach(function (r) {
-                if (r.payload.doc.data()['type'] == 'group') {
-                    // console.log("id of these groups =");
-                    // console.log(r.payload.doc.id);
-                    _this.listOfGroups2.push(r);
-                }
-            });
-        });
-        setTimeout(function () {
-            console.log('Async operation has ended');
-            event.target.complete();
-        }, 2000);
     };
     GroupChatPage.prototype.GroupChat = function (id, title) {
         var _this = this;
@@ -223,7 +267,7 @@ var GroupChatPage = /** @class */ (function () {
                     var data = res_1_1.value;
                     // console.log("data");
                     // console.log(data.payload.id);
-                    _this.router.navigateByUrl("/chat/" + data.payload.id);
+                    _this.navCtrl.navigateRoot("/chat/" + data.payload.id);
                     //use following if passing 2 parameters
                     // this.router.navigateByUrl(`/chat/${data.payload.id}/${this.currentFirebaseUserId}`);
                 }
@@ -249,15 +293,18 @@ var GroupChatPage = /** @class */ (function () {
         var _this = this;
         //creating group name--------------------------------- stored in this.titleCheck (ordered alphabatically from both users' nickname)
         var userName1 = this.chatService.currentUser.userName;
-        var x = userName1.localeCompare(userName2, undefined, { numeric: true, sensitivity: 'base' });
+        var x = userName1.localeCompare(userName2, undefined, {
+            numeric: true,
+            sensitivity: "base",
+        });
         if (x == -1) {
             // console.log("userName1 will come first");
-            this.titleCheck = 'oOc_' + userName1 + '&' + userName2;
+            this.titleCheck = "oOc_" + userName1 + "&" + userName2;
             console.log("this.titlecheck =" + this.titleCheck);
         }
         else {
             // console.log("userName2 will come first");
-            this.titleCheck = 'oOc_' + userName2 + '&' + userName1;
+            this.titleCheck = "oOc_" + userName2 + "&" + userName1;
             console.log("this.titlecheck =" + this.titleCheck);
         }
         var obs1 = this.findGroup(this.titleCheck);
@@ -269,7 +316,7 @@ var GroupChatPage = /** @class */ (function () {
                     if (data.length > 0) {
                         console.log("found an existing group with this group id =" + data[0].id);
                         _this.groupId = data[0].id;
-                        _this.router.navigateByUrl("/chat/" + _this.groupId);
+                        _this.navCtrl.navigateRoot("/chat/" + _this.groupId);
                     }
                     else {
                         console.log("group not found--in create group section"); //group not available--create group
@@ -296,9 +343,10 @@ var GroupChatPage = /** @class */ (function () {
         });
     };
     GroupChatPage.prototype.findGroup = function (title) {
-        var group = this.db.collection('groupsTaskTracker', function (ref) {
-            return ref.where('title', '==', title);
-        }).valueChanges({ idField: 'id' }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["take"])(1));
+        var group = this.db
+            .collection("groupsTaskTracker", function (ref) { return ref.where("title", "==", title); })
+            .valueChanges({ idField: "id" })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["take"])(1));
         return group;
     };
     GroupChatPage.prototype.addUser = function (participant1) {
@@ -326,7 +374,7 @@ var GroupChatPage = /** @class */ (function () {
                 }
                 finally { if (e_3) throw e_3.error; }
             }
-            _this.participant = '';
+            _this.participant = "";
         });
     };
     GroupChatPage.prototype.readyToCreateOneOnOneGroup = function () {
@@ -334,7 +382,7 @@ var GroupChatPage = /** @class */ (function () {
         this.createGroup(this.titleCheck, this.users).then(function (res) {
             console.log("group created");
             // this.router.navigateByUrl('/chats');
-            _this.router.navigateByUrl("/chat/" + _this.groupId);
+            _this.navCtrl.navigateRoot("/chat/" + _this.groupId);
         });
         this.users = [];
     };
@@ -343,15 +391,18 @@ var GroupChatPage = /** @class */ (function () {
         var current = {
             email: this.chatService.currentUser.email,
             id: this.chatService.currentUserIdFromFirebaseSetFromHomePage,
-            userName: this.chatService.currentUser.userName
+            userName: this.chatService.currentUser.userName,
         };
         var allUsers = [current];
         allUsers.push.apply(allUsers, Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"])(users));
-        return this.db.collection('groupsTaskTracker').add({
+        return this.db
+            .collection("groupsTaskTracker")
+            .add({
             title: title,
-            type: 'OneOnOne',
-            users: allUsers
-        }).then(function (res) {
+            type: "OneOnOne",
+            users: allUsers,
+        })
+            .then(function (res) {
             var e_4, _a;
             // console.log("new group's id ="+res.id);
             _this.groupId = res.id;
@@ -359,9 +410,11 @@ var GroupChatPage = /** @class */ (function () {
             try {
                 for (var allUsers_1 = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__values"])(allUsers), allUsers_1_1 = allUsers_1.next(); !allUsers_1_1.done; allUsers_1_1 = allUsers_1.next()) {
                     var usr = allUsers_1_1.value;
-                    var oneAdd = _this.db.collection("usersTaskTracker/" + usr.id + "/groups").add({
+                    var oneAdd = _this.db
+                        .collection("usersTaskTracker/" + usr.id + "/groups")
+                        .add({
                         id: res.id,
-                        type: 'OneOnOne'
+                        type: "OneOnOne",
                     });
                     promises.push(oneAdd);
                 }
@@ -384,11 +437,11 @@ var GroupChatPage = /** @class */ (function () {
     GroupChatPage.ctorParameters = function () { return [
         { type: src_app_Services_chat_service__WEBPACK_IMPORTED_MODULE_2__["ChatService"] },
         { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__["AngularFirestore"] },
-        { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] }
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["NavController"] }
     ]; };
     GroupChatPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-group-chat',
+            selector: "app-group-chat",
             template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./group-chat.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/Pages/group-chat/group-chat.page.html")).default,
             styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./group-chat.page.scss */ "./src/app/Pages/group-chat/group-chat.page.scss")).default]
         })

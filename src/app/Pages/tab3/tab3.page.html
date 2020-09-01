@@ -34,7 +34,7 @@
     "
   >
     <ion-refresher
-      style="position: relative; z-index: 2; top: 0px;"
+      style="position: relative; z-index: 2; top: 0px"
       slot="fixed"
       (ionRefresh)="doRefresh($event)"
     >
@@ -77,32 +77,33 @@
     <ion-row *ngIf="!isLoading && loadedTasks.length >0">
       <ion-col size="12" size-lg="6" offset-med="3" offset-lg="3">
         <ion-row>
-          <ion-col size="auto">
+          <ion-col size="auto" (click)="getAllTasks()">
             <ion-chip outline color="primary">
               <ion-label> Tasks <b>({{loadedTasks.length}}) </b></ion-label>
             </ion-chip>
           </ion-col>
-          <ion-col size="auto">
+          <ion-col size="auto" (click)="getInprogress()">
             <ion-chip outline color="warning">
               <ion-label>
                 In-Progress <b>({{getTotalInProgress()}}) </b>
               </ion-label>
             </ion-chip>
           </ion-col>
-          <ion-col size="auto">
+          <ion-col size="auto" (click)="getCompleted()">
             <ion-chip outline color="success">
               <ion-label> Done <b>({{getTotalCompleted()}}) </b> </ion-label>
             </ion-chip>
           </ion-col>
         </ion-row>
-        <ion-list>
+        <ion-list 
+        lines="full">
           <ion-row
-            *ngFor="let tk of loadedTasks let i = index"
-            style="justify-items: left;"
+            *ngFor="let tk of userProgress let i = index"
+            style="justify-items: left"
           >
             <ion-col>
-              <ion-item-sliding #slidingItem>
-                <ion-item
+              <ion-item-sliding #slidingItem> 
+                <ion-item detail="true"
                   [routerLink]="['/', 'tasktracker', 'mytasks', tk.id ]"
                 >
                   <ion-label
@@ -115,7 +116,7 @@
                     </ion-note>
                     <ion-badge
                       slot="end"
-                      style="float: right;"
+                      style="float: right"
                       [color]="
                     tk.progress  > 0.99
                           ? 'success'
@@ -131,18 +132,20 @@
 
                 <ion-item-options>
                   <ion-item-option
-                    color="secondary"
+                    color="primary"
                     (click)="onEdit(tk.id, slidingItem)"
                   >
                     <ion-icon name="create" slot="icon-only"></ion-icon>
                   </ion-item-option>
-                  <!-- <ion-item-option color="danger">
+                  <ion-item-option
+                    color="secondary"
+                    [routerLink]="['/', 'tasktracker', 'taskview', tk.id]"
+                  >
                     <ion-icon
-                      name="trash"
+                      name="git-merge-outline"
                       slot="icon-only"
-                      (click)="onDelete(tk, slidingItem)"
                     ></ion-icon>
-                  </ion-item-option> -->
+                  </ion-item-option>
                 </ion-item-options>
               </ion-item-sliding>
             </ion-col>

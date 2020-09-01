@@ -11,9 +11,9 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_back_button", function() { return BackButton; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _index_92848855_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-92848855.js */ "./node_modules/@ionic/core/dist/esm-es5/index-92848855.js");
-/* harmony import */ var _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-23e7365a.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-23e7365a.js");
-/* harmony import */ var _theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./theme-5641d27f.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-5641d27f.js");
+/* harmony import */ var _index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-44bf8136.js */ "./node_modules/@ionic/core/dist/esm-es5/index-44bf8136.js");
+/* harmony import */ var _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ionic-global-837be8f3.js */ "./node_modules/@ionic/core/dist/esm-es5/ionic-global-837be8f3.js");
+/* harmony import */ var _theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./theme-3f0b0c04.js */ "./node_modules/@ionic/core/dist/esm-es5/theme-3f0b0c04.js");
 
 
 
@@ -23,7 +23,7 @@ var backButtonMdCss = ":host{--background:transparent;--color-focused:currentCol
 var BackButton = /** @class */ (function () {
     function class_1(hostRef) {
         var _this = this;
-        Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
+        Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["r"])(this, hostRef);
         /**
          * If `true`, the user cannot interact with the button.
          */
@@ -49,14 +49,14 @@ var BackButton = /** @class */ (function () {
                         if (_a) {
                             return [2 /*return*/, nav.pop({ animationBuilder: this.routerAnimation, skipIfBusy: true })];
                         }
-                        return [2 /*return*/, Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_3__["o"])(this.defaultHref, ev, 'back', this.routerAnimation)];
+                        return [2 /*return*/, Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_3__["o"])(this.defaultHref, ev, 'back', this.routerAnimation)];
                 }
             });
         }); };
     }
     class_1.prototype.componentWillLoad = function () {
         if (this.defaultHref === undefined) {
-            this.defaultHref = _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["c"].get('backButtonDefaultHref');
+            this.defaultHref = _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["c"].get('backButtonDefaultHref');
         }
     };
     Object.defineProperty(class_1.prototype, "backButtonIcon", {
@@ -66,20 +66,20 @@ var BackButton = /** @class */ (function () {
                 // icon is set on the component or by the config
                 return icon;
             }
-            if (Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this) === 'ios') {
+            if (Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this) === 'ios') {
                 // default ios back button icon
-                return _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["c"].get('backButtonIcon', 'chevron-back');
+                return _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["c"].get('backButtonIcon', 'chevron-back');
             }
             // default md back button icon
-            return _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["c"].get('backButtonIcon', 'arrow-back-sharp');
+            return _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["c"].get('backButtonIcon', 'arrow-back-sharp');
         },
         enumerable: false,
         configurable: true
     });
     Object.defineProperty(class_1.prototype, "backButtonText", {
         get: function () {
-            var defaultBackButtonText = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this) === 'ios' ? 'Back' : null;
-            return this.text != null ? this.text : _ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["c"].get('backButtonText', defaultBackButtonText);
+            var defaultBackButtonText = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this) === 'ios' ? 'Back' : null;
+            return this.text != null ? this.text : _ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["c"].get('backButtonText', defaultBackButtonText);
         },
         enumerable: false,
         configurable: true
@@ -107,21 +107,11 @@ var BackButton = /** @class */ (function () {
         var _a;
         var _b = this, color = _b.color, defaultHref = _b.defaultHref, disabled = _b.disabled, type = _b.type, hasIconOnly = _b.hasIconOnly, backButtonIcon = _b.backButtonIcon, backButtonText = _b.backButtonText;
         var showBackButton = defaultHref !== undefined;
-        var mode = Object(_ionic_global_23e7365a_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
-        return (Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["H"], { onClick: this.onClick, class: Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_3__["c"])(color, (_a = {},
-                _a[mode] = true,
-                _a['button'] = true,
-                _a['back-button-disabled'] = disabled,
-                _a['back-button-has-icon-only'] = hasIconOnly,
-                _a['in-toolbar'] = Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_3__["h"])('ion-toolbar', this.el),
-                _a['in-toolbar-color'] = Object(_theme_5641d27f_js__WEBPACK_IMPORTED_MODULE_3__["h"])('ion-toolbar[color]', this.el),
-                _a['ion-activatable'] = true,
-                _a['ion-focusable'] = true,
-                _a['show-back-button'] = showBackButton,
-                _a)) }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("button", { type: type, disabled: disabled, class: "button-native", part: "native", "aria-label": backButtonText || 'back' }, Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("span", { class: "button-inner" }, backButtonIcon && Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-icon", { part: "icon", icon: backButtonIcon, "aria-hidden": "true", lazy: false }), backButtonText && Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("span", { part: "text", "aria-hidden": "true", class: "button-text" }, backButtonText)), mode === 'md' && Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-ripple-effect", { type: this.rippleType }))));
+        var mode = Object(_ionic_global_837be8f3_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this);
+        return (Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["H"], { onClick: this.onClick, class: Object.assign(Object.assign({}, Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_3__["c"])(color)), (_a = {}, _a[mode] = true, _a['button'] = true, _a['back-button-disabled'] = disabled, _a['back-button-has-icon-only'] = hasIconOnly, _a['in-toolbar'] = Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_3__["h"])('ion-toolbar', this.el), _a['in-toolbar-color'] = Object(_theme_3f0b0c04_js__WEBPACK_IMPORTED_MODULE_3__["h"])('ion-toolbar[color]', this.el), _a['ion-activatable'] = true, _a['ion-focusable'] = true, _a['show-back-button'] = showBackButton, _a)) }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("button", { type: type, disabled: disabled, class: "button-native", part: "native", "aria-label": backButtonText || 'back' }, Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("span", { class: "button-inner" }, backButtonIcon && Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-icon", { part: "icon", icon: backButtonIcon, "aria-hidden": "true", lazy: false }), backButtonText && Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("span", { part: "text", "aria-hidden": "true", class: "button-text" }, backButtonText)), mode === 'md' && Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["h"])("ion-ripple-effect", { type: this.rippleType }))));
     };
     Object.defineProperty(class_1.prototype, "el", {
-        get: function () { return Object(_index_92848855_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
+        get: function () { return Object(_index_44bf8136_js__WEBPACK_IMPORTED_MODULE_1__["i"])(this); },
         enumerable: false,
         configurable: true
     });
