@@ -1,6 +1,17 @@
 {
-  "appId": "com.TaskTracker.wsd",
+  "appId": "com.tasktracker.wsd",
   "appName": "TaskTracker",
   "webDir": "www",
-  "npmClient": "npm"
+  "npmClient": "npm",
+  "cordova": {
+    "preferences": {
+      "ScrollEnabled": "false",
+      "BackupWebStorage": "none",
+      "SplashMaintainAspectRatio": "true",
+      "FadeSplashScreenDuration": "300",
+      "SplashShowOnlyFirstTime": "false",
+      "SplashScreen": "screen",
+      "SplashScreenDelay": "3000"
+    }
+  }
 }
