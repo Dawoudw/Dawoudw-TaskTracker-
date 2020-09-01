@@ -79,7 +79,9 @@ import { HomePage } from "./Pages/home/home.page";
 //   // },
 // ];
 const routes: Routes = [
+ 
   { path: "", loadChildren: "./Pages/tabs/tabs.module#TabsPageModule" },
+ 
 
   { path: "index", loadChildren: "./Pages/home/home.module#HomePageModule" },
 
