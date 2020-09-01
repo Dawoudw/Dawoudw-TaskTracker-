@@ -1,7 +1,7 @@
 {
-    "dev": {
+    "uat": {
         "configLevel": "project",
         "useProfile": false,
-        "awsConfigFilePath": "C:\\Users\\User\\.amplify\\awscloudformation\\D9VaZRucO3"
+        "awsConfigFilePath": "C:\\Users\\User\\.amplify\\awscloudformation\\tjd9c9lG1w"
     }
 }

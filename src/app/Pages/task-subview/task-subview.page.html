@@ -19,11 +19,7 @@
     <ion-item lines="full">
       <ion-buttons>
         <ion-button slot="start" (click)="back()">
-          <ion-icon
-            size="small"
-            slot="icon-only"
-            src="../assets/images/return-svg.svg"
-          ></ion-icon>
+          <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
         </ion-button>
       </ion-buttons>
       <span>
@@ -45,10 +41,10 @@
         <h3><b>{{ loadedTask.task }} </b></h3>
 
         <ion-text size="samll" slot="start" color="secondary">
-          <i style="font-size: smaller;"> {{loadedTask.taskdate|date}}</i>
+          <i style="font-size: smaller"> {{loadedTask.taskdate|date}}</i>
         </ion-text>
         <ion-badge
-          style="float: right;"
+          style="float: right"
           [color]="
             loadedTask.progress > 99
                   ? 'success'
@@ -65,7 +61,7 @@
             size="samll"
             class="ion-text-start ion-text-wrap"
           >
-            {{ loadedTask.details}}
+            <p>{{ loadedTask.details}}</p>
           </ion-text>
         </ion-label>
         <!-- <ion-text
@@ -132,13 +128,13 @@
   </ion-card>
   <div
     #divMsg
-    style="display: none;"
+    style="display: none"
     class="ion-no-padding ion-margin-top ion-margin-horizontal"
   >
     <ion-chip
       color="danger"
       class="ion-justify-content-center"
-      style="width: 98%;"
+      style="width: 98%"
     >
       <ion-label>There is no History entries for this task .</ion-label>
     </ion-chip>

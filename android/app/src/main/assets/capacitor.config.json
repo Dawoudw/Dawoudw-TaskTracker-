@@ -1,0 +1,6 @@
+{
+  "appId": "com.TaskTracker.wsd",
+  "appName": "TaskTracker",
+  "webDir": "www",
+  "npmClient": "npm"
+}
