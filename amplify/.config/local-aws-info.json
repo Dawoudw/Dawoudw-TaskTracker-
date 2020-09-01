@@ -1,7 +1,7 @@
 {
     "uat": {
         "configLevel": "project",
-        "useProfile": false,
-        "awsConfigFilePath": "C:\\Users\\User\\.amplify\\awscloudformation\\tjd9c9lG1w"
+        "useProfile": true,
+        "profileName": "tasktracker"
     }
 }

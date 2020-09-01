@@ -1,32 +1,62 @@
-.message {
+.my-message {
   padding: 10px !important;
-  border-radius: 10px !important;
+  border-radius: 15px !important;
   margin-bottom: 4px !important;
 
   img {
     width: 100%;
   }
-}
-.my-message {
-  // background: var(--ion-color-tertiary);
-  background: rgb(216, 252, 253);
-  color: rgb(0, 0, 0);
-  font-size: small;
-  // color: #fff;
-}
-.other-message {
-  // background: var(--ion-color-medium);
-  // color: #fff;
-  // background: var(--ion-color-light);
-  background: rgba(255, 245, 216, 0.986);
-  color: rgb(0, 0, 0);
-  font-size: small;
+  position: relative;
+  background: #a8eef5;
+  border-radius: 0.4em;
 }
 
+.my-message:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  border-right-color: #a8eef5;
+  border-left: 0;
+  border-top: 0;
+  margin-top: -10px;
+  margin-left: -15px;
+}
+
+.other-message {
+  padding: 10px !important;
+  border-radius: 15px !important;
+  margin-bottom: 4px !important;
+
+  img {
+    width: 100%;
+  }
+  position: relative;
+  background: #fff3e5;
+  border-radius: 0.4em;
+}
+
+.other-message :after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 27px solid transparent;
+  border-left-color: #fff3e5;
+  border-right: 0;
+  border-bottom: 0;
+  margin-top:-10px;
+  margin-right: -18px;
+}
 .time {
   // color: #dfdfdf;
   color: var(--ion-color-medium);
-  float: right;
+  float: right !important;
   font-size: x-small;
   font-style: italic;
 }
