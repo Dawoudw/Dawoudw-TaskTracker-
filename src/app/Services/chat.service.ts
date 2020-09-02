@@ -30,104 +30,48 @@ export class ChatService {
   currentUserIdFromFireabase = JSON.parse(
     localStorage.getItem("clientIdFirebase")
   );
+  groupId: any;
 
   fromChatService() {
-    console.log("fromChatService");
-    console.log(this.usersList);
-    this.usrServ.usersList.forEach((user) => {
-      console.log("user");
-      console.log(user["email"]);
-    });
+    try {
+      // console.log("fromChatService");
+      // console.log(this.usersList);
+      this.usrServ.usersList.forEach((user) => {
+        // console.log("user");
+        // console.log(user["email"]);
+      });
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   getAllUsers() {
-    return this.db.collection("usersTaskTracker").snapshotChanges();
+    try {
+      return this.db.collection("usersTaskTracker").snapshotChanges();
+    } catch (err) {
+      console.log(err);
+    }
   }
-
-  // getAllGroups(){
-  //   console.log("in getAllGroups");
-  //   console.log(this.currentUser.email);
-  //   console.log("current user's id from firebase ="+this.currentUserIdFromFirebase);
-  //   let currentUserIdFromFirebase = '';
-  //   let userObservable = this.findUser(this.currentUser.email);
-  //   forkJoin(userObservable).subscribe(res => {
-  //     for (let data of res) {
-  //       if (data.length > 0) {
-  //         // console.log("found an existing user with this user id ="+data[0].id);
-  //         currentUserIdFromFirebase = data[0].id;
-  //         console.log("currentUserIdFromFirebase");
-  //         console.log(currentUserIdFromFirebase);
-  //         // this.groupId = data[0].id;
-  //         // this.router.navigateByUrl(`/chat/${this.groupId}`);
-  //       }
-  //     }
-  //   });
-  //   console.log("before error");
-  //   // setTimeout(() => {
-  //     console.log(currentUserIdFromFirebase);
-  //     return this.db.collection(`usersTaskTracker/${currentUserIdFromFirebase}/groups`).snapshotChanges();
-  //   // }, 2000);
-
-  // }
 
   getCurrentUser() {
-    console.log("currentUser =" + this.currentUser);
-    console.log("current user's email =" + this.currentUser.email);
-    console.log("firebase id for this user");
+    // console.log("currentUser =" + this.currentUser);
+    // console.log("current user's email =" + this.currentUser.email);
+    // console.log("firebase id for this user");
   }
-
-  // checkOrCreateUserInFirebase() {
-  //   //for checking if users exists in firebase collection "usersTaskTracker"
-  //   //if a user is found, then load groups for group chat for that user
-  //   let userObservable = this.findUser(this.currentUser.email);
-  //   forkJoin(userObservable).subscribe(res => {
-  //     for (let data of res) {
-  //       if (data.length > 0) {
-  //         // console.log("found an existing user with this user id ="+data[0].id);
-  //         this.currentUserIdFromFirebase = data[0].id;
-  //         // this.groupId = data[0].id;
-  //         // this.router.navigateByUrl(`/chat/${this.groupId}`);
-
-  //         //getting list of groups
-  //         this.listOfGroups = [];
-  //         this.getAllGroups(this.currentUserIdFromFirebase)
-  //           .subscribe(result => {
-  //             result.forEach(r => {
-  //               if(r.payload.doc.data()['type'] == 'group') {
-  //                 console.log("id of these groups =");
-  //                 console.log(r.payload.doc.id);
-  //                 this.listOfGroups.push(r);
-  //               }
-  //             });
-  //         });
-
-  //       }
-  //       else {
-  //         //User not found in firebase collection "usersTaskTracker"--creating the user
-  //         console.log("user not found in firebase--in create user section");
-  //         this.db.collection('usersTaskTracker').add({
-  //           email: this.currentUser.email,
-  //           userId: this.currentUser.userId,
-  //           userName: this.currentUser.userName,
-  //           avatar: this.currentUser.avatar
-  //         });
-  //       }
-  //     }
-  //   });
-  // }
 
   findUser(email) {
-    let user = this.db
-      .collection("usersTaskTracker", (ref) => ref.where("email", "==", email))
-      .valueChanges({ idField: "id" })
-      .pipe(take(1));
-    return user;
+    try {
+      let user = this.db
+        .collection("usersTaskTracker", (ref) =>
+          ref.where("email", "==", email)
+        )
+        .valueChanges({ idField: "id" })
+        .pipe(take(1));
+      return user;
+    } catch (err) {
+      console.log(err);
+    }
   }
-
-  // getAllGroups(id){
-  //   console.log("id received ==="+id);
-  //   return this.db.collection(`usersTaskTracker/${id}/groups`).snapshotChanges();
-  // }
 
   getAllGroups2() {
     try {
@@ -163,14 +107,13 @@ export class ChatService {
           users: allUsers,
         })
         .then((res) => {
+          this.groupId = res.id;
           let promises = [];
           for (let usr of allUsers) {
-            console.log("usr");
-            console.log(usr);
-            console.log("usr.id");
-            console.log(usr.id);
-            console.log("res.id");
-            console.log(res.id);
+            // console.log("usr =");
+            // console.log(usr);
+            // console.log("usr.id ="+usr.id);
+            // console.log("res.id ="+res.id);
             let oneAdd = this.db
               .collection(`usersTaskTracker/${usr.id}/groups`)
               .add({

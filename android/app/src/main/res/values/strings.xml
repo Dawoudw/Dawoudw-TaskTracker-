@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">TaskTracker</string>
     <string name="title_activity_main">TaskTracker</string>
-    <string name="package_name">com.TaskTracker.wsd</string>
-    <string name="custom_url_scheme">com.TaskTracker.wsd</string>
+    <string name="package_name">com.tasktracker.wsd</string>
+    <string name="custom_url_scheme">com.tasktracker.wsd</string>
 </resources>

@@ -87,6 +87,7 @@
               <ion-item
                 detail="false"
                 (click)="oneOnOneChat(item.payload.doc.data().email,item.payload.doc.data().userName)"
+                style="text-align: center !important;"
               >
                 <ion-avatar slot="start" name="avatar">
                   <!-- <img src="../assets/images/avatar.svg" /> -->
@@ -95,14 +96,15 @@
                   ></text-avatar>
                 </ion-avatar>
                 <ion-label
+                  class="ion-align-items-center"
                   color="secondary"
                   position="stacked"
                   class="ion-text-start ion-text-capitalize"
                 >
                   {{ item.payload.doc.data().userName }}
-                  <ion-label class="ion-no-margin ion-no-padding ion-text-wrap">
-                    <ion-note position="stacked">
-                      <small> {{ item.payload.doc.data().email }}</small>
+                  <ion-label  mode="md" style="margin-top:-5px"class="ion-no-margin ion-no-padding ion-text-wrap">
+                    <ion-note class="ion-text-wrap" >
+                      <small > {{ item.payload.doc.data().email }}</small>
                     </ion-note></ion-label
                   >
                 </ion-label>

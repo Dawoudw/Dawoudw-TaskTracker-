@@ -16,10 +16,10 @@ export class GroupChatPage implements OnDestroy, OnInit {
     public chatService: ChatService,
     public db: AngularFirestore,
     // private router: Router,
-    private navCtr: NavController
+    private navCtrl: NavController
   ) {}
 
-  listOfUsers = [];
+  listOfUsers = []; //this list can show all groups using function getAllGroups() from chat service
   currentUserEmail = this.chatService.currentUser.email;
   listOfGroups = this.chatService.listOfGroups;
   listOfGroups2 = [];
@@ -33,22 +33,34 @@ export class GroupChatPage implements OnDestroy, OnInit {
   private ngUnsubscribe = new Subject();
 
   ngOnInit() {
-    console.log(
-      "check firebase user id set from home page here =" +
-        this.currentFirebaseUserId
-    );
-    //checking or creating a user account for currenlty logged in user
-    //if user exists, then load groups in which this user participates
-    // this.checkOrCreateUserInFirebase();
+    //getting firebase userid if not found
+    if(this.currentFirebaseUserId == null || this.currentFirebaseUserId == '') {
+      console.log("firebase userid not found");
+      let user = this.chatService.findUser(this.currentUserEmail);
+      //console.log(user);  //observable
+      user.subscribe((result) => {
+        // console.log("firebase user id retrieved ="+result[0].id);
+        this.chatService.currentUserIdFromFirebaseSetFromHomePage = result[0].id;
+        this.currentFirebaseUserId = result[0].id;
+      });
+    }
+    setTimeout(() => {
+      console.log(
+        "check firebase user id here =" +
+          this.currentFirebaseUserId
+      );
+      //this gets a list of all users
+      this.getAllUsers();
+      //this gets a list of all groups created by this user (groups for group chat only)
+      this.getAllUserGroups();
+    }, 2000);
 
-    //this gets a list of all users
-
-    this.getAllUsers();
-    this.getAllUserGroups();
   }
+
+
   getAllUsers() {
     this.listOfUsers = new Array();
-    this.chatService.getAllUsers().subscribe((result) => {
+    this.chatService.getAllUsers().pipe(take(1)).subscribe((result) => {
       // console.log("getting list of all users");
       result.forEach((r) => {
         if (
@@ -61,13 +73,25 @@ export class GroupChatPage implements OnDestroy, OnInit {
   }
   getAllUserGroups() {
     try {
-      //get all groups for group chats
+     //get all groups for group chats
       this.listOfGroups2 = new Array();
-      this.chatService.getAllGroups2().subscribe((result) => {
+      // console.log("listOfGroups2 =");
+      // console.log(this.listOfGroups2);
+
+      this.listOfGroups2.forEach((item) =>{
+        // console.log("item");
+        // console.log(item.payload.doc.data());
+      });
+      this.chatService.getAllGroups2().pipe(take(1)).subscribe((result) => {
         result.forEach((r) => {
           if (r.payload.doc.data()["type"] == "group") {
-            // console.log("id of these groups =");
-            // console.log(r.payload.doc.id);
+            // console.log("group id="+r.payload.doc.id);
+              // if(this.listOfGroups2.find(item =>item.payload.doc.data()['id'] == r.payload.doc.id)) {
+              //   console.log("found similar id ="+r.payload.doc.id);
+              // } else {
+              //   console.log("not found...pushing...");
+              //    this.listOfGroups2.push(r);
+              // }
             this.listOfGroups2.push(r);
           }
         });
@@ -75,7 +99,9 @@ export class GroupChatPage implements OnDestroy, OnInit {
     } catch (err) {
       console.log(err);
     }
+
   }
+
   //swipe down to refresh
   loading: boolean;
   async doRefresh(event) {
@@ -107,7 +133,7 @@ export class GroupChatPage implements OnDestroy, OnInit {
       for (let data of res) {
         // console.log("data");
         // console.log(data.payload.id);
-        this.navCtr.navigateRoot(`/chat/${data.payload.id}`);
+        this.navCtrl.navigateRoot(`/chat/${data.payload.id}`);
         //use following if passing 2 parameters
         // this.router.navigateByUrl(`/chat/${data.payload.id}/${this.currentFirebaseUserId}`);
       }
@@ -147,7 +173,7 @@ export class GroupChatPage implements OnDestroy, OnInit {
             "found an existing group with this group id =" + data[0].id
           );
           this.groupId = data[0].id;
-          this.navCtr.navigateRoot(`/chat/${this.groupId}`);
+          this.navCtrl.navigateRoot(`/chat/${this.groupId}`);
         } else {
           console.log("group not found--in create group section"); //group not available--create group
           setTimeout(() => {
@@ -193,7 +219,7 @@ export class GroupChatPage implements OnDestroy, OnInit {
     this.createGroup(this.titleCheck, this.users).then((res) => {
       console.log("group created");
       // this.router.navigateByUrl('/chats');
-      this.navCtr.navigateRoot(`/chat/${this.groupId}`);
+      this.navCtrl.navigateRoot(`/chat/${this.groupId}`);
     });
     this.users = [];
   }
