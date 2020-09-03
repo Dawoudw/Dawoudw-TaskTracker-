@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { TaskSubviewPageRoutingModule } from './task-subview-routing.module';
-
+import{TextAvatarModule} from '../../directives/text-avatar.directive.module'
 import { TaskSubviewPage } from './task-subview.page';
 import { SubTaskComponent } from 'src/app/Components/sub-task/sub-task.component';
 import { ExpandableComponent } from 'src/app/Components/expandable/expandable.component';
@@ -15,7 +15,8 @@ import { ExpandableComponent } from 'src/app/Components/expandable/expandable.co
     CommonModule,
     FormsModule,
     IonicModule,
-    TaskSubviewPageRoutingModule
+    TaskSubviewPageRoutingModule,
+    TextAvatarModule
   ],
   declarations: [TaskSubviewPage,SubTaskComponent,ExpandableComponent]
 })

@@ -23,7 +23,6 @@ interface TaskData {
 export class TasksService {
   private _myTasks = new BehaviorSubject<Task[]>([]);
   loginedUser = new User();
-
   path: string = "https://46odim7l6f.execute-api.us-east-2.amazonaws.com/beta";
   constructor(
     private httpClient: HttpClient,
@@ -109,6 +108,11 @@ export class TasksService {
   addSubTask(id, subTask: any): Promise<any>{
     return this.httpClient.post<any>(`${this.path}/task/${id}`, subTask).toPromise();
   }
+  updateSubTask( subTask: any): Promise<any>{
+    return this.httpClient.put<any>(`${this.path}/subtask`, subTask).toPromise();
+  }
+
+
   addTask(taskTitle: string, taskDescription: string) {
     console.log(
       "Trying to create task with title: ",

@@ -17,3 +17,12 @@
    --ion-item-background:var(--ion-color-light-tint);  
 }
 
+
+.my-custom-modal-class   {
+  --backdrop-opacity: 0.8 !important;
+
+  .modal-wrapper {
+    --height: 40% !important;
+    position: absolute;
+  }
+}

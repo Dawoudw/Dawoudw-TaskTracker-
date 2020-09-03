@@ -51,6 +51,17 @@ const routes: Routes = [
           },
         ],
       },
+      // {
+      //   path: "create-subtask",
+      //   children: [
+      //     {
+      //       path: ":taskid/:subtaskid",
+      //       canActivate: [ActivateGuard],
+      //       loadChildren:
+      //         "../create-subtask/create-subtask.module#CreateSubtaskPageModule",
+      //     },
+      //   ],
+      // },
       {
         path: "mytasks",
         canActivate: [ActivateGuard],

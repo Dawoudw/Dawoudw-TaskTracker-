@@ -12,39 +12,100 @@
       >
         <ion-item
           lines="none"
+          class="ion-no-margin "
           [ngClass]="{
             '': !SubTaskObj.expanded,
             'item-background-color': SubTaskObj.expanded
           }"
         >
-          <ion-label class="ion-text-start ion-text-capitalize ion-text-wrap">
-            <!-- <h3>
-                <b>{{ SubTaskObj.subtask }} </b>
-              </h3> -->
-
-            <ion-text size="samll" slot="start" color="secondary">
-              <i style="font-size: smaller">
-                {{ SubTaskObj.taskdate | date }}</i
+          <ion-label>
+            <ion-label class="ion-no-margin ion-no-padding">
+              <ion-item-divider
+                style="border: none;"
+                class="ion-no-margin ion-no-padding"
+                color="light"
               >
-            </ion-text>
-            <ion-badge
-              style="float: right"
-              [color]="
-                SubTaskObj.progress > 99
-                  ? 'success'
-                  : SubTaskObj.progress < 50
-                  ? 'warning'
-                  : 'primary'
-              "
-            >
-              {{ parsPercentage(SubTaskObj.progress) }}%
-            </ion-badge>
-            <ion-label size="samll" class="ion-text-start ion-text-capitalize">
-              <ion-text size="samll" class="ion-text-start ion-text-wrap">
-                <p>{{ SubTaskObj.details }}</p>
-              </ion-text>
+                <ion-label slot="start" color="primary">
+                  <span
+                    style="  display: flex;
+                align-items: center ;margin-bottom:4px; "
+                  >
+                    <small>
+                      <ion-avatar
+                        class="ion-no-padding"
+                        style=" margin-right:4px !important ;width: 26px;height: 26px; "
+                      >
+                        <text-avatar
+                          text="{{ getTaskOwnerName(SubTaskObj.userid) }}"
+                        ></text-avatar>
+                      </ion-avatar>
+                    </small>
+                    {{ getTaskOwnerName(SubTaskObj.userid) }}
+                  </span>
+                </ion-label>
+                <ion-label
+                  slot="end"
+                  color="warning"
+                  style="position:fixed  !important;float:right;right:0px !important;; "
+                >
+                  <ion-buttons collapse="true" (click)="openNewTaskModal()">
+                    <ion-button>
+                      <ion-icon
+                        slot="icon-only"
+                        name="create-sharp"
+                        size="large"
+                        style="float: right !important "
+                      >
+                      </ion-icon>
+                    </ion-button>
+                  </ion-buttons>
+                </ion-label>
+              </ion-item-divider>
             </ion-label>
-          </ion-label>
+            <ion-label
+              id="lblcontiner"
+              class="ion-text-start ion-text-capitalize ion-text-wrap"
+            >
+              <!-- <h3>
+                <b>{{ SubTaskObj.subtask }} </b> 
+                    style="  display: flex;
+                align-items: center ;margin-bottom: 1px; "
+              </h3> -->
+              <div
+                style="border-bottom: thin; border-bottom-style: solid; border-color: lightskyblue;"
+              >
+                <ion-note slot="start" size="samll" color="secondary">
+                  <i style="margin-left: 5px;">
+                    {{ SubTaskObj.taskdate | date }}</i
+                  >
+                </ion-note>
+                <small>
+                  <ion-badge
+                    size="small"
+                    style=" float:left;  "
+                    [color]="
+                      parsPercentage(SubTaskObj.progress) > 99
+                        ? 'success'
+                        : parsPercentage(SubTaskObj.progress) < 50
+                        ? 'warning'
+                        : 'primary'
+                    "
+                  >
+                    {{ parsPercentage(SubTaskObj.progress) }}%
+                  </ion-badge></small
+                >
+              </div>
+              <ion-label
+                style="margin-top:4px ;"
+                size="samll"
+                class="ion-text-start ion-text-capitalize"
+              >
+                <ion-text size="samll" class="ion-text-start ion-text-wrap">
+                  <p>{{ SubTaskObj.details }}</p>
+                </ion-text>
+              </ion-label>
+            </ion-label></ion-label
+          >
         </ion-item>
       </ion-list>
 

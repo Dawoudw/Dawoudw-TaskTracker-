@@ -7,8 +7,11 @@ import {
   Input,
   Inject,
 } from "@angular/core";
-
- 
+import { CreateSubtaskPage } from "src/app/Pages/create-subtask/create-subtask.page";
+import { ModalController } from "@ionic/angular";
+import { AuthService } from "src/app/Services/authService.service";
+import { UsersService } from "src/app/Services/users.service";
+import { User } from "src/app/Models/user";
 
 @Component({
   selector: "app-sub-task",
@@ -21,9 +24,12 @@ export class SubTaskComponent implements OnInit {
   @Input("expandHeight") expandHeight: string = "150px";
   @Input("SubTaskObj") SubTaskObj: any = new Object();
 
-  constructor(public rendr: Renderer2) {
-     
-  }
+  constructor(
+    public rendr: Renderer2,
+    private modalCtrl: ModalController,
+    private auth: AuthService,
+    private userServ: UsersService
+  ) {}
 
   // ngAfterViewInit() {
   //   this.renderer.setStyle(
@@ -38,5 +44,36 @@ export class SubTaskComponent implements OnInit {
   parsPercentage(val): number {
     return parseInt(val) > 1 ? parseInt(val) : parseInt(val) * 100;
   }
-
+  editSubTask() {
+    console.log("Dddd");
+  }
+  openNewTaskModal() {
+    if (this.auth.isLoggedIn()) {
+      this.modalCtrl
+        .create({
+          component: CreateSubtaskPage,
+          cssClass: "my-custom-modal-class ",
+          componentProps: { subTask: this.SubTaskObj, isEdit: true },
+        })
+        .then((modalElement) => {
+          modalElement.present();
+          return modalElement.onDidDismiss();
+        })
+        .then((resultData) => {
+          this.SubTaskObj.expanded = true;
+          // console.log("ResultData: ", resultData);
+          // this.loadData();
+        });
+    } else return false;
+  }
+  getTaskOwnerName(id: any): any {
+    try {
+      const usr = this.userServ.findUserById(id);
+      console.log("getTaskOwnerName" ,id,usr)
+      if (usr.userName) return usr.userName;
+      else return "";
+    } catch (err) {
+      console.log(err);
+    }
+  }
 }
