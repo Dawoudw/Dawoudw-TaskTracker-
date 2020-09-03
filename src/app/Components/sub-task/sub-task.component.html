@@ -43,7 +43,7 @@
                     {{ getTaskOwnerName(SubTaskObj.userid) }}
                   </span>
                 </ion-label>
-                <ion-label
+                <ion-label *ngIf="auth.isLoggedIn()"
                   slot="end"
                   color="warning"
                   style="position:fixed  !important;float:right;right:0px !important;; "

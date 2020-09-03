@@ -27,7 +27,7 @@ export class SubTaskComponent implements OnInit {
   constructor(
     public rendr: Renderer2,
     private modalCtrl: ModalController,
-    private auth: AuthService,
+    public auth: AuthService,
     private userServ: UsersService
   ) {}
 

@@ -134,7 +134,7 @@ export class CreateSubtaskPage implements OnInit, OnDestroy {
       this.subTask.details = this.form.value.description;
       this.subTask.subtask = this.form.value.title;
       this.subTask.progress = this.form.value.progress;
-      this.subTask.userid = this.user.userId;
+      //this.subTask.userid = this.user.userId;
       console.log(this.subTask);
       if (this.form.value.title) {
         if (this.isEdit) {
