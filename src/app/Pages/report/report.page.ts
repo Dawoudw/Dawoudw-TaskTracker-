@@ -45,6 +45,7 @@ export class ReportPage {
           if (t.taskdate) this.dateArr.push(t.taskdate);
         }
       }
+      this.dateArr.sort();
     });
 
     this.platform.ready().then(() => {
