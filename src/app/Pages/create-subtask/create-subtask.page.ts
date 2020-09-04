@@ -70,7 +70,6 @@ export class CreateSubtaskPage implements OnInit, OnDestroy {
         progress: parseInt(this.subTask.progress + ""),
         taskdate: this.subTask.taskdate,
       });
-      this.subTask.userid = this.user.userId;
     } else {
       this.txt = "Create";
     }
@@ -134,7 +133,7 @@ export class CreateSubtaskPage implements OnInit, OnDestroy {
       this.subTask.details = this.form.value.description;
       this.subTask.subtask = this.form.value.title;
       this.subTask.progress = this.form.value.progress;
-      //this.subTask.userid = this.user.userId;
+       this.subTask.userid =     this.subTask.userid ;
       console.log(this.subTask);
       if (this.form.value.title) {
         if (this.isEdit) {

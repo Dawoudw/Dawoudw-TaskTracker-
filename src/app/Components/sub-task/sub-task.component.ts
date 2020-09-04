@@ -48,18 +48,21 @@ export class SubTaskComponent implements OnInit {
     console.log("Dddd");
   }
   openNewTaskModal() {
+    console.log(" openNewTaskModal()this.SubTaskObj",this.SubTaskObj)
     if (this.auth.isLoggedIn()) {
       this.modalCtrl
         .create({
           component: CreateSubtaskPage,
           cssClass: "my-custom-modal-class ",
           componentProps: { subTask: this.SubTaskObj, isEdit: true },
+
+          
         })
         .then((modalElement) => {
           modalElement.present();
           return modalElement.onDidDismiss();
         })
-        .then((resultData) => {
+        .then(() => {
           this.SubTaskObj.expanded = true;
           // console.log("ResultData: ", resultData);
           // this.loadData();
@@ -68,9 +71,9 @@ export class SubTaskComponent implements OnInit {
   }
   getTaskOwnerName(id: any): any {
     try {
-      const usr = this.userServ.findUserById(id);
-      console.log("getTaskOwnerName" ,id,usr)
-      if (usr.userName) return usr.userName;
+      let usr = this.userServ.findUserById(id);
+     // console.log("getTaskOwnerName" ,id,usr)
+      if (usr) return usr.userName?usr.userName:"";
       else return "";
     } catch (err) {
       console.log(err);

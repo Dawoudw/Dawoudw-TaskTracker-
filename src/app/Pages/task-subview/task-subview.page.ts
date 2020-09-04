@@ -68,6 +68,7 @@ export class TaskSubviewPage implements OnInit {
             this.subTasks = res;
 
             this.subTasks.map((item) => {
+              //Add isExpanded property to the subtask object 
               item.expanded = false;
             });
             if (this.subTasks.length < 1) {
@@ -81,11 +82,11 @@ export class TaskSubviewPage implements OnInit {
         });
     });
   }
-  async getSubTasks(taskid): Promise<any[]> {
-    let subtasklist = await this.tasksService
+    getSubTasks(taskid): Promise<any[]> {
+    let subtasklist =   this.tasksService
       .getSubTasks(taskid)
       .then((res) => {
-       // console.log(" getSubTasks(taskid): Promise<SubTask[]>", res);
+       console.log(" getSubTasks(taskid): Promise<SubTask[]>", res);
 
         return res.sort(
           (a, b) => Date.parse(b.taskdate) - Date.parse(a.taskdate)
@@ -131,7 +132,7 @@ export class TaskSubviewPage implements OnInit {
           modalElement.present();
           return modalElement.onDidDismiss();
         })
-        .then((resultData) => {
+        .then(() => {
          // console.log("ResultData: ", resultData);
           this.loadData();
         });

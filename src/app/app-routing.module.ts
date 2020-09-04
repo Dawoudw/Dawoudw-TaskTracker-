@@ -27,6 +27,10 @@ const routes: Routes = [
     redirectTo: "index",
     pathMatch: "full",
   },
+  {
+    path: 'report-task-period',
+    loadChildren: () => import('./Pages/report-task-period/report-task-period.module').then( m => m.ReportTaskPeriodPageModule)
+  },
  
   
 ];

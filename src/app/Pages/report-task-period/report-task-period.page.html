@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-label position="fixed" color="primary">
       <p style="font-size: 16px;text-align: center !important;">
-        Users Progress Report
+        Users Progress - Preiod Report
       </p>
     </ion-label>
     <ion-buttons slot="start">
@@ -20,7 +20,7 @@
       <ion-col size="12" size-lg="6" size-md="6" offset-med="3" offset-lg="3">
         <ion-row style="justify-items: left;">
           <ion-col>
-            <ion-list>
+            <ion-list lines="full">
               <ion-item detail="false">
                 <ion-label
                   size="small"
@@ -28,7 +28,7 @@
                   position="stacked"
                   class="ion-text-start ion-text-capitalize ion-text-wrap"
                 >
-                  Choose a User By Name
+                  Choose a User By Name :
                 </ion-label>
                 <ion-select name="users" id="users" [(ngModel)]="userId">
                   <ion-select-option
@@ -47,26 +47,41 @@
                   position="stacked"
                   class="ion-text-start ion-text-capitalize ion-text-wrap"
                 >
-                  Choose a Report Date
+                  Choose a Report Date Range
                 </ion-label>
 
                 <ion-select
+                  placeholder="From Date"
                   calss="ion-dark"
                   color="dark"
                   name="dates"
                   id="dates"
-                  [(ngModel)]="taskDate"
+                  [(ngModel)]="taskDate1"
                 >
                   <ion-select-option
-                    size="samll"
+                    size="small"
                     *ngFor="let date of dateArr"
                     value="{{date}}"
                     >{{date}}</ion-select-option
                   >
                 </ion-select>
-                <div
-                  style="justify-content: center;display: flex;width: 100%;max-height:50px;"
+
+                <ion-select
+                  placeholder="To Date"
+                  calss="ion-dark"
+                  color="dark"
+                  name="dates"
+                  id="dates"
+                  [(ngModel)]="taskDate2"
                 >
+                  <ion-select-option
+                    size="small"
+                    *ngFor="let date of dateArr"
+                    value="{{date}}"
+                    >{{date}}</ion-select-option
+                  >
+                </ion-select>
+                <div style="justify-content: center;display: flex;width: 100%;max-height:50px;">
                   <ion-button
                     color="primary"
                     (click)="processData()"
@@ -80,11 +95,7 @@
         </ion-row>
         <ion-row>
           <ion-col size="12" class="ion-border" color="light">
-            <div
-              style="text-align: center !important;"
-              id="div_pie"
-              class="ion-padding"
-            ></div>
+            <div style="text-align: center !important;" id="div_pie"></div>
           </ion-col>
         </ion-row>
       </ion-col>
