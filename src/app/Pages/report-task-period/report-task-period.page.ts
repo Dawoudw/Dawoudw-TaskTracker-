@@ -112,14 +112,53 @@ export class ReportTaskPeriodPage {
     {
       data.addRows([["Pending", 1 - total]]);
     }
-
     var options = {
-      title: 'Associate Task Status',
+      title: "Associate Task Status",
+      //titlePosition: 'none',
       is3D: true,
-      legend: { position: 'labeled' }
-    }
+									 
+	 
 
-    var chart = new google.visualization.PieChart(document.getElementById('div_pie'));
+      backgroundColor: {
+        stroke: "#16b7fc",
+        strokeWidth: 1,
+        fill: "transparent",
+      },
+ 
+      legend: {
+        position: "labeled",
+        textStyle: {
+          color: "#16b7fc",
+          bold: false,
+          italic: true,
+        },
+      },
+
+      enableInteractivity: true,
+      // textStyle: {
+      //   color: "yellow",
+
+      //   fontSize: "x-smaller",
+      //   bold: false,
+      //   italic: true,
+      // },
+      titleTextStyle: {
+        color: "#16b7fc",
+        fontSize: "13",
+      },
+      // forceIFrame: true,
+      // pieStartAngle:50,
+      // pieHole:10,
+      // legend: 'none',
+      // pieSliceText: 'label',
+      // slices: {  4: {offset: 0.2},
+      //           12: {offset: 0.3},
+      //           14: {offset: 0.4},
+      //           15: {offset: 0.5},
+      // },
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('div_pie2'));
     chart.draw(data, options);
   }
 
