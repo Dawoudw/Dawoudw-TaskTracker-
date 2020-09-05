@@ -61,7 +61,7 @@ export class ReportPage {
         self.tasks = data;
       });
 
-    setTimeout(() => this.DrawPieChart(), 250);
+    setTimeout(() => this.DrawPieChart(), 500);
   }
 
   DrawPieChart() {
@@ -73,9 +73,9 @@ export class ReportPage {
 
     //for percent in format "#%" - parseFloat and divide by 100
     for (const t of this.tasks) {
-      const val = this.parsPercentage(t.progress)
-      data.addRows([[t.task, val/ 100]]);
-      total = total + val/ 100;
+      const val = this.parsPercentage(t.progress);
+      data.addRows([[t.task, val / 100]]);
+      total = total + val / 100;
     }
     if (total < 1) {
       data.addRows([["Pending", 1 - total]]);
@@ -84,7 +84,25 @@ export class ReportPage {
     var options = {
       title: "Associate Task Status",
       is3D: true,
-      legend: { position: "labeled" },
+      backgroundColor: {
+        stroke: "#16b7fc",
+        strokeWidth: 1,
+        fill: "transparent",
+      },
+
+      legend: {
+        position: "labeled",
+        textStyle: {
+          color: "#16b7fc",
+          bold: false,
+          italic: true,
+        },
+      },
+      enableInteractivity: true,
+      titleTextStyle: {
+        color: "#16b7fc",
+        fontSize: "13",
+      },
     };
 
     var chart = new google.visualization.PieChart(

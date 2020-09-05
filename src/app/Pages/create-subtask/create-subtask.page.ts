@@ -14,11 +14,13 @@ import { AuthService } from "src/app/Services/authService.service";
   templateUrl: "./create-subtask.page.html",
   styleUrls: ["./create-subtask.page.scss"],
 })
-export class CreateSubtaskPage implements OnInit , OnDestroy{
+export class CreateSubtaskPage implements OnInit, OnDestroy {
   form: FormGroup;
   subTask: SubTask = new SubTask();
+  isEdit: boolean = false;
   user: User;
   task: Task;
+  txt: any;
   constructor(
     private modalCtrl: ModalController,
     private tasksService: TasksService, // private formBuilder: FormBuilder
@@ -27,15 +29,13 @@ export class CreateSubtaskPage implements OnInit , OnDestroy{
   ) {
     this.user = auth.getLoggedUser();
 
-    if (!this.user) {    console.log(!this.user)
-      router.ngOnDestroy()
+    if (!this.user) {
+      // console.log(!this.user);
+      this.router.ngOnDestroy();
     }
   }
-  ngOnDestroy(): void {
-  
-  }
+  ngOnDestroy(): void {}
   ngOnInit() {
-    console.log(`${this.task.id}`);
     this.form = new FormGroup({
       title: new FormControl(null, {
         updateOn: "blur",
@@ -54,8 +54,26 @@ export class CreateSubtaskPage implements OnInit , OnDestroy{
         validators: [Validators.required],
       }),
     });
+    this.fillForm();
   }
+  saveSubTask() {
 
+    this.isEdit?this.updateSubTask():this.createSubTask();
+  }
+  fillForm() {
+    console.log("this.subTask", this.subTask);
+    if (this.isEdit) {
+      this.txt = "Edit";
+      this.form.setValue({
+        title: this.subTask.subtask,
+        description: this.subTask.details,
+        progress: parseInt(this.subTask.progress + ""),
+        taskdate: this.subTask.taskdate,
+      });
+    } else {
+      this.txt = "Create";
+    }
+  }
   onCancel() {
     this.modalCtrl.dismiss(null, "cancel");
   }
@@ -81,27 +99,60 @@ export class CreateSubtaskPage implements OnInit , OnDestroy{
 
   async createSubTask() {
     if (this.form.valid && this.task) {
-      this.subTask.taskid = this.task.id;
+      this.subTask.taskid = this.isEdit ? this.subTask.taskid : this.task.id;
       this.subTask.taskdate = this.form.value.taskdate;
       this.subTask.details = this.form.value.description;
       this.subTask.subtask = this.form.value.title;
       this.subTask.progress = this.form.value.progress;
+      this.subTask.userid = this.user.userId;
       console.log(this.subTask);
       if (this.form.value.title) {
-        await this.tasksService
-          .addSubTask(this.subTask.id, this.subTask)
-          .then((result) => {
-            console.log("createSubTask() result ", result);
-          })
-          .catch((er) => {
-            console.log(er);
-          })
-          .finally(() => {
-            this.form.reset();
-            this.modalCtrl.dismiss(null, "task created");
-          });
+        if (!this.isEdit) {
+          await this.tasksService
+            .addSubTask(this.subTask.id, this.subTask)
+            .then((result) => {
+              console.log("createSubTask() result ", result);
+            })
+            .catch((er) => {
+              console.log(er);
+            })
+            .finally(() => {
+              this.form.reset();
+              this.modalCtrl.dismiss(null, "task created");
+            });
+        }
       }
     } else {
+      console.log("There were undefined fields when creating a subtask");
+    }
+  }
+  async updateSubTask() {
+    if (this.form.valid && this.subTask) {
+      this.subTask.taskid = this.isEdit ? this.subTask.taskid : this.task.id;
+      this.subTask.taskdate = this.form.value.taskdate;
+      this.subTask.details = this.form.value.description;
+      this.subTask.subtask = this.form.value.title;
+      this.subTask.progress = this.form.value.progress;
+       this.subTask.userid =     this.subTask.userid ;
+      console.log(this.subTask);
+      if (this.form.value.title) {
+        if (this.isEdit) {
+          await this.tasksService
+            .updateSubTask(this.subTask)
+            .then((result) => {
+              console.log("updateSubTask() result ", result);
+            })
+            .catch((er) => {
+              console.log(er);
+            })
+            .finally(() => {
+              this.form.reset();
+              this.modalCtrl.dismiss(null, "task updated");
+            });
+        }
+      }
+    } else {
+      this.form.setValue({ valid: false });
       console.log("There were undefined fields when creating a subtask");
     }
   }

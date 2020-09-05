@@ -24,11 +24,11 @@ export class UsersService {
       );
     });
     console.log("usersList", users);
-   console.log("usersAr", this.usersList);
+    console.log("usersAr", this.usersList);
     return this.usersList;
   }
-  async findUserById(id): Promise<User> {
-    return this.usersList.find((x) => x.userId === id);
+    findUserById(id): User {
+    return this.usersList.find((x) => x.userId == id);
   }
 
   getUserById(id): User {
@@ -40,15 +40,15 @@ export class UsersService {
       usr.userName = res["Items"][0].name.S;
       usr.email = res["Items"][0].email.S;
       usr.avatar = "../assets/avatar.svg";
-      //  console.log(usr);    
-        // console.log("res['Items']", res["Items"]);
+      //  console.log(usr);
+      // console.log("res['Items']", res["Items"]);
       // console.log("res['Items'][0] ", res["Items"][0]);
       // console.log("res['Items'][0].id", res["Items"][0].id.S);
     });
     return usr;
   }
   getUserByEmail(email: String): User {
-    console.log(this.usersList)
+    console.log(this.usersList);
     return this.usersList.find((u) => u.email === email);
   }
 }

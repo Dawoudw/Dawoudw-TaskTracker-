@@ -8,19 +8,22 @@ export class SubTask {
         "taskdate": "2020-08-24",
         "progress": "0%"
    */
-  public id: string="";
-  public taskid: string;
-  public taskdate: any;
-  public details: string;
-  public subtask: string; // the task name
-  public progress: number;
-  constructor(taskid?, id?, taskdate?, details?, subtask?, progress?) {
+    id: string="";
+    taskid: string;
+    taskdate: any;
+    details: string;
+    subtask: string; // the task name
+    progress: number;
+    userid:any
+  
+  constructor(taskid?, id?, taskdate?, details?, subtask?, progress?,userid?) {
     this.taskid = taskid;
     this.id = id;
     this.taskdate = taskdate;
     this.details = details;
     this.subtask = subtask;
     this.progress = progress;
+    this.userid=userid;
   }
 
 }

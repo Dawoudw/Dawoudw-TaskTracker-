@@ -16,7 +16,7 @@
 </ion-header>
 
 <!-- Card view  -->
-<ion-content fullscreen>
+<ion-content translucent>
   <ion-grid>
     <ion-row>
       <ion-col size-med="6" size-lg="6" offset-med="3" offset-lg="3">
@@ -65,11 +65,11 @@
       </ion-col>
     </ion-row>
   </ion-grid> </ion-content
-><ion-footer>
-  <ion-button
-    class="ion-text-capitalize ion-margin"
+><ion-footer class="ion-text-center ion-margin ion-justify-content-center ion-align-items-center ion-align-self-center" >
+  <ion-button style="max-width:400px; width:70%;"
+    class="ion-text-capitalize ion-align-self-center"
     color="primary"
-    expand="block"
+    
     (click)="updateTask()"
     [disabled]="!loadedTask.details||!loadedTask.task||loadedTask.progress<0"
     >Save
