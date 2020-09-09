@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import {NgForm, FormControl, Validators } from "@angular/forms";
 import { ModalController } from "@ionic/angular";
 import { TasksService } from "src/app/Services/tasks.service";
 
@@ -9,26 +9,28 @@ import { TasksService } from "src/app/Services/tasks.service";
   styleUrls: ["./create-task.page.scss"],
 })
 export class CreateTaskPage implements OnInit {
-  form: FormGroup;
-
   constructor(
     private modalCtrl: ModalController,
     private tasksService: TasksService // private formBuilder: FormBuilder
   ) {}
-
+@ViewChild('f') form:NgForm;
   ngOnInit() {
-    this.form = new FormGroup({
-      title: new FormControl(null, {
-        updateOn: "blur",
-        validators: [Validators.required],
-      }),
-      description: new FormControl(null, {
-        updateOn: "blur",
-        validators: [Validators.required],
-      }),
-    });
-  }
 
+    // this.form = new FormGroup({
+    //   title: new FormControl(null, {
+    //     updateOn: "blur",
+    //     validators: [Validators.required],
+    //   }),
+    //   description: new FormControl(null, {
+    //     updateOn: "blur",
+    //     validators: [Validators.required],
+    //   }),
+    // });
+  }
+  onsubmit()
+  {
+    console.log("form",this.form)
+  }
   onCancel() {
     this.modalCtrl.dismiss(null, "cancel");
   }

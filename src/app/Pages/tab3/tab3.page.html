@@ -14,16 +14,27 @@
     ></ion-icon>
     <ion-label slot="start" color="primary"> <p>My Tasks</p></ion-label>
 
-    <ion-buttons slot="end">
-      <!-- <ion-button [routerLink]="['/', 'tasktracker', 'submit-my-progress', 'new']"> -->
+    <!--- /* <ion-buttons slot="end">
+ <ion-button [routerLink]="['/', 'tasktracker', 'submit-my-progress', 'new']"> 
       <ion-button (click)="openNewTaskModal()">
         <ion-icon slot="icon-only" name="add-outline"></ion-icon>
       </ion-button>
-    </ion-buttons>
+    </ion-buttons> */--->
   </ion-toolbar>
+
 </ion-header>
 
-<ion-content>
+<ion-content>  <ion-fab
+  
+  (click)="openNewTaskModal()"
+  vertical="top"
+  horizontal="end"
+  slot="fixed"
+>
+  <ion-fab-button size="small">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
   <div
     class="ion-no-margin ; no-padding"
     style="
