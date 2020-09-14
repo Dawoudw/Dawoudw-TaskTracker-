@@ -99,25 +99,26 @@ export class ReportTaskPeriodPage {
     var data: any = new google.visualization.DataTable();
     let total: number = 0;
 
-    data.addColumn('string', 'Task');
+    data.addColumn('string', 'Day');
     data.addColumn('number', 'Progress');
 
     //for percent in format "#%" - parseFloat and divide by 100
     for(const t of this.tasks)
     {
-      data.addRows([[t.task, (this.parsPercentage(t.progress) / 100)]]);
-      total = total + (this.parsPercentage(t.progress) / 100);
+      data.addRows([[t.taskdate,  this.parsPercentage(t.progress)  ]]);
+    //  total = total + (this.parsPercentage(t.progress) / 100);
     }
-    if(total<1)
-    {
-      data.addRows([["Pending", 1 - total]]);
-    }
+    // if(total<1)
+    // {
+    //   data.addRows([["Pending", 1 - total]]);
+    // }
     var options = {
       title: "Associate Task Status",
       //titlePosition: 'none',
       is3D: true,
 									 
-	 
+      // hAxis: {title: 'Day',  titleTextStyle: {color: '#333'}},
+      // vAxis: {minValue: 0},
 
       backgroundColor: {
         stroke: "#16b7fc",
