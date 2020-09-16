@@ -12,13 +12,13 @@ declare var google;
   styleUrls: ["./report-task-period.page.scss"],
 })
 export class ReportTaskPeriodPage {
-  //deafult is a working userId and date case, other dates/userId combo may not work due to differing format or lack of data
+
   tasks: Task[];
   userArr: UserInfo[] = new Array(0);
   userId: string = "0";
   dateArr: string[] = new Array(0);
-  taskDate1: string; //= "2020-08-17";
-  taskDate2: string; //= "2020-08-19";
+  taskDate1: string = "2020-08-14";
+  taskDate2: string = "2020-09-09";
   taskDates: string[];
 
   constructor(public platform: Platform, public api: ReportService) 
@@ -87,79 +87,67 @@ export class ReportTaskPeriodPage {
           {
             this.tasks.push(t);
           }
-          
         });
     }
-  
-    setTimeout(() => this.DrawPieChart(), 1500);
+
+    setTimeout(() => this.DrawBarChart(), 1500);
   }
 
-  DrawPieChart()
+  DrawBarChart()
   {
+    this.tasks.sort((t1, t2) => {
+      if(t1.taskdate>t2.taskdate)
+      {
+        return 1;
+      }
+      else if(t1.taskdate==t2.taskdate)
+      {
+        return 0;
+      }
+      else
+      {
+        return -1;
+      }
+    });
+
     var data: any = new google.visualization.DataTable();
     let total: number = 0;
-
-    data.addColumn('string', 'Day');
+    let index: number = 0;
+    
+    let colors: string[] = new Array(0);
+    colors.push('gold','silver','blue','orange','red','green', 'pink', 'brown');
+    
+    data.addColumn('string', 'Task');
     data.addColumn('number', 'Progress');
-
-    //for percent in format "#%" - parseFloat and divide by 100
+    data.addColumn({ role: 'style' }, 'Color' );
+    
     for(const t of this.tasks)
     {
-      data.addRows([[t.taskdate,  this.parsPercentage(t.progress)  ]]);
-    //  total = total + (this.parsPercentage(t.progress) / 100);
+      if(index >= colors.length)
+      {
+        index = 0;
+      }
+
+      data.addRows([[t.task + ": " + t.taskdate, this.parsPercentage(t.progress), colors[index]]]);
+      total = total + (this.parsPercentage(t.progress) / 100);
+
+      index++;
     }
-    // if(total<1)
-    // {
-    //   data.addRows([["Pending", 1 - total]]);
-    // }
+    if(total == 0)
+    {
+      data.addRows([["Pending", 1]]);
+    }
+
     var options = {
-      title: "Associate Task Status",
-      //titlePosition: 'none',
+      title: 'Associate Task Status',
       is3D: true,
-									 
-      // hAxis: {title: 'Day',  titleTextStyle: {color: '#333'}},
-      // vAxis: {minValue: 0},
+      legend: { position: 'none' },
+      orientation: 'vertical',
+      hAxis: {title: 'Progress %'},
+      //vAxis: {title: 'Task Date'}
+   }
 
-      backgroundColor: {
-        stroke: "#16b7fc",
-        strokeWidth: 1,
-        fill: "transparent",
-      },
- 
-      legend: {
-        position: "labeled",
-        textStyle: {
-          color: "#16b7fc",
-          bold: false,
-          italic: true,
-        },
-      },
-
-      enableInteractivity: true,
-      // textStyle: {
-      //   color: "yellow",
-
-      //   fontSize: "x-smaller",
-      //   bold: false,
-      //   italic: true,
-      // },
-      titleTextStyle: {
-        color: "#16b7fc",
-        fontSize: "13",
-      },
-      // forceIFrame: true,
-      // pieStartAngle:50,
-      // pieHole:10,
-      // legend: 'none',
-      // pieSliceText: 'label',
-      // slices: {  4: {offset: 0.2},
-      //           12: {offset: 0.3},
-      //           14: {offset: 0.4},
-      //           15: {offset: 0.5},
-      // },
-    };
-
-    var chart = new google.visualization.PieChart(document.getElementById('div_pie2'));
+    var chart = new google.visualization.BarChart(document.getElementById('div_bar'));
     chart.draw(data, options);
   }
 

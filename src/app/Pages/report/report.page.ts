@@ -74,11 +74,11 @@ export class ReportPage {
     //for percent in format "#%" - parseFloat and divide by 100
     for (const t of this.tasks) {
       const val = this.parsPercentage(t.progress);
-      data.addRows([[t.task, val / 100]]);
+      data.addRows([[(t.task + " - " + t.progress), val / 100]]);
       total = total + val / 100;
     }
-    if (total < 1) {
-      data.addRows([["Pending", 1 - total]]);
+    if (total == 0) {
+      data.addRows([["Pending", 1]]);
     }
 
     var options = {
